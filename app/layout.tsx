@@ -22,8 +22,8 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${poppins.className} bg-[#ebebeb]`}>
-        <main className="max-w-5xl mx-auto flex flex-col">
+      <body className={`${poppins.className} bg-[#ebebeb] custom-scrollbar`}>
+        <main className="max-w-7xl mx-auto flex flex-col overflow-x-hidden">
           <Navbar />
           {children}
         </main>
