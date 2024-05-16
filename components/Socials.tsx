@@ -6,7 +6,7 @@ import { NewTwitterIcon } from "./icons/X";
 
 const Socials = () => {
   return (
-    <ul className="px-4 max-lg:hidden flex flex-col gap-6 items-center justify-center ">
+    <ul className="ax-lg:hidden flex flex-col gap-6 items-center justify-center ">
       <li>
         <Link href="https://github.com/sougata-github">
           <GithubIcon className="h-5 w-5" />
