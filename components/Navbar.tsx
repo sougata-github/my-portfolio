@@ -1,10 +1,11 @@
 import { links } from "@/lib/data";
 
 import Link from "next/link";
+import MobileNav1 from "./MobileNav1";
 
 const Navbar = () => {
   return (
-    <header className="max-md:hidden py-4 sticky w-full pt-6 px-4 text-[#424242] tracking-tight h-[75px]">
+    <header className="bg-[#ebebeb] mx-auto max-w-7xl max-sm:hidden py-4 sticky top-0 w-full pt-6 px-4 text-[#424242] tracking-tight h-[75px]">
       <nav className="flex items-center justify-between">
         <Link
           href="/"
@@ -12,7 +13,7 @@ const Navbar = () => {
         >
           Sougata
         </Link>
-        <ul className="flex gap-8 items-center">
+        <ul className="flex gap-8 items-center max-lg:hidden">
           {links.map((link: string, index) => (
             <li key={index} className="transition-all hover:text-black">
               <Link
@@ -24,6 +25,7 @@ const Navbar = () => {
             </li>
           ))}
         </ul>
+        <MobileNav1 />
       </nav>
     </header>
   );
