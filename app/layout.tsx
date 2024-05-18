@@ -3,7 +3,8 @@ import { Poppins } from "next/font/google";
 
 import "./globals.css";
 
-import Navbar from "@/components/Navbar";
+import Navbar from "@/components/shared/Navbar/Navbar";
+import MobileNav2 from "@/components/shared/Navbar/MobileNav2";
 
 export const metadata: Metadata = {
   title: "Sougata Das",
@@ -22,9 +23,12 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${poppins.className} bg-[#ebebeb] custom-scrollbar`}>
+      <body
+        className={`${poppins.className} bg-[#ebebeb] custom-scrollbar max-sm:scrollbar-hidden`}
+      >
         <Navbar />
-        <main className="px-4 max-w-7xl mx-auto flex flex-col overflow-x-hidden custom-scrollbar">
+        <MobileNav2 />
+        <main className="px-4 max-w-7xl mx-auto flex flex-col overflow-x-hidden custom-scrollbar max-sm:scrollbar-hidden">
           {children}
         </main>
       </body>

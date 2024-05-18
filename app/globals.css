@@ -86,6 +86,10 @@
     background: #888;
     border-radius: 50px;
   }
+
+  .scrollbar-hidden::-webkit-scrollbar {
+    display: none;
+  }
 }
 
 @layer base {

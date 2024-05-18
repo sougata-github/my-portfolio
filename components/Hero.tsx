@@ -10,7 +10,7 @@ import { SentIcon } from "./icons/Sent";
 
 const Hero = () => {
   return (
-    <section className="pb-2 max-md:pt-6 lg:pt-2 max-sm:pt-8 transition-all">
+    <section className="pb-2 max-md:pt-2 lg:pt-2 max-sm:pt-8 transition-all">
       <div className="flex flex-col items-center lg:flex-row md:justify-between max-sm:pb-2 gap-2">
         {/* Social Buttons */}
         <div className="my-4 max-sm:my-4">
@@ -41,7 +41,7 @@ const Hero = () => {
             </Link>
             <Button className="bg-black max-sm:py-4 py-6 px-4 rounded-xl max-sm:text-xs">
               <Copy className="mr-1 mt-[0.5] h-4 w-4 max-sm:h-3 max-sm:w-3 text-white" />
-              Copy Email
+              Copy Mail
             </Button>
           </div>
         </div>
