@@ -20,7 +20,7 @@ const MobileNav1 = () => {
         </SheetTrigger>
         <SheetContent side="left">
           <SheetTitle className="mt-2">
-            <h1 className="text-xl font-semibold">Sougata Das</h1>
+            <h1 className="text-xl font-semibold">Sougata</h1>
           </SheetTitle>
           <ul className="flex flex-col gap-8 items-start py-8 mt-2">
             {links.map((link: string, index) => (
