@@ -1,12 +1,12 @@
 import Link from "next/link";
 import Image from "next/image";
 
-import Socials from "./Socials";
-import { Button } from "./ui/button";
-import ScrollButton from "./ScrollButton";
+import Socials from "../ui/Socials";
+import { Button } from "../ui/button";
+import ScrollButton from "../ui/ScrollButton";
 
 import { Copy } from "lucide-react";
-import { SentIcon } from "./icons/Sent";
+import { SentIcon } from "../icons/Sent";
 
 const Hero = () => {
   return (
@@ -23,12 +23,12 @@ const Hero = () => {
             <h1 className="text-4xl lg:text-5xl font-bold">
               Sougata Das<span className="hidden lg:inline">👋</span>
             </h1>
-            <h2 className="text-[#4a4a4a] text-lg lg:text-2xl font-medium mt-2 md:mt-4">
+            <h2 className="text-light-1 text-lg lg:text-2xl font-medium mt-2 md:mt-4">
               <span className="hidden lg:inline">-</span>Creative Developer
             </h2>
           </div>
 
-          <p className="text-[#6f6f6f] text-sm lg:text-[16px] mt-2 lg:mt-4 max-w-md max-md:max-w-[400px]">
+          <p className="text-light-2 text-sm lg:text-[16px] mt-2 lg:mt-4 max-w-md max-md:max-w-[400px]">
             I&apos;m a frontend developer based in India, specializing in
             React.js & Next.js.
           </p>

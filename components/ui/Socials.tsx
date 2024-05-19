@@ -1,8 +1,8 @@
 import Link from "next/link";
 
-import { GithubIcon } from "./icons/Github";
-import { Linkedin02Icon } from "./icons/Linkdin";
-import { NewTwitterIcon } from "./icons/X";
+import { GithubIcon } from "../icons/Github";
+import { Linkedin02Icon } from "../icons/Linkdin";
+import { NewTwitterIcon } from "../icons/X";
 
 const Socials = () => {
   return (
