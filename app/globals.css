@@ -90,6 +90,14 @@
   .scrollbar-hidden::-webkit-scrollbar {
     display: none;
   }
+
+  .section-heading {
+    @apply text-center lg:text-5xl text-4xl font-bold py-2;
+  }
+
+  .section-subheading {
+    @apply text-center text-light-2 py-2 font-medium lg:text-lg text-sm;
+  }
 }
 
 @layer base {
