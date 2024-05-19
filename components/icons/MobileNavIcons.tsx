@@ -1,8 +1,8 @@
-import { Phone } from "lucide-react";
 import { UserAccountIcon } from "./About";
 import { Home01Icon } from "./Home";
 import { Briefcase05Icon } from "./Projects";
 import { Rocket01Icon } from "./Skill";
+import { SentIcon } from "./Sent";
 
 export type links = {
   link: string;
@@ -28,6 +28,6 @@ export const iconLinks: links[] = [
   },
   {
     link: "Contact",
-    icon: <Phone className="h-[17px] w-[17px] text-[#6f6f6f]" />,
+    icon: <SentIcon className="h-5 w-5 text-[#6f6f6f]" />,
   },
 ];

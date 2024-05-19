@@ -17,13 +17,16 @@ const MobileNav2 = () => {
             {iconLinks.map((item: links) => (
               <li
                 key={item.link}
-                className="cursor-pointer transition-all hover:text-black p-4 rounded-xl hover:bg-gray-200"
+                className="cursor-pointer transition-all hover:text-black p-2 rounded-xl hover:bg-gray-200"
               >
                 <Link
                   href={`${item.link === "Home" ? "/" : `#${item.link}`}`}
-                  className="font-medium"
+                  className="font-medium flex flex-col items-center gap-2"
                 >
                   {item.icon}
+                  <p className="text-xs font-medium text-gray-500 text-center">
+                    {item.link}
+                  </p>
                 </Link>
               </li>
             ))}

@@ -49,7 +49,7 @@ const Hero = () => {
         {/* Hero Image */}
         <div className="flex justify-center items-center mb-2 md:mb-0">
           <Image
-            src="/hero-light.png"
+            src="/images/hero-light.png"
             alt="Illustration of Sougata Das"
             width={500}
             height={500}
