@@ -24,7 +24,7 @@ const Hero = () => {
               Sougata Das<span className="hidden lg:inline">👋</span>
             </h1>
             <h2 className="text-light-1 text-lg lg:text-2xl font-medium mt-2 md:mt-4">
-              <span className="hidden lg:inline">-</span>Creative Developer
+              <span className="hidden lg:inline">-</span> Creative Developer
             </h2>
           </div>
 

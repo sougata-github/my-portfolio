@@ -9,7 +9,7 @@ interface AboutCardProps {
 
 const AboutCard = ({ title, description, icon, link }: AboutCardProps) => {
   return (
-    <div className="cursor-pointer lg:w-[160px] lg:h-auto max-sm:px-8 px-8 py-4 lg:py-6 bg-white border-[0.5px] border-[#bcbcbc] rounded-xl flex flex-col gap-2 max-sm:gap-1 items-center">
+    <div className="cursor-pointer lg:w-[160px] lg:h-auto max-sm:px-8 px-8 py-4 lg:py-6 bg-[#cecece] border-[0.5px] border-[#d7d7d7] rounded-xl flex flex-col gap-2 max-sm:gap-1 items-center">
       {icon}
       <h1 className="text-light-1 max-sm:text-[10px] lg:text-sm font-semibold tracking-tight">
         {title}

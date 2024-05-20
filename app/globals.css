@@ -98,6 +98,10 @@
   .section-subheading {
     @apply text-center text-light-2 py-2 font-medium lg:text-lg text-sm;
   }
+
+  .section-container {
+    @apply pt-6 sm:pt-[calc(76px+1.5rem)] lg:pb-8 pb-6 mb-20 max-md:mb-8 max-sm:mb-0;
+  }
 }
 
 @layer base {

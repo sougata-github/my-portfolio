@@ -15,10 +15,7 @@ const MobileNav2 = () => {
         <SheetContent side="bottom" className="p-0">
           <ul className="flex flex-wrap justify-center items-start py-8 mt-2 gap-4">
             {iconLinks.map((item: links) => (
-              <li
-                key={item.link}
-                className="cursor-pointer transition-all hover:text-black p-2 rounded-xl hover:bg-gray-200"
-              >
+              <li key={item.link} className="cursor-pointer p-2 rounded-xl">
                 <Link
                   href={`${item.link === "Home" ? "/" : `#${item.link}`}`}
                   className="font-medium flex flex-col items-center gap-2"

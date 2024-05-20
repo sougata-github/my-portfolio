@@ -10,7 +10,7 @@ import { Briefcase, HeadphonesIcon } from "lucide-react";
 
 const About = () => {
   return (
-    <section id="About" className="lg:py-8 py-6">
+    <section id="About" className="section-container">
       <h1 className="section-heading">About Me</h1>
       <p className="section-subheading">My Introduction</p>
       <div className="max-sm:mt-4 max-md:mt-8 mt-12 flex lg:flex-row flex-col gap-8 lg:justify-evenly max-lg:justify-center items-center py-4">
@@ -20,7 +20,7 @@ const About = () => {
             height={500}
             width={500}
             alt="profile"
-            className="object-cover max-w-[300px] sm:max-w-sm md:max-w-[480px] lg:max-w-[520px]] h-auto rounded-3xl"
+            className="object-cover max-w-[300px] sm:max-w-sm md:max-w-[480px] lg:max-w-[520px] h-auto rounded-3xl"
           />
         </div>
         <div className="max-lg:items-center flex flex-col gap-4 max-lg:text-center">
