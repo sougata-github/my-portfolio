@@ -1,7 +1,7 @@
 import { projectsData } from "@/lib/data";
 
-import { Button } from "../ui/button";
 import ProjectCard from "../ui/ProjectCard";
+import ProjectDialog from "../ui/ProjectDialog";
 
 const Projects = () => {
   return (
@@ -11,9 +11,7 @@ const Projects = () => {
     >
       <h1 className="section-heading">My Projects</h1>
       <div className="py-2 w-full flex justify-center">
-        <Button className="lg:text-lg text-sm bg-transparent text-light-2 font-medium hover:bg-transparent hover:text-light-1 transition-all">
-          View All
-        </Button>
+        <ProjectDialog />
       </div>
 
       <div className="grid grid-cols-1 lg:grid-cols-2 py-6 sm:py-12 mx-auto max-w-4xl place-content-center gap-6">

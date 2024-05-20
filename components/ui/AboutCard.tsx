@@ -9,9 +9,9 @@ interface AboutCardProps {
 
 const AboutCard = ({ title, description, icon, link }: AboutCardProps) => {
   return (
-    <div className="cursor-pointer lg:w-[160px] lg:h-auto max-sm:px-8 px-8 py-4 lg:py-6 bg-[#cecece] border-[0.5px] border-[#d7d7d7] rounded-xl flex flex-col gap-2 max-sm:gap-1 items-center">
+    <div className="cursor-pointer py-4 lg:py-6 bg-transparent flex flex-col gap-2 max-sm:gap-1 items-center">
       {icon}
-      <h1 className="text-light-1 max-sm:text-[10px] lg:text-sm font-semibold tracking-tight">
+      <h1 className="text-light-1 max-sm:text-[10px] sm:text-lg font-semibold tracking-tight">
         {title}
       </h1>
 
@@ -19,12 +19,12 @@ const AboutCard = ({ title, description, icon, link }: AboutCardProps) => {
         <Link
           target="_blank"
           href={link}
-          className="text-light-2 text-xs max-sm:text-[8.5px] underline"
+          className="font-medium text-light-2 text-xs max-sm:text-[8.5px] underline"
         >
           {description}
         </Link>
       ) : (
-        <p className="text-light-2 text-xs max-sm:text-[8.5px]">
+        <p className="font-medium text-light-2 text-xs max-sm:text-[8.5px]">
           {description}
         </p>
       )}
