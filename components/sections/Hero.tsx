@@ -33,7 +33,7 @@ const Hero = () => {
             React.js & Next.js.
           </p>
           <div className="flex gap-4 mt-6">
-            <Link href="#contact">
+            <Link href="#Contact">
               <Button className="bg-black max-sm:py-4 py-6 px-4 rounded-xl max-sm:text-xs">
                 Say Hello
                 <SentIcon className="ml-1 mt-[0.5] h-5 w-5 max-sm:h-4 max-sm:w-4 text-white" />
