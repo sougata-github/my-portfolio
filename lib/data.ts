@@ -95,22 +95,3 @@ export const allProjectsData = [
     srcCode: "https://github.com/sougata-github/Modern-Restaurant-Landing-Page",
   },
 ];
-
-export const skillsData = [
-  "HTML",
-  "CSS",
-  "JavaScript",
-  "TypeScript",
-  "Tailwind",
-  "Node.js",
-  "React.js",
-  "Next.js",
-  "Framer Motion",
-  "GSAP",
-  "MongoDB",
-  "Mongoose",
-  "MySql",
-  "Prisma",
-  "Git",
-  "Github",
-];

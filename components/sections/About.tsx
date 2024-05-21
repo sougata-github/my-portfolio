@@ -1,12 +1,11 @@
 import Image from "next/image";
 
 import { Button } from "../ui/button";
+import AboutCard from "../ui/AboutCard";
 import { DocumentValidationIcon } from "../icons/CV";
 
-import AboutCard from "../ui/AboutCard";
-
 import { GithubIcon } from "../icons/Github";
-import { Briefcase, HeadphonesIcon, Headset } from "lucide-react";
+import { Briefcase, Headset } from "lucide-react";
 
 const About = () => {
   return (
