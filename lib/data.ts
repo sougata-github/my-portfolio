@@ -1,5 +1,7 @@
 export const links = ["Home", "About", "Projects", "Skills", "Contact"];
 
+export const footerLinks = ["About", "Projects", "Contact"];
+
 export const projectsData = [
   {
     id: 1,
