@@ -23,8 +23,8 @@ const Hero = () => {
             <h1 className="text-4xl lg:text-5xl font-bold">
               Sougata Das<span className="hidden lg:inline">👋</span>
             </h1>
-            <h2 className="text-light-1 text-lg lg:text-2xl font-medium mt-2 md:mt-4">
-              <span className="hidden lg:inline">-</span> Creative Developer
+            <h2 className="text-light-1 text-lg lg:text-2xl font-semibold mt-2 md:mt-4 lg:ml-1">
+              Creative Developer
             </h2>
           </div>
 

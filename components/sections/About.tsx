@@ -24,22 +24,28 @@ const About = () => {
           />
         </div>
         <div className="max-lg:items-center flex flex-col gap-4 max-lg:text-center">
-          <div className="flex-wrap flex justify-between max-lg:gap-8">
+          <div className="flex-wrap flex justify-between max-lg:gap-12 max-sm:gap-8">
             <AboutCard
               title="My Work"
               description="github"
-              icon={<GithubIcon className="h-6 w-6 max-sm:h-4 max-sm:w-4" />}
+              icon={
+                <GithubIcon className="h-6 w-6 max-sm:h-5 max-sm:w-5 text-light-1" />
+              }
               link="https://github.com/sougata-github"
             />
             <AboutCard
               title="Completed"
               description="10+ projects"
-              icon={<Briefcase className="h-6 w-6 max-sm:h-4 max-sm:w-4" />}
+              icon={
+                <Briefcase className="h-6 w-6 max-sm:h-5 max-sm:w-5 text-light-1" />
+              }
             />
             <AboutCard
               title="Support"
               description="online 24/7"
-              icon={<Headset className="h-5 w-5 max-sm:h-4 max-sm:w-4" />}
+              icon={
+                <Headset className="h-6 w-6 max-sm:h-5 max-sm:w-5 text-light-1" />
+              }
             />
           </div>
           <p className="py-2 text-light-2 text-sm max-w-[400px] max-sm:max-w-[320px]">

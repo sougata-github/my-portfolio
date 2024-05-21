@@ -18,14 +18,17 @@ const ProjectDialog = () => {
       <DialogTrigger className="lg:text-xl text-sm text-light-2 font-medium hover:text-light-1 transition-all">
         View All
       </DialogTrigger>
-      <DialogContent className="custom-scrollbar overflow-y-auto pt-8 pb-4 px-8 max-w-[500px] max-h-[400px]">
+      <DialogContent className="cursor-pointer custom-scrollbar overflow-y-auto pt-8 pb-4 px-8 max-w-[500px] max-h-[400px]">
         <DialogHeader>
-          <DialogTitle className="text-xl text-light-1 font-bold">
+          <DialogTitle className="px-4 text-xl text-light-1 font-bold">
             All Projects
           </DialogTitle>
           <ul className="py-4 flex flex-col gap-4">
             {allProjectsData.map((project) => (
-              <li key={project.id} className="py-4">
+              <li
+                key={project.id}
+                className="p-4 hover:bg-[#f1f1f1] transition-all rounded-xl"
+              >
                 <div className="flex flex-col gap-2 mb-4 text-left">
                   <div className="flex gap-4 items-center">
                     <h1 className="text-[16px] text-light-1 font-semibold">

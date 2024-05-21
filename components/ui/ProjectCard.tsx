@@ -21,7 +21,7 @@ const ProjectCard = ({
   return (
     <div className="cursor-pointer max-w-[400px] border-[0.5px] border-[#d7d7d7] rounded-xl bg-[#e2e2e2] px-8 sm:px-10 my-4 flex flex-col gap-6 pb-2">
       <div>
-        <h1 className="text-light-1 text-xl font-bold pt-4 lg:pt-6">{title}</h1>
+        <h1 className="text-light-1 text-xl font-bold pt-6">{title}</h1>
         <p className="mt-2 text-light-2 text-sm font-medium max-w-[300px]">
           {description}
         </p>
@@ -44,9 +44,9 @@ const ProjectCard = ({
         <Link
           target="_blank"
           href={srcCode}
-          className="px-4 py-1 bg-[#cecece] text-xs font-semibold text-light-1 rounded-lg"
+          className="px-4 py-1 bg-[#cecece] text-xs font-medium text-light-1 rounded-lg"
         >
-          github
+          Code
         </Link>
       </div>
     </div>
