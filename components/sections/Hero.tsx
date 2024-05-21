@@ -5,8 +5,8 @@ import Socials from "../ui/Socials";
 import { Button } from "../ui/button";
 import ScrollButton from "../ui/ScrollButton";
 
-import { Copy } from "lucide-react";
 import { SentIcon } from "../icons/Sent";
+import CopyButton from "../ui/CopyButton";
 
 const Hero = () => {
   return (
@@ -39,10 +39,7 @@ const Hero = () => {
                 <SentIcon className="ml-1 mt-[0.5] h-5 w-5 max-sm:h-4 max-sm:w-4 text-white" />
               </Button>
             </Link>
-            <Button className="bg-black max-sm:py-4 py-6 px-4 rounded-xl max-sm:text-xs">
-              <Copy className="mr-1 mt-[0.5] h-4 w-4 max-sm:h-3 max-sm:w-3 text-white" />
-              Copy Mail
-            </Button>
+            <CopyButton />
           </div>
         </div>
 

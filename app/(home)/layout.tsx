@@ -1,6 +1,6 @@
 import Footer from "@/components/sections/Footer";
-import MobileNav2 from "@/components/shared/Navbar/MobileNav2";
-import Navbar from "@/components/shared/Navbar/Navbar";
+import MobileNav2 from "@/components/ui/Navbar/MobileNav2";
+import Navbar from "@/components/ui/Navbar/Navbar";
 
 const RootLayout = ({ children }: { children: React.ReactNode }) => {
   return (

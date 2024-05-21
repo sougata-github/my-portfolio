@@ -27,7 +27,7 @@ const ProjectDialog = () => {
             {allProjectsData.map((project) => (
               <li
                 key={project.id}
-                className="p-4 hover:bg-[#f1f1f1] transition-all rounded-xl"
+                className="p-4 lg:hover:bg-[#f1f1f1] transition-all rounded-xl"
               >
                 <div className="flex flex-col gap-2 mb-4 text-left">
                   <div className="flex gap-4 items-center">

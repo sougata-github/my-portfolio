@@ -53,7 +53,7 @@ const ContactMeForm = () => {
 
   return (
     <Form {...form}>
-      <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-8">
+      <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
         <FormField
           control={form.control}
           name="name"
@@ -100,7 +100,7 @@ const ContactMeForm = () => {
                 <Textarea
                   placeholder="Hi! My name is John Doe."
                   {...field}
-                  className="border-none focus-visible:ring-0 focus-visible:ring-offset-0 h-[160px] text-light-2 placeholder:text-[#a6a6a6]"
+                  className="border-none focus-visible:ring-0 focus-visible:ring-offset-0 h-[150px] text-light-2 placeholder:text-[#a6a6a6]"
                   autoComplete="off"
                 />
               </FormControl>
