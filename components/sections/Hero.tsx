@@ -21,7 +21,7 @@ const Hero = () => {
         <div className="max-sm:mt-2 flex flex-col items-center lg:items-start lg:text-left text-center max-md:gap-4 gap-2">
           <div className="gap-2">
             <h1 className="text-4xl lg:text-5xl font-bold">
-              Sougata Das<span className="hidden lg:inline">👋</span>
+              Hi! I&apos;m Sougata<span className="hidden lg:inline">👋</span>
             </h1>
             <h2 className="text-light-1 text-lg lg:text-2xl font-semibold mt-2 md:mt-4 lg:ml-1">
               Creative Developer
