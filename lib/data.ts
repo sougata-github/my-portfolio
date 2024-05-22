@@ -5,6 +5,7 @@ export const footerLinks = ["About", "Projects", "Contact"];
 export const projectsData = [
   {
     id: 1,
+    label: "devoverflow",
     title: "DevOverFlow",
     description: "A community-driven Q&A platform for programming enthusiasts.",
     href: "https://devoverflow-next.vercel.app/",
@@ -13,6 +14,7 @@ export const projectsData = [
   },
   {
     id: 2,
+    label: "jotion",
     title: "Jotion",
     description: "Productivity and note-taking web application.",
     href: "https://jotion-next.vercel.app/",
@@ -21,6 +23,7 @@ export const projectsData = [
   },
   {
     id: 3,
+    label: "team-chat",
     title: "Team Chat",
     description: "Full-Stack Discord clone built using Next.js.",
     href: "https://team-chat-efq7.onrender.com/invite/4a8a83a6-f6df-4644-90ee-d2c1093c0411",
@@ -29,6 +32,7 @@ export const projectsData = [
   },
   {
     id: 4,
+    label: "iphone-landing-page",
     title: "iPhone landing page",
     description:
       "IPhone 15 Pro landing page built using React, GSAP and Three.js.",

@@ -19,9 +19,9 @@ const Projects = () => {
           <ProjectCard
             key={project.id}
             title={project.title}
+            label={project.label}
             description={project.description}
             href={project.href}
-            srcCode={project.srcCode}
             tags={project.tags}
           />
         ))}
