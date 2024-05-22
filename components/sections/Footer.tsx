@@ -16,10 +16,7 @@ const Footer = () => {
       <ul className="py-4 flex gap-8 items-center justify-center text-light-2">
         {footerLinks.map((link: string, index) => (
           <li key={index} className="transition-all hover:text-black">
-            <Link
-              href={`${link === "Home" ? "/" : `#${link}`}`}
-              className="font-medium"
-            >
+            <Link href={`/#${link}`} className="font-medium">
               {link}
             </Link>
           </li>

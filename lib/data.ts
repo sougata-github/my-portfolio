@@ -11,6 +11,13 @@ export const projectsData = [
     href: "https://devoverflow-next.vercel.app/",
     srcCode: "https://github.com/sougata-github/DevOverFlow",
     tags: ["Next.js", "TypeScript", "Tailwind", "MongoDB", "Mongoose"],
+    projectDetails: {
+      forkLink: "https://github.com/sougata-github/DevOverFlow/fork",
+      tech: "",
+      features: "",
+      problems: "",
+      lessons: "",
+    },
   },
   {
     id: 2,
@@ -20,6 +27,13 @@ export const projectsData = [
     href: "https://jotion-next.vercel.app/",
     srcCode: "https://github.com/sougata-github/Jotion",
     tags: ["Next.js", "TypeScript", "Tailwind", "React Query", "Convex"],
+    projectDetails: {
+      forkLink: "https://github.com/sougata-github/Jotion/fork",
+      tech: "",
+      features: "",
+      problems: "",
+      lessons: "",
+    },
   },
   {
     id: 3,
@@ -29,6 +43,13 @@ export const projectsData = [
     href: "https://team-chat-efq7.onrender.com/invite/4a8a83a6-f6df-4644-90ee-d2c1093c0411",
     srcCode: "https://github.com/sougata-github/Team-Chat",
     tags: ["Next.js", "TypeScript", "Tailwind", "Prisma", "Socket-io"],
+    projectDetails: {
+      forkLink: "https://github.com/sougata-github/Team-Chat/fork",
+      tech: "",
+      features: "",
+      problems: "",
+      lessons: "",
+    },
   },
   {
     id: 4,
@@ -39,6 +60,14 @@ export const projectsData = [
     href: "https://iphone-15-pro-landing-page.vercel.app/",
     srcCode: "https://github.com/sougata-github/iphone-15-pro-landing-page",
     tags: ["React.js", "TypeScript", "Tailwind", "GSAP", "Three.js"],
+    projectDetails: {
+      forkLink:
+        "https://github.com/sougata-github/iphone-15-pro-landing-page/fork",
+      tech: "",
+      features: "",
+      problems: "",
+      lessons: "",
+    },
   },
 ];
 

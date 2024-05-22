@@ -17,7 +17,7 @@ const MobileNav2 = () => {
             {iconLinks.map((item: links) => (
               <li key={item.link} className="cursor-pointer p-2 rounded-xl">
                 <Link
-                  href={`${item.link === "Home" ? "/" : `#${item.link}`}`}
+                  href={`${item.link === "Home" ? "/" : `/#${item.link}`}`}
                   className="font-medium flex flex-col items-center gap-2"
                 >
                   {item.icon}

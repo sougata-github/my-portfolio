@@ -26,7 +26,7 @@ const MobileNav1 = () => {
             {links.map((link: string, index) => (
               <li key={index} className="transition-all hover:text-black">
                 <Link
-                  href={`${link === "Home" ? "/" : `#${link}`}`}
+                  href={`${link === "Home" ? "/" : `/#${link}`}`}
                   className="font-medium"
                 >
                   {link}
