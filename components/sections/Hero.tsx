@@ -29,8 +29,8 @@ const Hero = () => {
           </div>
 
           <p className="text-light-2 text-sm lg:text-[16px] mt-2 lg:mt-4 max-w-md max-md:max-w-[400px]">
-            I&apos;m a frontend developer based in India, specializing in
-            React.js & Next.js.
+            Transforming your ideas into interactive and engaging digital
+            experiences.
           </p>
           <div className="flex gap-4 mt-6">
             <Link href="#Contact">
@@ -46,12 +46,12 @@ const Hero = () => {
         {/* Hero Image */}
         <div className="flex justify-center items-center mb-2 md:mb-0">
           <Image
-            src="/images/hero-light.png"
+            src="/images/hero-1.png"
             alt="Illustration of Sougata Das"
             width={500}
             height={500}
             priority
-            className="w-full h-auto max-w-[380px] sm:max-w-sm md:max-w-[480px] lg:max-w-[520px]"
+            className="w-full h-auto max-w-[380px] sm:max-w-sm md:max-w-[480px] lg:max-w-[560px]"
           />
         </div>
       </div>
