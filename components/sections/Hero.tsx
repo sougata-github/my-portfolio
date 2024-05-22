@@ -10,18 +10,18 @@ import CopyButton from "../ui/CopyButton";
 
 const Hero = () => {
   return (
-    <section className="max-sm:mb-8 mb-14 lg:mb-20 pb-2 max-md:pt-2 lg:pt-2 max-sm:pt-8 transition-all">
+    <section className="max-sm:mb-8 mb-14 lg:mb-20 pb-2 max-md:pt-2 lg:pt-0 max-sm:pt-8 transition-all">
       <div className="flex flex-col items-center lg:flex-row md:justify-between max-sm:pb-2 gap-2">
         {/* Social Buttons */}
-        <div className="my-4 max-sm:my-4">
+        <div className="lg:mt-20 my-4 max-sm:my-4">
           <Socials />
         </div>
 
         {/* CTA */}
-        <div className="max-sm:mt-2 flex flex-col items-center lg:items-start lg:text-left text-center max-md:gap-4 gap-2">
+        <div className="lg:mt-16 max-sm:mt-2 flex flex-col items-center lg:items-start lg:text-left text-center max-md:gap-4 gap-2 ">
           <div className="gap-2">
             <h1 className="text-4xl lg:text-5xl font-bold">
-              Hi! I&apos;m Sougata<span className="hidden lg:inline">👋</span>
+              I&apos;m Sougata<span className="hidden lg:inline">👋</span>
             </h1>
             <h2 className="text-light-1 text-lg lg:text-2xl font-semibold mt-2 md:mt-4 lg:ml-1">
               Creative Developer
@@ -32,7 +32,8 @@ const Hero = () => {
             Transforming your ideas into interactive and engaging digital
             experiences.
           </p>
-          <div className="flex gap-4 mt-6">
+
+          <div className="flex gap-4 mt-8">
             <Link href="#Contact">
               <Button className="bg-black max-sm:py-4 py-6 px-4 rounded-xl max-sm:text-xs">
                 Say Hello
@@ -44,7 +45,7 @@ const Hero = () => {
         </div>
 
         {/* Hero Image */}
-        <div className="flex justify-center items-center mb-2 md:mb-0">
+        <div className="mb-2 md:mb-0">
           <Image
             src="/images/hero-1.png"
             alt="Illustration of Sougata Das"
@@ -57,7 +58,7 @@ const Hero = () => {
       </div>
 
       {/* Scroll Button */}
-      <div className="max-lg:flex items-center justify-center">
+      <div className="lg:max-w-4xl lg:mx-auto max-lg:flex items-center justify-center">
         <ScrollButton />
       </div>
     </section>
