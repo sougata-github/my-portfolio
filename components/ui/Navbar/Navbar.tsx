@@ -5,7 +5,7 @@ import MobileNav1 from "./MobileNav1";
 
 const Navbar = () => {
   return (
-    <header className="bg-[#ebebeb] mx-auto max-w-7xl max-sm:hidden py-4 sticky top-0 w-full pt-6 px-4 text-[#424242] tracking-tight h-[75px]">
+    <header className="z-[20] bg-[#ebebeb] mx-auto max-w-7xl max-sm:hidden py-4 sticky top-0 w-full pt-6 px-4 text-light-1 tracking-tight h-[75px]">
       <nav className="flex items-center justify-between">
         <Link
           href="/"

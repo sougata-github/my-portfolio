@@ -12,9 +12,9 @@ export const projectsData = [
     srcCode: "https://github.com/sougata-github/DevOverFlow",
     tags: ["Next.js", "TypeScript", "Tailwind", "MongoDB", "Mongoose"],
     projectDetails: {
+      imageUrl: "/project-images/devoverflow-1.png",
       forkLink: "https://github.com/sougata-github/DevOverFlow/fork",
       tech: "",
-      features: "",
       problems: "",
       lessons: "",
     },
@@ -28,9 +28,9 @@ export const projectsData = [
     srcCode: "https://github.com/sougata-github/Jotion",
     tags: ["Next.js", "TypeScript", "Tailwind", "React Query", "Convex"],
     projectDetails: {
+      imageUrl: "",
       forkLink: "https://github.com/sougata-github/Jotion/fork",
       tech: "",
-      features: "",
       problems: "",
       lessons: "",
     },
@@ -44,9 +44,9 @@ export const projectsData = [
     srcCode: "https://github.com/sougata-github/Team-Chat",
     tags: ["Next.js", "TypeScript", "Tailwind", "Prisma", "Socket-io"],
     projectDetails: {
+      imageUrl: "",
       forkLink: "https://github.com/sougata-github/Team-Chat/fork",
       tech: "",
-      features: "",
       problems: "",
       lessons: "",
     },
@@ -61,10 +61,10 @@ export const projectsData = [
     srcCode: "https://github.com/sougata-github/iphone-15-pro-landing-page",
     tags: ["React.js", "TypeScript", "Tailwind", "GSAP", "Three.js"],
     projectDetails: {
+      imageUrl: "",
       forkLink:
         "https://github.com/sougata-github/iphone-15-pro-landing-page/fork",
       tech: "",
-      features: "",
       problems: "",
       lessons: "",
     },

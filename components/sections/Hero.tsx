@@ -10,7 +10,10 @@ import CopyButton from "../ui/CopyButton";
 
 const Hero = () => {
   return (
-    <section className="max-sm:mb-8 mb-14 lg:mb-20 pb-2 max-md:pt-2 lg:pt-0 max-sm:pt-8 transition-all">
+    <section
+      id="Home"
+      className="max-sm:mb-8 mb-14 lg:mb-20 pb-2 max-md:pt-2 lg:pt-0 max-sm:pt-8 transition-all"
+    >
       <div className="flex flex-col items-center lg:flex-row md:justify-between max-sm:pb-2 gap-2">
         {/* Social Buttons */}
         <div className="lg:mt-20 my-4 max-sm:my-4">

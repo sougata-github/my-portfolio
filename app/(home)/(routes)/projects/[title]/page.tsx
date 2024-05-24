@@ -1,4 +1,5 @@
 import ProjectHeader from "@/components/sections/projects-page/ProjectHeader";
+import ProjectHero from "@/components/sections/projects-page/ProjectHero";
 
 import { projectsData } from "@/lib/data";
 
@@ -20,8 +21,13 @@ const Page = ({ params }: { params: { title: string } }) => {
       <ProjectHeader
         title={project.title}
         description={project.description}
+        href={project.href}
         srcCode={project.srcCode}
         forkLink={project.projectDetails.forkLink}
+      />
+      <ProjectHero
+        imageUrl={project.projectDetails.imageUrl}
+        href={project.href}
       />
     </>
   );

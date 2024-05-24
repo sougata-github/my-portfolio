@@ -117,6 +117,10 @@
     @apply pt-6 sm:pt-[calc(76px+1.5rem)] lg:pb-8 pb-6 mb-20 max-md:mb-8 max-sm:mb-0;
   }
 
+  .project-heading {
+    @apply font-bold text-light-1 max-lg:text-center text-4xl max-sm:text-2xl;
+  }
+
   .animate-border {
     animation: border-animation 8s ease-in-out infinite 1s;
   }
