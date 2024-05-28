@@ -1,6 +1,7 @@
 import ProjectFeatures from "@/components/sections/projects-page/ProjectFeatures";
 import ProjectHeader from "@/components/sections/projects-page/ProjectHeader";
 import ProjectHero from "@/components/sections/projects-page/ProjectHero";
+import ProjectTech from "@/components/sections/projects-page/ProjectTech";
 
 import { projectsData } from "@/lib/data";
 
@@ -16,7 +17,6 @@ const Page = ({ params }: { params: { title: string } }) => {
       </p>
     );
   }
-
   return (
     <>
       <ProjectHeader
@@ -31,6 +31,7 @@ const Page = ({ params }: { params: { title: string } }) => {
         href={project.href}
       />
       <ProjectFeatures features={project.projectDetails.features} />
+      <ProjectTech title={project.label} />
     </>
   );
 };
