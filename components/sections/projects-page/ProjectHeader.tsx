@@ -20,12 +20,12 @@ const ProjectHeader = ({
   forkLink,
 }: ProjectHeaderProps) => {
   return (
-    <header className="mt-8 lg:mt-10 py-4 lg:py-8 flex items-center lg:items-start lg:justify-between lg:flex-row flex-col max-lg:gap-12">
+    <header className="max-sm:mt-12 mt-8 lg:mt-10 py-4 lg:py-8 flex items-center lg:items-start lg:justify-between lg:flex-row flex-col max-lg:gap-12">
       <Link target="_blank" href={href}>
         <h1 className="max-lg:text-center text-4xl lg:text-5xl font-bold text-light-1">
           {title}
         </h1>
-        <p className="max-w-[400px] mt-8 max-lg:text-center text-lg text-light-2 font-medium tracking-tight">
+        <p className="max-w-[400px] mt-8 max-lg:text-center max-sm:text-sm text-lg text-light-2 font-medium tracking-tight">
           {description}
         </p>
       </Link>

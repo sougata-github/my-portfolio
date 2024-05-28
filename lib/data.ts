@@ -12,8 +12,32 @@ export const projectsData = [
     srcCode: "https://github.com/sougata-github/DevOverFlow",
     tags: ["Next.js", "TypeScript", "Tailwind", "MongoDB", "Mongoose"],
     projectDetails: {
-      imageUrl: "/project-images/devoverflow-1.png",
+      imageUrl: "/project-images/devoverflow-light.png",
       forkLink: "https://github.com/sougata-github/DevOverFlow/fork",
+      features: [
+        {
+          label: "Key Features",
+          features: [
+            "Authentication",
+            "Ask questions",
+            "Answer questions",
+            "Upvote & Downvote",
+          ],
+        },
+        {
+          label: "Additional",
+          features: [
+            "Badge System",
+            "Popular Tags",
+            "Global Search",
+            "View Jobs",
+          ],
+        },
+        {
+          label: "UX",
+          features: ["Manage Profile", "Light and Dark Mode"],
+        },
+      ],
       tech: "",
       problems: "",
       lessons: "",
@@ -30,6 +54,11 @@ export const projectsData = [
     projectDetails: {
       imageUrl: "",
       forkLink: "https://github.com/sougata-github/Jotion/fork",
+      features: [
+        { label: "Key Features", features: [""] },
+        { label: "Additional", features: [""] },
+        { label: "UX", features: [""] },
+      ],
       tech: "",
       problems: "",
       lessons: "",
@@ -46,6 +75,11 @@ export const projectsData = [
     projectDetails: {
       imageUrl: "",
       forkLink: "https://github.com/sougata-github/Team-Chat/fork",
+      features: [
+        { label: "Key Features", features: [""] },
+        { label: "Additional", features: [""] },
+        { label: "UX", features: [""] },
+      ],
       tech: "",
       problems: "",
       lessons: "",
@@ -64,6 +98,11 @@ export const projectsData = [
       imageUrl: "",
       forkLink:
         "https://github.com/sougata-github/iphone-15-pro-landing-page/fork",
+      features: [
+        { label: "Key Features", features: [""] },
+        { label: "Additional", features: [""] },
+        { label: "UX", features: [""] },
+      ],
       tech: "",
       problems: "",
       lessons: "",

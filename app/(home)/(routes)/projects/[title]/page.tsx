@@ -1,3 +1,4 @@
+import ProjectFeatures from "@/components/sections/projects-page/ProjectFeatures";
 import ProjectHeader from "@/components/sections/projects-page/ProjectHeader";
 import ProjectHero from "@/components/sections/projects-page/ProjectHero";
 
@@ -29,6 +30,7 @@ const Page = ({ params }: { params: { title: string } }) => {
         imageUrl={project.projectDetails.imageUrl}
         href={project.href}
       />
+      <ProjectFeatures features={project.projectDetails.features} />
     </>
   );
 };

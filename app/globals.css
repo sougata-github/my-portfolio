@@ -117,6 +117,10 @@
     @apply pt-6 sm:pt-[calc(76px+1.5rem)] lg:pb-8 pb-6 mb-20 max-md:mb-8 max-sm:mb-0;
   }
 
+  .project-section-container {
+    @apply mt-5 lg:mt-8 max-sm:pb-10 max-md:pb-12 pb-20 flex flex-col gap-8;
+  }
+
   .project-heading {
     @apply font-bold text-light-1 max-lg:text-center text-4xl max-sm:text-2xl;
   }
