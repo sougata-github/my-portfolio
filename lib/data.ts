@@ -36,15 +36,27 @@ export const projectsData = [
         {
           label: "UX",
           features: [
-            "Manage Profile",
             "Fully Responsive",
             "Light & Dark Mode",
+            "Manage Profile",
             "Beautiful Loading UI",
           ],
         },
       ],
-      problems: "",
-      lessons: "",
+      problems: [
+        "This project, part of my Next.js learning journey while already deep into React, was quite daunting. It took nearly three months to complete and deploy without errors. Along the way, I faced numerous challenges, from setup to deployment, encountering errors at every turn.",
+
+        "One notable hurdle was integrating webhooks to sync Clerk and MongoDB databases. It took days to realize a wrong API key was the culprit behind my database not updating upon user sign-ups. Understanding Next.js caching and rendering strategies was pivotal for debugging page update issues.",
+
+        "I vividly recall a mid-project update from Vercel breaking everything, though resolving it by updating dependencies. Throughout, resources like Github, Stack Overflow, and documentation proved invaluable. These errors pushed me beyond my comfort zone, teaching me debugging techniques, best practices, clean coding, and patience. In summary, errors signify progress.",
+      ],
+      lessons: [
+        "Where to start? This being my inaugural dive into Next.js was the project's most valuable lesson. I explored a plethora of features like App Router, SSR, ISR, SSG, React Server Components, API Routes, Server Actions, Loading and Error States, Layout Components, Dynamic Routes, Route Groups, Image and Link Components, and many more.",
+
+        "Moreover, I tackled essential functionalities like Pagination, Searching, Debouncing, Filtering, React Hook Form, and Fetching and Displaying Data using APIs. This endeavor marked my maiden voyage into production-ready development, emphasizing Clean Code, Optimization, SEO, Metadata, Organized File and Folder Structure, Scalable and Maintainable Code, Building and Deployment Processes, Reusable Components, User-Centered Design, UX, and Responsiveness.",
+
+        "Furthermore, I ventured into designing database models, employing Mongoose and MongoDB for efficient querying and database operations. Embarking on this application was a decision I'm grateful for, as the insights gleaned from this journey are truly invaluable.",
+      ],
     },
   },
   {
@@ -63,11 +75,11 @@ export const projectsData = [
           label: "Key Features",
           features: [
             "Authentication",
-            "Real-time Database",
-            "Notion-style Editor",
             "Archive Notes",
             "Restore Notes",
-            "Infinite Children Notes",
+            "Notion-style Editor",
+            "Infinite Child Notes",
+            "Real-time Database",
           ],
         },
         {
@@ -83,14 +95,14 @@ export const projectsData = [
           label: "UX",
           features: [
             "Fully Responsive",
-            "Expandable Sidebar",
             "Light & Dark Mode",
+            "Expandable Sidebar",
             "Beautiful Loading UI",
           ],
         },
       ],
-      problems: "",
-      lessons: "",
+      problems: [""],
+      lessons: [""],
     },
   },
   {
@@ -128,8 +140,8 @@ export const projectsData = [
         },
         { label: "UX", features: ["Fully Responsive", "Light & Dark Mode"] },
       ],
-      problems: "",
-      lessons: "",
+      problems: [""],
+      lessons: [""],
     },
   },
   {
@@ -149,19 +161,22 @@ export const projectsData = [
         {
           label: "Key Features",
           features: [
-            "Smooth Animations",
-            "Stunning Hero Section",
-            "Animated Video Carousel",
             "3D iPhone models",
+            "Animated Carousel",
+            "Stunning Hero Section",
           ],
         },
         {
           label: "UX",
-          features: ["Seamless Transitions", "Fully Responsive"],
+          features: [
+            "Fully Responsive",
+            "Smooth Animations",
+            "Seamless Transitions",
+          ],
         },
       ],
-      problems: "",
-      lessons: "",
+      problems: [""],
+      lessons: [""],
     },
   },
 ];

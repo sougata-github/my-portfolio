@@ -1,6 +1,7 @@
 import ProjectFeatures from "@/components/sections/projects-page/ProjectFeatures";
 import ProjectHeader from "@/components/sections/projects-page/ProjectHeader";
 import ProjectHero from "@/components/sections/projects-page/ProjectHero";
+import ProjectProblemsAndLessons from "@/components/sections/projects-page/ProjectProblemsAndLessons";
 import ProjectTech from "@/components/sections/projects-page/ProjectTech";
 
 import { projectsData } from "@/lib/data";
@@ -32,6 +33,14 @@ const Page = ({ params }: { params: { title: string } }) => {
       />
       <ProjectFeatures features={project.projectDetails.features} />
       <ProjectTech title={project.label} />
+      <ProjectProblemsAndLessons
+        details={project.projectDetails.problems}
+        heading="Problems"
+      />
+      <ProjectProblemsAndLessons
+        details={project.projectDetails.lessons}
+        heading="Lessons"
+      />
     </>
   );
 };
