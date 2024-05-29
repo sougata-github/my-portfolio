@@ -1,22 +1,11 @@
 import { TechIcons } from "@/components/icons/ProjectTechIcons";
 import ProjectTechStackBadge from "./ProjectTechStackBadge";
 
-type techStackType = {
-  label: string;
-  icon: React.ReactNode;
-};
-
-type projectType = {
-  title: string;
-  techStack: techStackType;
-  others?: string[];
-};
-
 const ProjectTech = ({ title }: { title: string }) => {
   const project = TechIcons.find((project) => project.title === title);
 
   if (!project) {
-    return <div>Project not found</div>;
+    return <p>Something went wrong!</p>;
   }
 
   return (
