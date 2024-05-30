@@ -13,7 +13,7 @@ const labelIcon: Record<string, React.ReactNode> = {
 
 const ProjectFeatureCard = ({ label, features }: ProjectFeatureCardProps) => {
   return (
-    <div className="max-lg:text-center pb-4 flex flex-col items-center lg:items-start px-4">
+    <div className="pb-4 flex flex-col items-center lg:items-start px-4">
       <div className="pt-5 flex flex-row gap-2 items-center justify-center">
         <h1 className="tracking-tight text-light-1 font-semibold text-base md:text-xl">
           {label}

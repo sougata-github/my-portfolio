@@ -25,7 +25,7 @@ const ProjectHeader = ({
         <h1 className="max-lg:text-center text-4xl lg:text-5xl font-bold text-light-1">
           {title}
         </h1>
-        <p className="max-w-[400px] mt-8 max-lg:text-center max-sm:text-sm text-lg text-light-2 font-medium tracking-tight">
+        <p className="max-w-[400px] mt-8 max-lg:text-center max-sm:text-sm text-lg text-light-2 font-medium tracking-tight max-sm:px-8">
           {description}
         </p>
       </Link>

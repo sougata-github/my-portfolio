@@ -17,7 +17,7 @@ const ProjectTech = ({ title }: { title: string }) => {
 
       <div className="pt-4 flex gap-12 lg:gap-20 w-full lg:flex-row flex-col">
         <div className="flex flex-col gap-4">
-          <h2 className="py-4 max-lg:text-center text-light-2 font-semibold text-base">
+          <h2 className="py-4 max-lg:text-center text-light-2 font-semibold text-lg">
             Primary tech-stack
           </h2>
 
@@ -34,7 +34,7 @@ const ProjectTech = ({ title }: { title: string }) => {
 
         {project.others && (
           <div className="max-lg:mt-4">
-            <h2 className="py-4 max-lg:text-center text-light-2 font-semibold text-base">
+            <h2 className="py-4 max-lg:text-center text-light-2 font-semibold text-lg">
               Others
             </h2>
             <ul className="text-sm text-light-2 font-medium py-2 max-w-[360px] flex flex-wrap gap-4 lg:justify-start justify-center max-lg:mx-auto">
