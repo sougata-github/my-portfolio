@@ -1,8 +1,8 @@
-import ProjectFeatures from "@/components/sections/projects-page/ProjectFeatures";
-import ProjectHeader from "@/components/sections/projects-page/ProjectHeader";
 import ProjectHero from "@/components/sections/projects-page/ProjectHero";
-import ProjectProblemsAndLessons from "@/components/sections/projects-page/ProjectProblemsAndLessons";
 import ProjectTech from "@/components/sections/projects-page/ProjectTech";
+import ProjectHeader from "@/components/sections/projects-page/ProjectHeader";
+import ProjectFeatures from "@/components/sections/projects-page/ProjectFeatures";
+import ProjectProblemsAndLessons from "@/components/sections/projects-page/ProjectProblemsAndLessons";
 
 import { projectsData } from "@/lib/data";
 

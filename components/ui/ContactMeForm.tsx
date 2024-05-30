@@ -19,7 +19,7 @@ import { Textarea } from "@/components/ui/textarea";
 import { useTransition } from "react";
 import { useForm } from "react-hook-form";
 
-import { sendEmail } from "@/actions/sendEmail";
+import { sendEmail } from "@/lib/sendEmail";
 
 import { toast } from "sonner";
 import { Loader2 } from "lucide-react";
@@ -38,16 +38,20 @@ const ContactMeForm = () => {
 
   const onSubmit = (values: z.infer<typeof formSchema>) => {
     startTransition(() => {
-      sendEmail(values).then((data) => {
-        if (data?.error) {
-          toast.error(data?.error);
-        }
+      sendEmail(values)
+        .then((data) => {
+          if (data?.error) {
+            toast.error(data?.error);
+          }
 
-        if (data?.success) {
-          form.reset();
-          toast.success(data?.success);
-        }
-      });
+          if (data?.success) {
+            form.reset();
+            toast.success(data?.success);
+          }
+        })
+        .catch((error) => {
+          console.log(error);
+        });
     });
   };
 
