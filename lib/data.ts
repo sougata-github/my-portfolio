@@ -13,6 +13,7 @@ export const projectsData = [
     tags: ["Next.js", "TypeScript", "Tailwind", "MongoDB", "Mongoose"],
     projectDetails: {
       imageUrl: "/project-images/devoverflow-light.png",
+      mobileImageUrl: "/project-mobile-images/devoverflow-mobile.jpg",
       forkLink: "https://github.com/sougata-github/DevOverFlow/fork",
       features: [
         {
@@ -71,6 +72,7 @@ export const projectsData = [
     tags: ["Next.js", "TypeScript", "Tailwind", "React Query", "Convex"],
     projectDetails: {
       imageUrl: "/project-images/jotion-1.png",
+      mobileImageUrl: "/project-mobile-images/jotion-mobile.jpg",
       forkLink: "https://github.com/sougata-github/Jotion/fork",
       features: [
         {
@@ -129,6 +131,7 @@ export const projectsData = [
     tags: ["Next.js", "TypeScript", "Tailwind", "Prisma", "Socket-io"],
     projectDetails: {
       imageUrl: "/project-images/team-chat-light.png",
+      mobileImageUrl: "/project-mobile-images/team-chat-mobile.jpg",
       forkLink: "https://github.com/sougata-github/Team-Chat/fork",
       features: [
         {
@@ -181,6 +184,7 @@ export const projectsData = [
     tags: ["React.js", "TypeScript", "Tailwind", "GSAP", "Three.js"],
     projectDetails: {
       imageUrl: "/project-images/iphone-landing-page.png",
+      mobileImageUrl: "/project-mobile-images/iphone-landing-page-mobile.jpg",
       forkLink:
         "https://github.com/sougata-github/iphone-15-pro-landing-page/fork",
       features: [

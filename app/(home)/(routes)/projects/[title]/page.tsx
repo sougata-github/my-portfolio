@@ -29,6 +29,7 @@ const Page = ({ params }: { params: { title: string } }) => {
       />
       <ProjectHero
         imageUrl={project.projectDetails.imageUrl}
+        mobileImageUrl={project.projectDetails.mobileImageUrl}
         href={project.href}
       />
       <ProjectFeatures features={project.projectDetails.features} />

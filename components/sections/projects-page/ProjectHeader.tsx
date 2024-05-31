@@ -32,13 +32,13 @@ const ProjectHeader = ({
 
       <div className="flex lg:gap-8 gap-4">
         <Link target="_blank" href={srcCode}>
-          <Button className="bg-transparent border-[0.5px] border-[#cecece] text-light-1 hover:bg-transparent">
-            Star <Star className="h-4 w-4 ml-2" />
+          <Button className="bg-transparent border-[0.5px] border-[#cecece] text-light-1 hover:bg-transparent max-sm:text-[12.5px]">
+            Star <Star className="h-4 w-4 ml-2 max-sm:h-3 max-sm:w-3" />
           </Button>
         </Link>
         <Link target="_blank" href={forkLink}>
-          <Button className="bg-transparent border-[0.5px] border-[#cecece] text-light-1 hover:bg-transparent">
-            Fork <GitFork className="h-4 w-4 ml-2" />
+          <Button className="bg-transparent border-[0.5px] border-[#cecece] text-light-1 hover:bg-transparent max-sm:text-[12.5px]">
+            Fork <GitFork className="h-4 w-4 ml-2 max-sm:h-3 max-sm:w-3" />
           </Button>
         </Link>
       </div>

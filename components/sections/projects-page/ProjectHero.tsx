@@ -3,12 +3,13 @@ import Link from "next/link";
 
 interface ProjectHeroProps {
   imageUrl: string;
+  mobileImageUrl: string;
   href: string;
 }
 
-const ProjectHero = ({ imageUrl, href }: ProjectHeroProps) => {
+const ProjectHero = ({ imageUrl, mobileImageUrl, href }: ProjectHeroProps) => {
   return (
-    <section className="max-sm:mt-4 mt-16 lg:mt-10 max-sm:pb-10 max-md:pb-12 pb-20 flex flex-col gap-8">
+    <section className="mt-12 lg:mt-10 max-sm:pb-10 max-md:pb-12 pb-20 flex flex-col gap-8">
       <h1 className="project-heading">Preview</h1>
       <Link
         target="_blank"
@@ -24,7 +25,17 @@ const ProjectHero = ({ imageUrl, href }: ProjectHeroProps) => {
             priority
             unoptimized
             quality={100}
-            className="w-full h-auto rounded-xl max-lg:max-w-[700px] max-md:max-w-[580px] max-sm:max-w-[480px]"
+            className="w-full h-auto rounded-xl max-lg:max-w-[700px] max-md:max-w-[580px] max-sm:hidden"
+          />
+          <Image
+            src={mobileImageUrl}
+            width={500}
+            height={500}
+            alt="project-preview"
+            priority
+            unoptimized
+            quality={100}
+            className="max-w-[280px] h-auto rounded-xl sm:hidden"
           />
         </div>
       </Link>
