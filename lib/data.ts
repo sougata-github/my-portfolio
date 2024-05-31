@@ -54,7 +54,7 @@ export const projectsData = [
       lessons: [
         "Where to start? I learnt about all the important Next.js features like App Router, SSR, ISR, SSG, React Server Components, API Routes, Server Actions, Loading and Error States, Layout Components, Dynamic Routes, Route Groups, Image and Link Components, and many more.",
 
-        "Moreover, I tackled essential functionalities like Pagination, Searching, Debouncing, Filtering, React Hook Form, and Fetching and Displaying Data using APIs. I gained knowledge in Production-Ready Development, Clean Code, Optimization, SEO, Metadata, Organized File and Folder Structure, Building and Deployment Processes, Reusable Components, User-Centered Design, UX, and Responsiveness.",
+        "Moreover, I tackled essential functionalities like Pagination, Searching, Debouncing, Filtering, React Hook Form, and Fetching and Displaying Data using APIs. I gained knowledge in Clean Code, Optimization, SEO, Metadata, Organized File and Folder Structure, Building and Deployment Processes, Reusable Components, UX, and Responsiveness.",
 
         "Furthermore, I ventured into designing database models, employing Mongoose and MongoDB for efficient querying and database operations.",
 
@@ -160,7 +160,7 @@ export const projectsData = [
       problems: [
         "Implementing WebSockets, particularly Socket IO, for the first time presented a valuable learning opportunity. Setting up an IO handler, Socket Provider, and custom hook to integrate Socket IO with React Query for real-time message fetching was a novel experience.",
 
-        "Designing the server, channels, and user profiles, while establishing relationships between all models, posed significant challenges. One notable issue arose with null first names for users who signed up without providing this essential detail. This issue became critical as the media room failed to render without a first name. Fortunately, I resolved this by implementing a default first name for users who hadn't specified one.",
+        "Designing the server, channels, and user profiles, while establishing relationships between all models posed significant challenges. One notable issue arose with null first names for users who signed up without providing this essential detail. This issue became critical as the media room failed to render without a first name. Fortunately, I resolved this by implementing a default first name for users who hadn't specified one.",
 
         "Developing the Chat Component proved to be highly challenging due to its requirement for infinite scrolling of messages, coupled with the Chat Input component. To address this, I employed custom hooks for prefetching older messages and utilized refs for seamless auto-scrolling to the latest message.",
       ],
