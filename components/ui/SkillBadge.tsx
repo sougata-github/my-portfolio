@@ -12,7 +12,7 @@ interface SkillBadgeProps {
 
 const SkillBadge = ({ label, icon }: SkillBadgeProps) => {
   return (
-    <div className="cursor-pointer p-8 bg-[#cecece] text-light-1 flex items-center justify-center rounded-xl h-[60px] w-[60px]">
+    <div className="cursor-pointer p-8 max-lg:p-7 bg-[#cecece] text-light-1 flex items-center justify-center rounded-xl h-[50px] w-[50px] lg:h-[60px] lg:w-[60px]">
       <TooltipProvider>
         <Tooltip>
           <TooltipTrigger>{icon}</TooltipTrigger>

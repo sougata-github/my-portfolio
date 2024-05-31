@@ -9,62 +9,62 @@ import { SiMongoose, SiNextdotjs, SiPrisma } from "react-icons/si";
 export const skillsData = [
   {
     label: "HTML",
-    icon: <FaHtml5 className="h-8 w-8" />,
+    icon: <FaHtml5 className="h-8 w-8 max-lg:w-7 max-lg:h-7" />,
   },
   {
     label: "CSS",
-    icon: <FaCss3Alt className="h-8 w-8" />,
+    icon: <FaCss3Alt className="h-8 w-8 max-lg:w-7 max-lg:h-7" />,
   },
   {
     label: "JavaScript",
-    icon: <RiJavascriptFill className="h-10 w-10" />,
+    icon: <RiJavascriptFill className="h-10 w-10 max-lg:w-9 max-lg:h-9" />,
   },
   {
     label: "TypeScript",
-    icon: <BiLogoTypescript className="h-10 w-10" />,
+    icon: <BiLogoTypescript className="h-10 w-10 max-lg:w-9 max-lg:h-9" />,
   },
   {
     label: "Tailwind",
-    icon: <RiTailwindCssFill className="h-9 w-9" />,
+    icon: <RiTailwindCssFill className="h-9 w-9 max-lg:w-8 max-lg:h-8" />,
   },
   {
     label: "Node.js",
-    icon: <IoLogoNodejs className="h-9 w-9" />,
+    icon: <IoLogoNodejs className="h-9 w-9 max-lg:w-8 max-lg:h-8" />,
   },
   {
     label: "React.js",
-    icon: <GrReactjs className="h-9 w-9" />,
+    icon: <GrReactjs className="h-9 w-9 max-lg:w-8 max-lg:h-8" />,
   },
   {
     label: "Next.js",
-    icon: <SiNextdotjs className="h-9 w-9" />,
+    icon: <SiNextdotjs className="h-9 w-9 max-lg:w-8 max-lg:h-8" />,
   },
   {
     label: "Framer Motion",
-    icon: <TbBrandFramerMotion className="h-9 w-9" />,
+    icon: <TbBrandFramerMotion className="h-9 w-9 max-lg:w-8 max-lg:h-8" />,
   },
   {
     label: "MongoDB",
-    icon: <BiLogoMongodb className="h-9 w-9" />,
+    icon: <BiLogoMongodb className="h-9 w-9 max-lg:w-8 max-lg:h-8" />,
   },
   {
     label: "Mongoose",
-    icon: <SiMongoose className="h-9 w-9" />,
+    icon: <SiMongoose className="h-9 w-9 max-lg:w-8 max-lg:h-8" />,
   },
   {
     label: "MySql",
-    icon: <GrMysql className="h-8 w-8" />,
+    icon: <GrMysql className="h-8 w-8 max-lg:w-7 max-lg:h-7" />,
   },
   {
     label: "Prisma",
-    icon: <SiPrisma className="h-8 w-8" />,
+    icon: <SiPrisma className="h-8 w-8 max-lg:w-7 max-lg:h-7" />,
   },
   {
     label: "Git",
-    icon: <IoIosGitBranch className="h-8 w-8" />,
+    icon: <IoIosGitBranch className="h-8 w-8 max-lg:w-7 max-lg:h-7" />,
   },
   {
     label: "Github",
-    icon: <IoLogoGithub className="h-9 w-9" />,
+    icon: <IoLogoGithub className="h-9 w-9 max-lg:w-8 max-lg:h-8" />,
   },
 ];

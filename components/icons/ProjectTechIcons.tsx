@@ -28,35 +28,35 @@ export const TechIcons = [
     techStack: [
       {
         label: "Next.js 14",
-        icon: <SiNextdotjs className="h-7 w-7" />,
+        icon: <SiNextdotjs className="h-7 w-7 max-lg:h-6 max-lg:w-6" />,
       },
       {
         label: "TypeScript",
-        icon: <BiLogoTypescript className="h-9 w-9" />,
+        icon: <BiLogoTypescript className="h-9 w-9 max-lg:h-8 max-lg:w-8" />,
       },
       {
         label: "Tailwind CSS",
-        icon: <RiTailwindCssFill className="h-7 w-7" />,
+        icon: <RiTailwindCssFill className="h-7 w-7 max-lg:h-6 max-lg:w-6" />,
       },
       {
         label: "MongoDB",
-        icon: <BiLogoMongodb className="h-8 w-8" />,
+        icon: <BiLogoMongodb className="h-8 w-8 max-lg:w-7 max-lg:h-7" />,
       },
       {
         label: "Mongoose",
-        icon: <SiMongoose className="h-8 w-8" />,
+        icon: <SiMongoose className="h-8 w-8 max-lg:w-7 max-lg:h-7" />,
       },
       {
         label: "Clerk",
-        icon: <SiClerk className="h-6 w-6" />,
+        icon: <SiClerk className="h-6 w-6 max-lg:w-5 max-lg:h-5" />,
       },
       {
         label: "Shadcn UI",
-        icon: <SiShadcnui className="h-6 w-6" />,
+        icon: <SiShadcnui className="h-6 w-6 max-lg:w-5 max-lg:h-5" />,
       },
       {
         label: "Vercel",
-        icon: <SiVercel className="h-6 w-6" />,
+        icon: <SiVercel className="h-6 w-6 max-lg:w-5 max-lg:h-5" />,
       },
     ],
 
@@ -75,35 +75,35 @@ export const TechIcons = [
     techStack: [
       {
         label: "Next.js 14",
-        icon: <SiNextdotjs className="h-7 w-7" />,
+        icon: <SiNextdotjs className="h-7 w-7 max-lg:h-6 max-lg:w-6" />,
       },
       {
         label: "TypeScript",
-        icon: <BiLogoTypescript className="h-8 w-8" />,
+        icon: <BiLogoTypescript className="h-8 w-8 max-lg:w-7 max-lg:h-7" />,
       },
       {
         label: "Tailwind CSS",
-        icon: <RiTailwindCssFill className="h-7 w-7" />,
+        icon: <RiTailwindCssFill className="h-7 w-7 max-lg:h-6 max-lg:w-6" />,
       },
       {
         label: "Clerk",
-        icon: <SiClerk className="h-6 w-6" />,
+        icon: <SiClerk className="h-6 w-6 max-lg:w-5 max-lg:h-5" />,
       },
       {
         label: "Convex",
-        icon: <FaDatabase className="h-6 w-6" />,
+        icon: <FaDatabase className="h-6 w-6 max-lg:w-5 max-lg:h-5" />,
       },
       {
         label: "Shadcn UI",
-        icon: <SiShadcnui className="h-6 w-6" />,
+        icon: <SiShadcnui className="h-6 w-6 max-lg:w-5 max-lg:h-5" />,
       },
       {
         label: "BlockNote Editor",
-        icon: <MdEditDocument className="h-7 w-7" />,
+        icon: <MdEditDocument className="h-7 w-7 max-lg:h-6 max-lg:w-6" />,
       },
       {
         label: "Vercel",
-        icon: <SiVercel className="h-6 w-6" />,
+        icon: <SiVercel className="h-6 w-6 max-lg:w-5 max-lg:h-5" />,
       },
     ],
 
@@ -115,35 +115,35 @@ export const TechIcons = [
     techStack: [
       {
         label: "Next.js 14",
-        icon: <SiNextdotjs className="h-7 w-7" />,
+        icon: <SiNextdotjs className="h-7 w-7 max-lg:h-6 max-lg:w-6" />,
       },
       {
         label: "TypeScript",
-        icon: <BiLogoTypescript className="h-10 w-10" />,
+        icon: <BiLogoTypescript className="h-10 w-10 max-lg:w-9 max-lg:h-9" />,
       },
       {
         label: "Tailwind CSS",
-        icon: <RiTailwindCssFill className="h-7 w-7" />,
+        icon: <RiTailwindCssFill className="h-7 w-7 max-lg:h-6 max-lg:w-6" />,
       },
       {
         label: "Clerk",
-        icon: <SiClerk className="h-6 w-6" />,
+        icon: <SiClerk className="h-6 w-6 max-lg:w-5 max-lg:h-5" />,
       },
       {
         label: "Prisma",
-        icon: <SiPrisma className="h-7 w-7" />,
+        icon: <SiPrisma className="h-7 w-7 max-lg:h-6 max-lg:w-6" />,
       },
       {
         label: "NeonDB",
-        icon: <BiLogoPostgresql className="h-8 w-8" />,
+        icon: <BiLogoPostgresql className="h-8 w-8 max-lg:w-7 max-lg:h-7" />,
       },
       {
         label: "Socket IO",
-        icon: <SiSocketdotio className="h-7 w-7" />,
+        icon: <SiSocketdotio className="h-7 w-7 max-lg:h-6 max-lg:w-6" />,
       },
       {
         label: "React Query",
-        icon: <SiReactquery className="h-7 w-7" />,
+        icon: <SiReactquery className="h-7 w-7 max-lg:h-6 max-lg:w-6" />,
       },
     ],
     others: [
@@ -163,35 +163,35 @@ export const TechIcons = [
     techStack: [
       {
         label: "React",
-        icon: <GrReactjs className="h-7 w-7" />,
+        icon: <GrReactjs className="h-7 w-7 max-lg:h-6 max-lg:w-6" />,
       },
       {
         label: "TypeScript",
-        icon: <BiLogoTypescript className="h-10 w-10" />,
+        icon: <BiLogoTypescript className="h-10 w-10 max-lg:w-9 max-lg:h-9" />,
       },
       {
         label: "Tailwind CSS",
-        icon: <RiTailwindCssFill className="h-7 w-7" />,
+        icon: <RiTailwindCssFill className="h-7 w-7 max-lg:h-6 max-lg:w-6" />,
       },
       {
         label: "GSAP",
-        icon: <SiGreensock className="h-9 w-9" />,
+        icon: <SiGreensock className="h-9 w-9 max-lg:w-8 max-lg:h-8" />,
       },
       {
         label: "Three.js",
-        icon: <TbBrandThreejs className="h-7 w-7" />,
+        icon: <TbBrandThreejs className="h-7 w-7 max-lg:h-6 max-lg:w-6" />,
       },
       {
         label: "Sentry",
-        icon: <SiSentry className="h-7 w-7" />,
+        icon: <SiSentry className="h-7 w-7 max-lg:h-6 max-lg:w-6" />,
       },
       {
         label: "Vite",
-        icon: <SiVite className="h-7 w-7" />,
+        icon: <SiVite className="h-7 w-7 max-lg:h-6 max-lg:w-6" />,
       },
       {
         label: "Vercel",
-        icon: <SiVercel className="h-6 w-6" />,
+        icon: <SiVercel className="h-6 w-6 max-lg:w-5 max-lg:h-5" />,
       },
     ],
   },
