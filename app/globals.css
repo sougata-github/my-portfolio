@@ -118,7 +118,7 @@
   }
 
   .project-section-container {
-    @apply mt-5 lg:mt-8 max-sm:pb-10 max-md:pb-12 pb-20 flex flex-col gap-8;
+    @apply mt-5 lg:mt-8 pb-20 flex flex-col gap-8;
   }
 
   .project-heading {

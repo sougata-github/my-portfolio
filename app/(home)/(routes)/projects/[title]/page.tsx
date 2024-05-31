@@ -1,6 +1,7 @@
 import ProjectHero from "@/components/sections/projects-page/ProjectHero";
 import ProjectTech from "@/components/sections/projects-page/ProjectTech";
 import ProjectHeader from "@/components/sections/projects-page/ProjectHeader";
+import ProjectFooter from "@/components/sections/projects-page/ProjectFooter";
 import ProjectFeatures from "@/components/sections/projects-page/ProjectFeatures";
 import ProjectProblemsAndLessons from "@/components/sections/projects-page/ProjectProblemsAndLessons";
 
@@ -42,6 +43,7 @@ const Page = ({ params }: { params: { title: string } }) => {
         details={project.projectDetails.lessons}
         heading="Lessons"
       />
+      <ProjectFooter />
     </>
   );
 };

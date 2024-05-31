@@ -9,14 +9,14 @@ interface ProjectHeroProps {
 
 const ProjectHero = ({ imageUrl, mobileImageUrl, href }: ProjectHeroProps) => {
   return (
-    <section className="mt-12 lg:mt-10 max-sm:pb-10 max-md:pb-12 pb-20 flex flex-col gap-8">
+    <section className="project-section-container">
       <h1 className="project-heading">Preview</h1>
       <Link
         target="_blank"
         href={href}
         className="flex max-lg:items-center max-lg:justify-center"
       >
-        <div className="cursor-pointer max-w-[1080px] shadow-xl rounded-xl">
+        <div className="mt-6 cursor-pointer max-w-[1080px] shadow-xl rounded-xl">
           <Image
             src={imageUrl}
             width={500}

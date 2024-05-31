@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+
 import { Button } from "./button";
 
 import { Check, Copy } from "lucide-react";
@@ -21,7 +22,7 @@ const CopyButton = () => {
 
   return (
     <Button
-      className="bg-black max-sm:py-4 py-6 px-4 rounded-xl max-sm:text-xs"
+      className="bg-black max-sm:py-[22px] py-6 px-4 rounded-xl max-sm:text-xs"
       onClick={onCopy}
     >
       {copied ? (

@@ -47,12 +47,12 @@ const About = () => {
               }
             />
           </div>
-          <p className="py-2 text-light-2 text-sm max-w-[400px] max-sm:max-w-[320px]">
-            I am a Frontend Web Developer from India with expertise in React,
-            Next, TypeScript & Tailwind CSS for creating dynamic and responsive
-            web applications.
+          <p className="py-2 text-light-2 text-base max-w-[400px] max-sm:max-w-[320px] max-lg:text-sm font-medium">
+            I am a Frontend Web Developer from India with expertise in React.js,
+            Next.js, TypeScript & Tailwind CSS for creating dynamic and
+            responsive web applications.
           </p>
-          <Button className="mt-4 w-fit bg-black max-sm:py-4 py-6 px-4 rounded-xl max-sm:text-xs">
+          <Button className="mt-4 w-fit bg-black max-sm:py-[22px] py-6 px-4 rounded-xl max-sm:text-xs">
             Download CV{" "}
             <DocumentValidationIcon className="h-5 w-5 text-white ml-2" />
           </Button>

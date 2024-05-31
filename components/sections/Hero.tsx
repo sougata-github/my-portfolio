@@ -26,19 +26,19 @@ const Hero = () => {
             <h1 className="text-4xl lg:text-5xl font-bold">
               I&apos;m Sougata<span className="hidden lg:inline">👋</span>
             </h1>
-            <h2 className="text-light-1 text-lg lg:text-2xl font-semibold mt-2 md:mt-4 lg:ml-1">
+            <h2 className="text-light-2 text-lg lg:text-2xl font-semibold mt-2 md:mt-4 lg:ml-1">
               Creative Developer
             </h2>
           </div>
 
-          <p className="text-light-2 text-sm lg:text-[16px] mt-2 lg:mt-4 max-w-md max-md:max-w-[400px]">
+          <p className="text-light-2 text-sm lg:text-[16px] mt-2 lg:mt-4 max-w-md max-md:max-w-[400px] max-sm:max-w-[300px] font-medium">
             Transforming your ideas into interactive and engaging digital
             experiences.
           </p>
 
           <div className="flex gap-4 mt-8">
             <Link href="#Contact">
-              <Button className="bg-black max-sm:py-4 py-6 px-4 rounded-xl max-sm:text-xs">
+              <Button className="bg-black max-sm:py-[22px] py-6 px-4 rounded-xl max-sm:text-xs">
                 Say Hello
                 <SentIcon className="ml-1 mt-[0.5] h-5 w-5 max-sm:h-4 max-sm:w-4 text-white" />
               </Button>
@@ -50,11 +50,13 @@ const Hero = () => {
         {/* Hero Image */}
         <div className="mb-2 md:mb-0">
           <Image
-            src="/images/hero-1.png"
+            unoptimized
+            quality={100}
+            priority
+            src="/images/hero.png"
             alt="Illustration of Sougata Das"
             width={500}
             height={500}
-            priority
             className="w-full h-auto max-w-[380px] sm:max-w-sm md:max-w-[480px] lg:max-w-[560px]"
           />
         </div>

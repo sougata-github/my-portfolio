@@ -8,7 +8,7 @@ import { footerLinks } from "@/lib/data";
 
 const Footer = () => {
   return (
-    <section className="mt-8 pt-20 pb-10 grid grid-cols-1 place-content-center">
+    <section className="mt-6 pt-12 pb-10 grid grid-cols-1 place-content-center">
       <ul className="my-1 items-center justify-center flex gap-4 max-w-lg mx-auto py-4 px-4 max-lg:px-2 max-lg:py-2">
         <li className="p-2 bg-[#cecece] rounded-lg">
           <Link target="_blank" href="https://github.com/sougata-github">
