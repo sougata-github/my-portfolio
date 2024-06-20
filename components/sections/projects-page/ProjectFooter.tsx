@@ -7,8 +7,8 @@ const ProjectFooter = () => {
           Let&apos;s build something together.
           <br />
           <br />
-          Feel free to reach out to me on any of my socials below if you&apos;re
-          looking for a developer, have a question, or just want to connect.
+          If you&apos;re looking for a developer, have a question, or just want
+          to connect, feel free to reach out on any of my socials below.
         </p>
       </div>
     </section>

@@ -19,12 +19,12 @@ const AboutCard = ({ title, description, icon, link }: AboutCardProps) => {
         <Link
           target="_blank"
           href={link}
-          className="font-medium text-light-2 text-xs max-sm:text-[10px] underline"
+          className="font-medium text-light-2 text-sm max-sm:text-[10px] hover:text-light-1 transition duration-200"
         >
           {description}
         </Link>
       ) : (
-        <p className="font-medium text-light-2 text-xs max-sm:text-[10px]">
+        <p className="font-medium text-light-2 text-sm max-sm:text-[10px] hover:text-light-1 transition duration-200">
           {description}
         </p>
       )}

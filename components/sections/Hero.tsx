@@ -31,7 +31,7 @@ const Hero = () => {
             </h2>
           </div>
 
-          <p className="text-light-2 text-sm lg:text-[16px] mt-2 lg:mt-4 max-w-md max-md:max-w-[400px] max-sm:max-w-[300px] font-medium">
+          <p className="text-light-2 text-sm lg:text-[16px] mt-2 lg:mt-4 max-w-[380px] max-sm:max-w-[300px] font-medium leading-6">
             Transforming your ideas into interactive and engaging digital
             experiences.
           </p>
@@ -54,7 +54,7 @@ const Hero = () => {
             quality={100}
             priority
             src="/images/hero.png"
-            alt="Illustration of Sougata Das"
+            alt="Hero illustration"
             width={500}
             height={500}
             className="w-full h-auto max-w-[380px] sm:max-w-sm md:max-w-[480px] lg:max-w-[560px]"

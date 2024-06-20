@@ -4,8 +4,8 @@ import { Button } from "../ui/button";
 import AboutCard from "../ui/AboutCard";
 import { DocumentValidationIcon } from "../icons/CV";
 
-import { GithubIcon } from "../icons/Github";
-import { Briefcase, Headset } from "lucide-react";
+import { Code, Headset } from "lucide-react";
+import { MdWebStories } from "react-icons/md";
 
 const About = () => {
   return (
@@ -22,13 +22,14 @@ const About = () => {
             className="object-cover max-w-[280px] sm:max-w-sm md:max-w-[400px] lg:max-w-[420px] h-auto"
           />
         </div>
+
         <div className="max-lg:items-center flex flex-col gap-4 max-lg:text-center">
           <div className="flex-wrap flex justify-between max-lg:gap-12 max-sm:gap-8">
             <AboutCard
-              title="My Work"
-              description="github"
+              title="Commits"
+              description="950+"
               icon={
-                <GithubIcon className="h-6 w-6 max-sm:h-5 max-sm:w-5 text-light-1" />
+                <Code className="h-6 w-6 max-sm:h-5 max-sm:w-5 text-light-1" />
               }
               link="https://github.com/sougata-github"
             />
@@ -36,8 +37,9 @@ const About = () => {
               title="Completed"
               description="10+ projects"
               icon={
-                <Briefcase className="h-6 w-6 max-sm:h-5 max-sm:w-5 text-light-1" />
+                <MdWebStories className="h-6 w-6 max-sm:h-5 max-sm:w-5 text-light-1" />
               }
+              link="https://github.com/sougata-github"
             />
             <AboutCard
               title="Support"
@@ -45,6 +47,7 @@ const About = () => {
               icon={
                 <Headset className="h-6 w-6 max-sm:h-5 max-sm:w-5 text-light-1" />
               }
+              link="https://linkedin.com/in/sougata-linkdin"
             />
           </div>
           <p className="py-2 text-light-2 text-base max-w-[400px] max-sm:max-w-[320px] max-lg:text-sm font-medium">
