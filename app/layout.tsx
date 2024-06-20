@@ -4,6 +4,7 @@ import { Poppins } from "next/font/google";
 import "./globals.css";
 
 import { Toaster } from "sonner";
+import PageTransition from "@/components/animations/PageTransition";
 
 export const metadata: Metadata = {
   title: "Sougata Das",
@@ -26,7 +27,7 @@ export default function RootLayout({
         className={`${poppins.className} bg-[#ebebeb] custom-scrollbar max-sm:scrollbar-hidden`}
       >
         <Toaster position="bottom-center" />
-        {children}
+        <PageTransition>{children}</PageTransition>
       </body>
     </html>
   );

@@ -99,7 +99,7 @@ const ContactMeForm = () => {
           name="message"
           render={({ field }) => (
             <FormItem>
-              <FormLabel className="text-light-1">Your Name</FormLabel>
+              <FormLabel className="text-light-1">Message</FormLabel>
               <FormControl>
                 <Textarea
                   placeholder="Hi! My name is John Doe."
@@ -114,7 +114,7 @@ const ContactMeForm = () => {
         />
         <Button
           type="submit"
-          className="w-full text-center"
+          className="bg-black max-sm:py-[22px] p-6 rounded-3xl max-sm:text-xs w-full"
           disabled={isPending}
         >
           {isPending ? (

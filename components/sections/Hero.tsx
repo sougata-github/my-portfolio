@@ -26,7 +26,7 @@ const Hero = () => {
             <h1 className="text-4xl lg:text-5xl font-bold">
               I&apos;m Sougata<span className="hidden lg:inline">👋</span>
             </h1>
-            <h2 className="text-light-2 text-lg lg:text-2xl font-semibold mt-2 md:mt-4 lg:ml-1">
+            <h2 className="text-light-1 text-lg lg:text-2xl font-bold mt-2 md:mt-4 lg:ml-1">
               Creative Developer
             </h2>
           </div>
@@ -36,11 +36,11 @@ const Hero = () => {
             experiences.
           </p>
 
-          <div className="flex gap-4 mt-8">
+          <div className="flex gap-6 mt-8">
             <Link href="#Contact">
-              <Button className="bg-black max-sm:py-[22px] py-6 px-4 rounded-xl max-sm:text-xs">
+              <Button className="button-base-styles">
                 Say Hello
-                <SentIcon className="ml-1 mt-[0.5] h-5 w-5 max-sm:h-4 max-sm:w-4 text-white" />
+                <SentIcon className="ml-2 mt-[0.5] h-5 w-5 max-sm:h-4 max-sm:w-4 text-white" />
               </Button>
             </Link>
             <CopyButton />

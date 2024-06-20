@@ -1,3 +1,5 @@
+"use client";
+
 import Link from "next/link";
 
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
@@ -5,9 +7,25 @@ import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import { GridViewIcon } from "../../icons/Grid";
 import { iconLinks, links } from "../../icons/MobileNavIcons";
 
+import { motion } from "framer-motion";
+
 const MobileNav2 = () => {
   return (
-    <div className="sm:hidden fixed right-0 left-0 bottom-0 bg-[#e4e4e4] w-full py-6 px-4 flex justify-end">
+    <motion.div
+      className="sm:hidden fixed right-0 left-0 bottom-0 bg-[#e4e4e4] w-full py-6 px-4 flex justify-end"
+      initial={{
+        opacity: 0,
+        y: 100,
+      }}
+      animate={{
+        y: 0,
+        opacity: 100,
+        transition: {
+          duration: 0.8,
+          ease: "easeInOut",
+        },
+      }}
+    >
       <Sheet>
         <SheetTrigger>
           <GridViewIcon className="text-gray-500 h-6 w-6" />
@@ -30,7 +48,7 @@ const MobileNav2 = () => {
           </ul>
         </SheetContent>
       </Sheet>
-    </div>
+    </motion.div>
   );
 };
 

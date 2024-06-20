@@ -52,7 +52,7 @@ const About = () => {
             Next.js, TypeScript & Tailwind CSS for creating dynamic and
             responsive web applications.
           </p>
-          <Button className="mt-4 w-fit bg-black max-sm:py-[22px] py-6 px-4 rounded-xl max-sm:text-xs">
+          <Button className="button-base-styles w-fit mt-6">
             Download CV{" "}
             <DocumentValidationIcon className="h-5 w-5 text-white ml-2" />
           </Button>

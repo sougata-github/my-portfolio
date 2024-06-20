@@ -21,18 +21,15 @@ const CopyButton = () => {
   };
 
   return (
-    <Button
-      className="bg-black max-sm:py-[22px] py-6 px-4 rounded-xl max-sm:text-xs"
-      onClick={onCopy}
-    >
+    <Button className="button-base-styles" onClick={onCopy}>
       {copied ? (
         <>
-          <Check className="mr-1 mt-[0.5] h-4 w-4 max-sm:h-3 max-sm:w-3 text-white" />
+          <Check className="mr-2 mt-[0.5] h-4 w-4 max-sm:h-3 max-sm:w-3 text-white" />
           Copied
         </>
       ) : (
         <>
-          <Copy className="mr-1 mt-[0.5] h-4 w-4 max-sm:h-3 max-sm:w-3 text-white" />
+          <Copy className="mr-2 mt-[0.5] h-4 w-4 max-sm:h-3 max-sm:w-3 text-white" />
           Copy Mail
         </>
       )}
