@@ -12,7 +12,7 @@ export const projectsData = [
     srcCode: "https://github.com/sougata-github/DevOverFlow",
     tags: ["Next.js", "TypeScript", "Tailwind", "MongoDB", "Mongoose"],
     projectDetails: {
-      imageUrl: "/project-images/devoverflow-light.png",
+      imageUrl: "/project-images/devoverflow.png",
       mobileImageUrl: "/project-mobile-images/devoverflow-mobile.jpg",
       forkLink: "https://github.com/sougata-github/DevOverFlow/fork",
       features: [
@@ -71,7 +71,7 @@ export const projectsData = [
     srcCode: "https://github.com/sougata-github/Jotion",
     tags: ["Next.js", "TypeScript", "Tailwind", "React Query", "Convex"],
     projectDetails: {
-      imageUrl: "/project-images/jotion-1.png",
+      imageUrl: "/project-images/jotion.png",
       mobileImageUrl: "/project-mobile-images/jotion-mobile.jpg",
       forkLink: "https://github.com/sougata-github/Jotion/fork",
       features: [
@@ -130,7 +130,7 @@ export const projectsData = [
     srcCode: "https://github.com/sougata-github/Team-Chat",
     tags: ["Next.js", "TypeScript", "Tailwind", "Prisma", "Socket-io"],
     projectDetails: {
-      imageUrl: "/project-images/team-chat-light.png",
+      imageUrl: "/project-images/team-chat.png",
       mobileImageUrl: "/project-mobile-images/team-chat-mobile.jpg",
       forkLink: "https://github.com/sougata-github/Team-Chat/fork",
       features: [

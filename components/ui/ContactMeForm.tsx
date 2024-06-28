@@ -16,13 +16,13 @@ import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { Textarea } from "@/components/ui/textarea";
 
-import { useTransition } from "react";
+// import { useTransition } from "react";
 import { useForm } from "react-hook-form";
 
 import { sendEmail } from "@/lib/sendEmail";
 
 import { toast } from "sonner";
-import { Loader2 } from "lucide-react";
+// import { Loader2 } from "lucide-react";
 
 const ContactMeForm = () => {
   const form = useForm<z.infer<typeof formSchema>>({
@@ -34,25 +34,40 @@ const ContactMeForm = () => {
     },
   });
 
-  const [isPending, startTransition] = useTransition();
+  // const [isPending, startTransition] = useTransition();
 
   const onSubmit = (values: z.infer<typeof formSchema>) => {
-    startTransition(() => {
-      sendEmail(values)
-        .then((data) => {
-          if (data?.error) {
-            toast.error(data?.error);
-          }
+    // startTransition(() => {
+    //   sendEmail(values)
+    //     .then((data) => {
+    //       if (data?.error) {
+    //         toast.error(data?.error);
+    //       }
 
-          if (data?.success) {
-            form.reset();
-            toast.success(data?.success);
-          }
-        })
-        .catch((error) => {
-          console.log(error);
-        });
-    });
+    //       if (data?.success) {
+    //         form.reset();
+    //         toast.success(data?.success);
+    //       }
+    //     })
+    //     .catch((error) => {
+    //       console.log(error);
+    //     });
+    // });
+
+    sendEmail(values)
+      .then((data) => {
+        if (data?.error) {
+          toast.error(data?.error);
+        }
+
+        if (data?.success) {
+          form.reset();
+          toast.success(data?.success);
+        }
+      })
+      .catch((error) => {
+        toast.error(error);
+      });
   };
 
   return (
@@ -114,14 +129,15 @@ const ContactMeForm = () => {
         />
         <Button
           type="submit"
-          className="bg-black max-sm:py-[22px] p-6 rounded-3xl max-sm:text-xs w-full"
-          disabled={isPending}
+          className="button-base-styles w-full"
+          // disabled={isPending}
         >
-          {isPending ? (
+          {/* {isPending ? (
             <Loader2 className="h-4 w-4 animate-spin transition-all" />
           ) : (
             "Send Message"
-          )}
+          )} */}
+          Send Message
         </Button>
       </form>
     </Form>

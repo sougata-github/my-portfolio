@@ -5,7 +5,7 @@ import AboutCard from "../ui/AboutCard";
 import { DocumentValidationIcon } from "../icons/CV";
 
 import { Code, Headset } from "lucide-react";
-import { MdWebStories } from "react-icons/md";
+import { MdFolder } from "react-icons/md";
 
 const About = () => {
   return (
@@ -37,7 +37,7 @@ const About = () => {
               title="Completed"
               description="10+ projects"
               icon={
-                <MdWebStories className="h-6 w-6 max-sm:h-5 max-sm:w-5 text-light-1" />
+                <MdFolder className="h-6 w-6 max-sm:h-5 max-sm:w-5 text-light-1" />
               }
               link="https://github.com/sougata-github"
             />
