@@ -110,7 +110,7 @@
   }
 
   .button-base-styles {
-    @apply bg-black max-sm:py-[22px] p-6 rounded-3xl max-sm:text-xs;
+    @apply bg-black max-sm:py-[22px] p-6 rounded-3xl max-sm:text-xs lg:hover:shadow-xl transition-shadow duration-500;
   }
 
   .section-heading {
