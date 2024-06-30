@@ -110,9 +110,7 @@
   }
 
   .button-base-styles {
-    @apply bg-black max-sm:py-[22px] p-6 rounded-3xl max-sm:text-xs lg:hover:scale-110 transition-all duration-300;
-
-    transform-origin: center;
+    @apply bg-black max-sm:py-[22px] p-6 rounded-3xl max-sm:text-xs;
   }
 
   .section-heading {

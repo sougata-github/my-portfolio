@@ -40,7 +40,7 @@ const Hero = () => {
             <Link href="#Contact">
               <Button className="button-base-styles">
                 Say Hello
-                <SentIcon className="ml-2 mt-[0.5] h-5 w-5 max-sm:h-4 max-sm:w-4 text-white" />
+                <SentIcon className="ml-2 h-5 w-5 max-sm:h-4 max-sm:w-4 text-white" />
               </Button>
             </Link>
             <CopyButton />
