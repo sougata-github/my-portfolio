@@ -1,8 +1,8 @@
 import { UserAccountIcon } from "./About";
 import { Home01Icon } from "./Home";
-import { Briefcase05Icon } from "./Projects";
 import { Rocket01Icon } from "./Skill";
 import { SentIcon } from "./Sent";
+import { Folder } from "lucide-react";
 
 export type links = {
   link: string;
@@ -20,7 +20,7 @@ export const iconLinks: links[] = [
   },
   {
     link: "Projects",
-    icon: <Briefcase05Icon className="h-5 w-5 text-[#6f6f6f]" />,
+    icon: <Folder className="h-5 w-5 text-[#6f6f6f]" />,
   },
   {
     link: "Skills",

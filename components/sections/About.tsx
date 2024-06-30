@@ -4,8 +4,8 @@ import { Button } from "../ui/button";
 import AboutCard from "../ui/AboutCard";
 import { DocumentValidationIcon } from "../icons/CV";
 
-import { Code, Headset } from "lucide-react";
-import { MdFolder } from "react-icons/md";
+import { Code2 } from "lucide-react";
+import { MdFolder, MdHeadset } from "react-icons/md";
 
 const About = () => {
   return (
@@ -29,7 +29,7 @@ const About = () => {
               title="Commits"
               description="950+"
               icon={
-                <Code className="h-6 w-6 max-sm:h-5 max-sm:w-5 text-light-1" />
+                <Code2 className="h-6 w-6 max-sm:h-5 max-sm:w-5 text-light-1" />
               }
               link="https://github.com/sougata-github"
             />
@@ -45,9 +45,9 @@ const About = () => {
               title="Support"
               description="online 24/7"
               icon={
-                <Headset className="h-6 w-6 max-sm:h-5 max-sm:w-5 text-light-1" />
+                <MdHeadset className="h-6 w-6 max-sm:h-5 max-sm:w-5 text-light-1" />
               }
-              link="https://linkedin.com/in/sougata-linkdin"
+              link="https://twitter.com/sougata_x"
             />
           </div>
           <p className="py-2 text-light-2 text-base max-w-[400px] max-sm:max-w-[320px] max-lg:text-sm font-medium">
