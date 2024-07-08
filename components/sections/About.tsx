@@ -50,8 +50,8 @@ const About = () => {
               link="https://twitter.com/sougata_x"
             />
           </div>
-          <p className="py-2 text-light-2 text-base max-w-[400px] max-sm:max-w-[320px] max-lg:text-sm font-medium">
-            I am a Frontend Web Developer from India with expertise in React.js,
+          <p className="py-2 text-light-2 text-base max-w-[380px] max-sm:max-w-[320px] max-lg:text-sm font-medium">
+            I am a Frontend Developer from India with expertise in React.js,
             Next.js, TypeScript & Tailwind CSS for creating dynamic and
             responsive web applications.
           </p>
