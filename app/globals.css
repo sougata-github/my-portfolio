@@ -84,4 +84,8 @@
     background: #343434;
     border-radius: 50px;
   }
+
+  .scrollbar-hidden::-webkit-scrollbar {
+    display: none;
+  }
 }

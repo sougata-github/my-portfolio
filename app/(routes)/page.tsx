@@ -1,5 +1,5 @@
 const page = () => {
-  return <div>page</div>;
+  return <div className="min-h-[80rem]">About</div>;
 };
 
 export default page;
