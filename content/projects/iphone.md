@@ -1,0 +1,40 @@
+---
+title: "iPhone 15 landing page"
+slug: "iphone"
+imageUrl: "/project-page/apple.png"
+description: iPhone 15 Pro landing page built using React, GSAP and Three.js.
+links:
+  liveLink: "https://iphone-15-pro-landing-page.vercel.app/"
+  srcLink: "https://github.com/sougata-github/iphone-15-pro-landing-page"
+  forkLink: "https://github.com/sougata-github/iphone-15-pro-landing-page/fork"
+---
+
+# Features
+
+## Core features.
+
+Key features include **3D iPhone models**, **animated carousel** and a **stunning hero-section**.
+
+Additionally, the landing-page is **fully-responsive** and has **smooth animations and transitions** .
+
+# Stack
+
+## Primary stack.
+
+I used **[React.js](https://react.dev/)** with **[TypeScript](https://www.typescriptlang.org/)** for this project, **[Tailwind CSS](https://tailwindcss.com/)** for styling, **[GSAP](https://gsap.com/)** for animations and **[React Three Fiber](https://r3f.docs.pmnd.rs/getting-started/introduction)** for 3D development.
+
+# Problems
+
+## Development roadbloacks.
+
+The implementation of the Animated Video Carousel was very challenging. Ensuring seamless transitions between videos while tracking each video's progress required meticulous planning and execution. Leveraging multiple refs, effects, and hooks proved instrumental in achieving the desired outcome.
+
+Rendering the 3D iPhone models presented its own set of challenges, encompassing aspects such as lighting, camera angles, and animation.
+
+# Lessons
+
+## Key takeaways.
+
+This project provided an opportunity to explore the creation of dynamic web experiences and captivating animations, shedding light on the methodologies utilized by industry leaders like Apple and Meta in crafting engaging websites.
+
+I believe that every frontend developer should include an innovative project in their portfolio, and this project exemplifies that.

@@ -1,0 +1,53 @@
+---
+title: "DevOverFlow"
+slug: "devoverflow"
+imageUrl: "/project-page/devoverflow.png"
+description: A community-driven Q&A platform for programming enthusiasts.
+links:
+  liveLink: "https://devoverflow-next.vercel.app/"
+  srcLink: "https://github.com/sougata-github/DevOverFlow"
+  forkLink: "https://github.com/sougata-github/DevOverFlow/fork"
+nextProject:
+  title: "Jotion"
+  link: "/projects/jotion"
+---
+
+# Features
+
+## Core features.
+
+Key features include **authentication**, **ask questions**, **answer questions**, **upvote or downvote**.
+
+Additionally, users can **edit** or **delete** their questions or answers, **save questions** to collections, **view top questions**, **assign tags**, view **popular tags**.
+
+A dedicated page for viewing **jobs**. **Badge system**, **global search** across the platform, **syntax highlighting** for improved readability.
+
+# Stack
+
+## Primary stack.
+
+This project uses **[Next.js 14](https://nextjs.org/)** with **[TypeScript](https://www.typescriptlang.org/)**, **[Tailwind CSS](https://tailwindcss.com/)** for styling, and **[Shadcn UI](https://ui.shadcn.com/)** for reusable components. Authentication and user management are handled with **[Clerk](https://clerk.com/)**.
+
+For the backend, I utilized **[MongoDB](https://www.mongodb.com/)** with **[Mongoose](https://mongoosejs.com/)** as the ODM. I used **[TinyMCE](https://www.tiny.cloud/)** for a rich text-editor that allows users to include code snippets in their questions and answers, complemented by **[PrismJS](https://prismjs.com/)** for syntax highlighting.
+
+# Problems
+
+## Development roadbloacks.
+
+This was the first project I built using Next.js, so it was quite intimidating as I had just started learning the framework.
+
+It took nearly three months to complete and deploy without errors. Along the way, I faced many challenges, from setup to deployment, encountering errors at every turn.
+
+I got stuck integrating webhooks to sync Clerk and MongoDB databases. I also recall a mid-project update from Vercel breaking everything, though I resolved it by updating dependencies.
+
+Throughout, resources like GitHub, Stack Overflow, and documentation proved invaluable.
+
+# Lessons
+
+## Key takeaways.
+
+Where to start? I learned about important Next.js features like App Router, SSR, ISR, SSG, React Server Components, API Routes, Server Actions, Loading and Error States, Layout Components, Dynamic Routes, Route Groups, Image and Link Components, and many more.
+
+Moreover, I tackled essential functionalities like Pagination, Searching, Debouncing, Filtering, React Hook Form, and Fetching and Displaying Data using APIs.
+
+I gained knowledge in Clean Code, Optimization, SEO, Metadata, Organized File and Folder Structure, Reusable Components, UX, etc.

@@ -18,10 +18,6 @@ const config = {
       },
     },
     extend: {
-      fontFamily: {
-        inter: ["var(--font-inter)"],
-        lato: ["var(--font-lato)"],
-      },
       colors: {
         dark: "#101010",
         light: "#e2e2e2",
@@ -80,7 +76,7 @@ const config = {
       },
     },
   },
-  plugins: [require("tailwindcss-animate")],
+  plugins: [require("@tailwindcss/typography"), require("tailwindcss-animate")],
 } satisfies Config;
 
 export default config;
