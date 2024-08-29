@@ -15,7 +15,7 @@ const MobileNav = () => {
   const pathname = usePathname();
 
   return (
-    <nav className="flex items-center justify-between py-4 px-8 md:hidden border-b-light/20 border-b-[0.5px]">
+    <nav className="backdrop-blur bg-dark/50 z-10 sticky top-0 flex items-center justify-between py-4 px-8 md:hidden border-b-light/20 border-b-[0.5px]">
       {/* title */}
       <Link href="/" className="flex flex-col">
         <h1 className="text-light text-lg">Sougata Das</h1>
@@ -30,7 +30,7 @@ const MobileNav = () => {
           </div>
         </SheetTrigger>
         <SheetContent
-          className="flex flex-col items-center justify-center text-base h-60 border-none bg-dark text-light/40"
+          className="backdrop-blur bg-dark/50 flex flex-col items-center justify-center text-base h-60 border-none text-light/40"
           side="top"
         >
           <ul className="grid grid-cols-2 place-items-center gap-4">

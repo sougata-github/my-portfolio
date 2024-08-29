@@ -37,17 +37,19 @@ const Sidebar = () => {
       >
         {/* Siderbar Image and title */}
         <div className="w-full tracking-wide text-left flex flex-col gap-4">
-          <Image
-            src="/profile-pic.png"
-            alt="profile picture"
-            placeholder="blur"
-            blurDataURL="https://placehold.co/76x76"
-            height={72}
-            width={72}
-            quality={100}
-            unoptimized
-            className="rounded-full"
-          />
+          <div className="flex items-center justify-center w-fit rounded-full p-0.5 bg-background/5">
+            <Image
+              src="/emoji.png"
+              alt="profile picture"
+              placeholder="blur"
+              blurDataURL="https://placehold.co/76x76"
+              height={72}
+              width={72}
+              quality={100}
+              unoptimized
+              className="rounded-full object-center"
+            />
+          </div>
 
           <div className="flex flex-col">
             <h1 className="text-light font-lato text-xl font-semibold">
