@@ -9,13 +9,30 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
+
 import { motion } from "framer-motion";
 
 const MobileNav = () => {
   const pathname = usePathname();
 
   return (
-    <nav className="backdrop-blur bg-dark/50 z-10 sticky top-0 flex items-center justify-between py-4 px-8 md:hidden border-b-light/20 border-b-[0.5px]">
+    <motion.nav
+      className="backdrop-blur bg-dark/50 z-10 sticky top-0 flex items-center justify-between py-4 px-8 md:hidden border-b-light/20 border-b-[0.5px]"
+      initial={{
+        y: -20,
+        opacity: 0,
+        filter: "blur(5px)",
+      }}
+      animate={{
+        y: 0,
+        opacity: 100,
+        filter: "blur(0px)",
+        transition: {
+          ease: "easeIn",
+          duration: 1,
+        },
+      }}
+    >
       {/* title */}
       <Link href="/" className="flex flex-col">
         <h1 className="text-light text-lg">Sougata Das</h1>
@@ -67,7 +84,7 @@ const MobileNav = () => {
           </ul>
         </SheetContent>
       </Sheet>
-    </nav>
+    </motion.nav>
   );
 };
 

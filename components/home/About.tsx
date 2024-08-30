@@ -1,34 +1,42 @@
-import Image from "next/image";
-
 import { Download } from "lucide-react";
+import { Separator } from "../ui/separator";
 import { Button } from "@/components/ui/button";
+import Image from "next/image";
 
 const About = () => {
   return (
     <section className="flex flex-col">
-      <div className="flex flex-col">
+      <div className="flex flex-row md:flex-col max-md:items-center gap-4">
         {/* Introduction */}
-        <h1 className="heading-text">About</h1>
-        <p className="secondary-text">Hi, I&apos;m Sougata.</p>
+
+        <div>
+          <h1 className="heading-text">About</h1>
+          <p className="secondary-text">Hi, I&apos;m Sougata.</p>
+        </div>
+
+        <div className="md:hidden flex items-center justify-center w-fit rounded-full p-0.5 bg-background/5">
+          <Image
+            src="/emoji.png"
+            alt="profile picture"
+            placeholder="blur"
+            blurDataURL="https://placehold.co/76x76"
+            height={72}
+            width={72}
+            quality={100}
+            unoptimized
+            className="rounded-full object-center"
+          />
+        </div>
       </div>
 
-      {/* About */}
-      <div className="pt-10 flex flex-col sm:flex-row gap-6 sm:gap-8">
-        {/* eslint-disable-next-line @next/next/no-img-element */}
-        <Image
-          src="/profile-pic.png"
-          alt="Profile Image"
-          width={200}
-          height={200}
-          quality={100}
-          unoptimized
-          className="rounded-xl w-full sm:w-[260px] sm:h-[260px] max-w-full"
-        />
+      <Separator className="h-[0.2px] mt-5 bg-background/10 w-full" />
 
-        <div className="pt-4 flex flex-col gap-8">
-          <p className="secondary-text">
+      {/* About */}
+      <div className="pt-6 flex flex-col sm:flex-row gap-6">
+        <div className="flex flex-col gap-8">
+          <p className="secondary-text max-w-lg">
             I am a Frontend Developer from India with expertise in React.js,
-            Next.js, TypeScript & Tailwind CSS for creating dynamic and
+            Next.js, TypeScript and Tailwid CSS for creating dynamic and
             responsive web applications.
           </p>
 

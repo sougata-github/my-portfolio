@@ -14,7 +14,7 @@ const Projects = () => {
   return (
     <section className="flex flex-col">
       <div className="flex flex-col">
-        <h1 className="heading-text">Featured projects</h1>
+        <h1 className="heading-text">Projects</h1>
         <p className="secondary-text">Check out my projects.</p>
       </div>
 

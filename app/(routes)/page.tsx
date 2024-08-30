@@ -7,8 +7,10 @@ import Education from "@/components/home/Education";
 const page = async () => {
   return (
     <section className="section-container">
-      <About />
-      <Projects />
+      <div className="flex flex-col gap-10">
+        <About />
+        <Projects />
+      </div>
       <Education />
       <Stack />
       <Connect />

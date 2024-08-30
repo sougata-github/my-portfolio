@@ -111,7 +111,7 @@ const Sidebar = () => {
               <Link
                 href={link.link}
                 className={cn(
-                  "relative w-full hover:text-light z-10",
+                  "relative w-full hover:text-light transition duration-300 z-10",
                   isProjects && link.link === "/projects" && "text-light",
                   pathname === link.link && "text-light"
                 )}

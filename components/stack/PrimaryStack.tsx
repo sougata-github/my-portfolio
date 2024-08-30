@@ -25,33 +25,27 @@ const PrimaryStack = () => {
         ))}
 
         <p className="secondary-text">
-          <span className="text-light">Backend</span> - For database management,
-          I use either{" "}
           <a
             href="https://www.mongodb.com/"
             target="_blank"
             className="text-light"
           >
+            Backend
+          </a>{" "}
+          - For database management, I use either{" "}
+          <a href="https://www.mongodb.com/" target="_blank">
             MongoDB
           </a>{" "}
           with{" "}
-          <a
-            href="https://mongoosejs.com/docs/"
-            target="_blank"
-            className="text-light"
-          >
+          <a href="https://mongoosejs.com/docs/" target="_blank">
             Mongoose
           </a>{" "}
           or{" "}
-          <a href="https://neon.tech/" target="_blank" className="text-light">
+          <a href="https://neon.tech/" target="_blank">
             NeonDB
           </a>{" "}
           with{" "}
-          <a
-            href="https://www.prisma.io/"
-            target="_blank"
-            className="text-light"
-          >
+          <a href="https://www.prisma.io/" target="_blank">
             Prisma
           </a>
           .
