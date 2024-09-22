@@ -8,12 +8,12 @@ export const links = [
     link: "/projects",
   },
   {
-    label: "Stack",
-    link: "/stack",
+    label: "Blogs",
+    link: "/blogs",
   },
   {
-    label: "Contact",
-    link: "#contact",
+    label: "Stack",
+    link: "/stack",
   },
 ];
 
@@ -47,26 +47,18 @@ export const projectsData = [
   },
 ];
 
-export const educationData = [
+export const servicesData = [
   {
-    course: "BTech in Computer Science",
-    platform: "University (2 years completed)",
-    date: "2021-2023",
+    title: "Landing Pages",
+    href: "/projects#services",
+    description:
+      "I create visually appealing modern landing pages, that will help you land more clients for your online business.",
   },
   {
-    course: "Full Stack Web Development bootcamp",
-    platform: "Udemy",
-    date: "2021-2022",
-  },
-  {
-    course: "React.js Course",
-    platform: "Udemy",
-    date: "2023-2024",
-  },
-  {
-    course: "Certified Next.js Developer",
-    platform: "JavaScript Mastery",
-    date: "2023-2024",
+    title: "Dashboards",
+    href: "/projects#services",
+    description:
+      "I develop intuitive, data-driven dashboards that provide actionable insights, helping you track performance and make informed business decisions.",
   },
 ];
 
@@ -125,5 +117,36 @@ export const primaryStackData = [
     href: "https://vercel.com/",
     content:
       "Easy to deploy applications with just one click, utilizing serverless edge functions for optimized performance and scalability.",
+  },
+];
+
+export const landingPageData = [
+  {
+    name: "Dark-themed Saas landing page",
+    href: "https://dark-saas-page.vercel.app",
+    imageUrl: "/project-thumbnails/dark-saas.png",
+  },
+  {
+    name: "Light-themed Saas landing page",
+    href: "https://light-saas-page.vercel.app",
+    imageUrl: "/project-thumbnails/light-saas.png",
+  },
+  {
+    name: "Ai-themed Saas landing page",
+    href: "https://ai-saas-page.vercel.app",
+    imageUrl: "/project-thumbnails/ai-saas.png",
+  },
+];
+
+export const dashboardsData = [
+  {
+    name: "Admin Dashboard 1",
+    href: "https://nextjs-admin-dashboard-1.vercel.app",
+    imageUrl: "/project-thumbnails/dashboard-1.png",
+  },
+  {
+    name: "Admin Dashboard 2",
+    href: "https://nextjs-admin-dashboard-2.vercel.app",
+    imageUrl: "/project-thumbnails/dashboard-2.png",
   },
 ];

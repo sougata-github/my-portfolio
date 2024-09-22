@@ -35,6 +35,4 @@ Rendering the 3D iPhone models presented its own set of challenges, encompassing
 
 ## Key takeaways.
 
-This project provided an opportunity to explore the creation of dynamic web experiences and captivating animations, shedding light on the methodologies utilized by industry leaders like Apple and Meta in crafting engaging websites.
-
-I believe that every frontend developer should include an innovative project in their portfolio, and this project exemplifies that.
+This project helped me learn modern technologies like GSAP and React Three Fiber, and provided an opportunity to explore the creation of dynamic web experiences and captivating animations.

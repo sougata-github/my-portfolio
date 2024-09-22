@@ -15,7 +15,7 @@ const Projects = () => {
     <section className="flex flex-col">
       <div className="flex flex-col">
         <h1 className="heading-text">Projects</h1>
-        <p className="secondary-text">Check out my projects.</p>
+        <p className="secondary-text">My Personal projects.</p>
       </div>
 
       <Separator className="h-[0.2px] mt-5 bg-background/10 w-full" />
@@ -32,7 +32,7 @@ const Projects = () => {
               className="flex flex-row gap-4 items-center"
               initial={{
                 opacity: 0,
-                y: 40,
+                y: 20,
                 filter: "blur(5px)",
               }}
               whileInView={{
@@ -43,7 +43,6 @@ const Projects = () => {
               transition={{
                 delay: 0.2 * index,
                 duration: 1,
-                ease: [0.25, 0.1, 0.25, 1],
               }}
               viewport={{ once: true }}
             >
@@ -70,13 +69,26 @@ const Projects = () => {
         ))}
       </ul>
 
-      <Link
+      <motion.a
         href="/projects"
         className="mt-6 text-sm px-2 group flex flex-row items-center gap-1"
+        initial={{
+          opacity: 0,
+          y: 20,
+        }}
+        whileInView={{
+          opacity: 100,
+          y: 0,
+        }}
+        transition={{
+          delay: 0.8,
+          duration: 1,
+        }}
+        viewport={{ once: true }}
       >
         View All
         <ChevronRight className="h-5 w-5 text-light/60 md:group-hover:translate-x-1 transition duration-500" />
-      </Link>
+      </motion.a>
     </section>
   );
 };

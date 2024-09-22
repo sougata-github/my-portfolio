@@ -52,7 +52,7 @@ const page = async ({ params }: { params: { slug: string } }) => {
             alt="devoverflow image"
             height={800}
             width={800}
-            className="max-w-full w-full h-full object-cover rounded-sm"
+            className="max-w-full w-full h-full object-cover rounded-sm outline outline-2 outline-white/10"
           />
         </div>
       </div>
@@ -72,7 +72,7 @@ const page = async ({ params }: { params: { slug: string } }) => {
           link={data.nextProject.link}
         />
       ) : (
-        <div className="mt-16 md:mt-20" />
+        <div className="mt-16" />
       )}
 
       <Connect />

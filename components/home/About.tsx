@@ -1,18 +1,13 @@
+import Image from "next/image";
 import { Download } from "lucide-react";
 import { Separator } from "../ui/separator";
 import { Button } from "@/components/ui/button";
-import Image from "next/image";
 
 const About = () => {
   return (
     <section className="flex flex-col">
       <div className="flex flex-row md:flex-col max-md:items-center gap-4">
         {/* Introduction */}
-
-        <div>
-          <h1 className="heading-text">About</h1>
-          <p className="secondary-text">Hi, I&apos;m Sougata.</p>
-        </div>
 
         <div className="md:hidden flex items-center justify-center w-fit rounded-full p-0.5 bg-background/5">
           <Image
@@ -26,6 +21,11 @@ const About = () => {
             unoptimized
             className="rounded-full object-center"
           />
+        </div>
+
+        <div>
+          <h1 className="heading-text">About</h1>
+          <p className="secondary-text">Hi, I&apos;m Sougata.</p>
         </div>
       </div>
 

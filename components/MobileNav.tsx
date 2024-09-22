@@ -19,7 +19,7 @@ const MobileNav = () => {
     <motion.nav
       className="backdrop-blur bg-dark/50 z-10 sticky top-0 flex items-center justify-between py-4 px-8 md:hidden border-b-light/20 border-b-[0.5px]"
       initial={{
-        y: -20,
+        y: -5,
         opacity: 0,
         filter: "blur(5px)",
       }}
@@ -29,7 +29,7 @@ const MobileNav = () => {
         filter: "blur(0px)",
         transition: {
           ease: "easeIn",
-          duration: 1,
+          duration: 0.4,
         },
       }}
     >
