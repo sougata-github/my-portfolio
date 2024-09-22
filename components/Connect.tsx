@@ -11,8 +11,8 @@ const Connect = () => {
 
       <div className="pt-4 flex flex-col gap-4">
         <p className="secondary-text max-w-[420px]">
-          If you&apos;re looking for a developer, have a question, or just want
-          to connect, reach out on any of my socials.
+          If you&apos;re looking for a developer or just want to connect, reach
+          out on any of my socials.
         </p>
 
         <ul className="mt-2 flex gap-[0.76rem] items-start">

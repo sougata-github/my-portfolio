@@ -5,7 +5,7 @@ const NextProject = ({ title, link }: { title: string; link: string }) => {
   return (
     <Link
       href={link}
-      className="w-full rounded-md my-16 md:my-20 flex flex-col gap-1 items-start group p-4 bg-background/5"
+      className="w-full rounded-md my-16 flex flex-col gap-1 items-start group"
     >
       <span className="heading-text text-base">Next Project</span>
       <div className="secondary-text flex gap-1 items-center">

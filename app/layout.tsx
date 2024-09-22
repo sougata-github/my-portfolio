@@ -1,12 +1,12 @@
 import "./globals.css";
 import { cn } from "@/lib/utils";
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { DM_Sans } from "next/font/google";
 
 import Sidebar from "@/components/Sidebar";
 import MobileNav from "@/components/MobileNav";
 
-const inter = Inter({
+const dm_sans = DM_Sans({
   subsets: ["latin"],
   weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"],
   variable: "--font-inter",
@@ -24,7 +24,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={cn("custom-scrollbar", inter.className)}>
+      <body className={cn("custom-scrollbar", dm_sans.className)}>
         <MobileNav />
         <main className="text-light mx-auto flex min-h-screen w-full max-w-4xl gap-12 px-8">
           <Sidebar />

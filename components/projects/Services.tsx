@@ -17,10 +17,27 @@ const Services = () => {
 
       <Separator className="h-[0.2px] mt-5 bg-background/10 w-full" />
 
-      <p className="secondary-text mt-5 mb-2">
+      <motion.p
+        className="secondary-text mt-5 mb-2"
+        initial={{
+          opacity: 0,
+          y: 20,
+          filter: "blur(5px)",
+        }}
+        whileInView={{
+          opacity: 100,
+          y: 0,
+          filter: "blur(0px)",
+        }}
+        transition={{
+          delay: 0.2,
+          duration: 1,
+        }}
+        viewport={{ once: true }}
+      >
         I create visually stunning and modern looking landing pages, that will
         help you land more clients for your online business.
-      </p>
+      </motion.p>
       <div className="pt-6 flex flex-col gap-12">
         {landingPageData.map((item, index) => (
           <motion.div
@@ -69,11 +86,28 @@ const Services = () => {
       </div>
 
       <div className="mt-12">
-        <p className="secondary-text mt-5 mb-2">
+        <motion.p
+          className="secondary-text mt-5 mb-2"
+          initial={{
+            opacity: 0,
+            y: 20,
+            filter: "blur(5px)",
+          }}
+          whileInView={{
+            opacity: 100,
+            y: 0,
+            filter: "blur(0px)",
+          }}
+          transition={{
+            delay: 0.2,
+            duration: 1,
+          }}
+          viewport={{ once: true }}
+        >
           I develop intuitive, data-driven dashboards that provide actionable
           insights, helping you track performance and make informed business
           decisions.
-        </p>
+        </motion.p>
         <div className="pt-6 flex flex-col gap-12">
           {dashboardsData.map((item, index) => (
             <motion.div

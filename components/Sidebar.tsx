@@ -51,11 +51,17 @@ const Sidebar = () => {
             />
           </div>
 
-          <div className="flex flex-col">
+          <div className="flex flex-col gap-0.5">
             <h1 className="text-light font-lato text-xl font-semibold">
               Sougata Das
             </h1>
-            <p className="text-light/60">Developer</p>
+
+            <div className="inline-flex items-center gap-2">
+              <span className="size-2 bg-green-500 rounded-full absolute" />
+              <span className="size-2 bg-green-500 rounded-full animate-ping" />
+
+              <p className="text-light/60 text-xs">Available for hire</p>
+            </div>
           </div>
         </div>
 

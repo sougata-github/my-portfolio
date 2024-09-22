@@ -51,14 +51,12 @@ export const servicesData = [
   {
     title: "Landing Pages",
     href: "/projects#services",
-    description:
-      "I create visually appealing modern landing pages, that will help you land more clients for your online business.",
+    description: "Modern landing pages for your online business.",
   },
   {
     title: "Dashboards",
     href: "/projects#services",
-    description:
-      "I develop intuitive, data-driven dashboards that provide actionable insights, helping you track performance and make informed business decisions.",
+    description: "Dashboards that provide help you track performance.",
   },
 ];
 

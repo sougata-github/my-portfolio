@@ -14,6 +14,7 @@ import Connect from "@/components/Connect";
 import BackButton from "@/components/projects/BackButton";
 import NextProject from "@/components/projects/NextProject";
 import ProjectLinks from "@/components/projects/ProjectLinks";
+import PageTransition from "@/components/animations/PageTransition";
 
 const page = async ({ params }: { params: { slug: string } }) => {
   const processor = unified()
@@ -35,48 +36,50 @@ const page = async ({ params }: { params: { slug: string } }) => {
   const htmlContent = (await processor.process(content)).toString();
 
   return (
-    <section className="flex flex-col pb-16">
-      <div className="flex flex-col">
-        <BackButton />
+    <PageTransition>
+      <section className="flex flex-col pb-16">
         <div className="flex flex-col">
-          <h1 className="heading-text">{data.title}</h1>
-          <p className="secondary-text">{data.description}</p>
+          <BackButton />
+          <div className="flex flex-col">
+            <h1 className="heading-text">{data.title}</h1>
+            <p className="secondary-text">{data.description}</p>
+          </div>
+
+          {/* Project Image */}
+          <div className="pt-6">
+            <Image
+              unoptimized
+              quality={100}
+              src={data.imageUrl}
+              alt="devoverflow image"
+              height={800}
+              width={800}
+              className="max-w-full w-full h-full object-cover rounded-sm outline outline-4 outline-white/10"
+            />
+          </div>
         </div>
 
-        {/* Project Image */}
-        <div className="pt-6">
-          <Image
-            unoptimized
-            quality={100}
-            src={data.imageUrl}
-            alt="devoverflow image"
-            height={800}
-            width={800}
-            className="max-w-full w-full h-full object-cover rounded-sm outline outline-2 outline-white/10"
-          />
-        </div>
-      </div>
+        {/* Project Links */}
+        <ProjectLinks links={data.links} />
 
-      {/* Project Links */}
-      <ProjectLinks links={data.links} />
-
-      {/* Project Content */}
-      <div
-        className="project-content-styles"
-        dangerouslySetInnerHTML={{ __html: htmlContent }}
-      />
-
-      {data.nextProject !== undefined ? (
-        <NextProject
-          title={data.nextProject.title}
-          link={data.nextProject.link}
+        {/* Project Content */}
+        <div
+          className="project-content-styles"
+          dangerouslySetInnerHTML={{ __html: htmlContent }}
         />
-      ) : (
-        <div className="mt-16" />
-      )}
 
-      <Connect />
-    </section>
+        {data.nextProject !== undefined ? (
+          <NextProject
+            title={data.nextProject.title}
+            link={data.nextProject.link}
+          />
+        ) : (
+          <div className="mt-16" />
+        )}
+
+        <Connect />
+      </section>
+    </PageTransition>
   );
 };
 
