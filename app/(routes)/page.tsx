@@ -1,6 +1,7 @@
 import Connect from "@/components/Connect";
 import About from "@/components/home/About";
 import Stack from "@/components/home/Stack";
+import Blogs from "@/components/home/Blogs";
 import Projects from "@/components/home/Projects";
 import Services from "@/components/home/Services";
 import PageTransition from "@/components/animations/PageTransition";
@@ -11,8 +12,9 @@ const page = async () => {
       <section className="section-container">
         <div className="flex flex-col gap-10">
           <About />
-          <Projects />
+          <Blogs />
         </div>
+        <Projects />
         <Services />
         <Stack />
         <Connect />

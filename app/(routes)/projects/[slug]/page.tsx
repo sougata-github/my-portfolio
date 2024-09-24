@@ -1,48 +1,44 @@
 import Image from "next/image";
 import { notFound } from "next/navigation";
 
-import fs from "fs";
-import matter from "gray-matter";
-import { unified } from "unified";
-import remarkParse from "remark-parse";
-import remarkRehype from "remark-rehype";
-import rehypeStringify from "rehype-stringify";
-import { addSeparatorAfterH2 } from "@/lib/utils";
-import rehypeExternalLinks from "rehype-external-links";
+import { projects } from "#site/content";
 
 import Connect from "@/components/Connect";
+import { MDXContent } from "@/components/mdx-components";
 import BackButton from "@/components/projects/BackButton";
 import NextProject from "@/components/projects/NextProject";
 import ProjectLinks from "@/components/projects/ProjectLinks";
 import PageTransition from "@/components/animations/PageTransition";
 
-const page = async ({ params }: { params: { slug: string } }) => {
-  const processor = unified()
-    .use(remarkParse)
-    .use(remarkRehype)
-    .use(addSeparatorAfterH2)
-    .use(rehypeStringify)
-    .use(rehypeExternalLinks, { target: "_blank" });
+interface Props {
+  params: {
+    slug: string;
+  };
+}
 
-  const filePath = `content/projects/${params.slug}.md`;
+export async function generateStaticParams(): Promise<Props["params"][]> {
+  return projects.map((project) => ({ slug: project.slugAsParams }));
+}
 
-  if (!fs.existsSync(filePath)) {
-    notFound();
+const page = ({ params }: { params: { slug: string } }) => {
+  const slug = params.slug;
+
+  const project = projects.find((project) => project.slugAsParams === slug);
+
+  if (!project) {
+    return notFound();
   }
-
-  const fileContent = fs.readFileSync(filePath, "utf-8");
-
-  const { data, content } = matter(fileContent);
-  const htmlContent = (await processor.process(content)).toString();
 
   return (
     <PageTransition>
       <section className="flex flex-col pb-16">
         <div className="flex flex-col">
-          <BackButton />
+          <BackButton href="/projects" />
           <div className="flex flex-col">
-            <h1 className="heading-text">{data.title}</h1>
-            <p className="secondary-text">{data.description}</p>
+            <h1 className="text-light text-2xl font-semibold">
+              {project.title}
+            </h1>
+            <p className="secondary-text">{project.description}</p>
           </div>
 
           {/* Project Image */}
@@ -50,7 +46,7 @@ const page = async ({ params }: { params: { slug: string } }) => {
             <Image
               unoptimized
               quality={100}
-              src={data.imageUrl}
+              src={project.imageUrl}
               alt="devoverflow image"
               height={800}
               width={800}
@@ -60,21 +56,18 @@ const page = async ({ params }: { params: { slug: string } }) => {
         </div>
 
         {/* Project Links */}
-        <ProjectLinks links={data.links} />
+        <ProjectLinks links={project.links} />
 
         {/* Project Content */}
-        <div
-          className="project-content-styles"
-          dangerouslySetInnerHTML={{ __html: htmlContent }}
-        />
+        <MDXContent code={project.body} className="project-content-styles" />
 
-        {data.nextProject !== undefined ? (
+        {project.nextProject !== undefined ? (
           <NextProject
-            title={data.nextProject.title}
-            link={data.nextProject.link}
+            title={project.nextProject.title}
+            link={project.nextProject.link}
           />
         ) : (
-          <div className="mt-16" />
+          <div className="mt-8" />
         )}
 
         <Connect />

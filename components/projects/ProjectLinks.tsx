@@ -15,10 +15,10 @@ export interface linkType {
 
 const ProjectLinks = ({ links }: linkType) => {
   return (
-    <section className="mt-16 md:mt-20 flex flex-col">
+    <section className="mt-16 flex flex-col">
       <div className="flex flex-col">
         <h1 className="heading-text">Links</h1>
-        <p className="secondary-text">Related links.</p>
+        <p className="secondary-text">Related links</p>
       </div>
 
       <Separator className="h-[0.2px] mt-5 bg-background/10 w-full" />

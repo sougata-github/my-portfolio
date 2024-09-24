@@ -23,10 +23,10 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body className={cn("custom-scrollbar", dm_sans.className)}>
+    <html lang="en" className="scroll-pt-[2rem]">
+      <body className={cn("overflow-y-scroll", dm_sans.className)}>
         <MobileNav />
-        <main className="text-light mx-auto flex min-h-screen w-full max-w-4xl gap-12 px-8">
+        <main className="overflow-x-clip text-light mx-auto flex min-h-screen w-full max-w-4xl gap-12 px-8">
           <Sidebar />
           <div className="relative flex flex-col pt-8 md:pt-20 w-full gap-16">
             {children}
