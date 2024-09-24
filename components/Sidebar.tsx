@@ -17,7 +17,7 @@ const Sidebar = () => {
   const isProjects = pathname.startsWith("/projects");
 
   return (
-    <aside className="border-r border-white/5 sticky top-0 w-48 hidden h-screen md:block py-20 pr-2">
+    <aside className="sticky top-0 w-48 hidden h-screen md:block py-20">
       <motion.div
         className="flex flex-col gap-8"
         initial={{

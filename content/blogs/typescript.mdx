@@ -5,11 +5,13 @@ date: 2024-09-23
 published: true
 ---
 
-## Statically Typed vs Dynamically Typed Languages
+## Introduction
+
+TypeScript is a superset of JavaScript, providing type safety and static type checking. It is a statically-typed language.
 
 In statically typed languages, the data type of a variable is known at compile time, while in dynamically typed languages, the data type is assigned during runtime by the interpreter, depending on its value.
 
-## Usage of TypeScript
+## Usage
 
 TypeScript is primarily a development tool, where the project still runs JavaScript.
 
@@ -19,7 +21,7 @@ TypeScript is primarily a development tool, where the project still runs JavaScr
 let variableName: type = value;
 ```
 
-## Running TypeScript Programs
+## Running TypeScript
 
 To run a `.ts` program, follow these steps:
 
@@ -30,7 +32,7 @@ node fileName.js
 
 The first step involves transpiling, where the TypeScript compiler transpiles the TypeScript code to JavaScript. Transpiling is the process of converting the source code from one programming language to another. It is often used in web development, especially with languages like TypeScript and JSX, which are not directly supported by web browsers.
 
-## Primitive Types: String, number, and boolean
+## Primitive Types
 
 In TypeScript, primitive types such as string, number, and boolean are used to represent basic data types.
 
@@ -52,7 +54,7 @@ console.log(userId);
 
 In situations where TypeScript cannot determine or is unsure about the type of a value, it marks the variable as `any`. However, using `any` is discouraged as it disables type checking. It's recommended to specify types explicitly or use the compiler flag `noImplicitAny` to flag implicit `any` types as errors.
 
-## Functions in TypeScript
+## Functions
 
 Type annotations for functions are strong and recommended.
 
@@ -74,7 +76,7 @@ const myFunc = (param: type): returnType => {
 };
 ```
 
-### Providing a Default Value
+### Default Value
 
 ```typescript {1} showLineNumbers
 function signUp(name: string, email: string, hasPaid: boolean = false) {
@@ -87,7 +89,7 @@ function signUp(name: string, email: string, hasPaid: boolean = false) {
 const user = signUp("MyName", "test@gmail.com");
 ```
 
-### Return Type Value
+### Return Type
 
 ```typescript {1} showLineNumbers
 function getName(name: string): string {
@@ -513,7 +515,7 @@ tsc -w
 
 This command runs TypeScript files in "watch mode", allowing the compiler to detect changes and recompile automatically.
 
-## Classes in TypeScript
+## Classes
 
 TypeScript offers full support for the class keyword introduced in ES2015.
 

@@ -66,7 +66,12 @@ export default defineConfig({
   mdx: {
     rehypePlugins: [
       rehypeSlug,
-      [rehypePrettyCode, { theme: "houston" }],
+      [
+        rehypePrettyCode,
+        {
+          theme: "houston",
+        },
+      ],
       [
         rehypeAutolinkHeadings,
         {

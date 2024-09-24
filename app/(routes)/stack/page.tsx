@@ -1,7 +1,12 @@
+import { Metadata } from "next";
 import Connect from "@/components/Connect";
 import Skills from "@/components/stack/Skills";
 import PrimaryStack from "@/components/stack/PrimaryStack";
 import PageTransition from "@/components/animations/PageTransition";
+
+export const metadata: Metadata = {
+  title: "Sougata Das | Stack",
+};
 
 const page = () => {
   return (

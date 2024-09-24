@@ -1,7 +1,9 @@
 const MoreCode = () => {
   return (
     <div className="flex flex-col gap-1 max-w-[420px] md:max-w-[480px]">
-      <h2 className="heading-text">Check out the full code</h2>
+      <h2 id="code" className="heading-text">
+        Code
+      </h2>
       <p className="secondary-text">
         <a
           target="_blank"

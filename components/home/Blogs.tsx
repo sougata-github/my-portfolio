@@ -2,7 +2,6 @@ import { posts } from "#site/content";
 import { sortPosts } from "@/lib/utils";
 
 import Link from "next/link";
-
 import { Separator } from "../ui/separator";
 import { ChevronRight } from "lucide-react";
 

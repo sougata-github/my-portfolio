@@ -1,7 +1,12 @@
+import { Metadata } from "next";
 import { posts } from "#site/content";
 import { sortPosts } from "@/lib/utils";
 import BlogPost from "@/components/blog/BlogPost";
 import PageTransition from "@/components/animations/PageTransition";
+
+export const metadata: Metadata = {
+  title: "Sougata Das | Blogs",
+};
 
 const page = () => {
   const sortedPosts = sortPosts(posts.filter((post) => post.published));

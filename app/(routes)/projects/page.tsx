@@ -1,7 +1,12 @@
+import { Metadata } from "next";
 import Connect from "@/components/Connect";
 import Services from "@/components/projects/Services";
 import PageTransition from "@/components/animations/PageTransition";
 import FeaturedProjects from "@/components/projects/FeaturedProjects";
+
+export const metadata: Metadata = {
+  title: "Sougata Das | Projects",
+};
 
 const page = () => {
   return (
