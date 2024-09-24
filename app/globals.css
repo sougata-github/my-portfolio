@@ -150,6 +150,8 @@
     prose-strong:secondary-text
     prose-strong:font-bold 
     
+    prose-p:max-w-xl
+    prose-p:max-md:max-w-full
     prose-p:secondary-text
     prose-li:secondary-text
     

@@ -4,6 +4,13 @@ pre {
   font-family: "Rubik", Arial, Helvetica, sans-serif;
   white-space: pre-wrap;
   overflow-x: auto;
+  max-width: 576px;
+}
+
+@media screen and (max-width: 768px) {
+  pre {
+    max-width: 100%;
+  }
 }
 
 code {

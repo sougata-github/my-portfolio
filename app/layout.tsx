@@ -1,16 +1,11 @@
 import "./globals.css";
 import { cn } from "@/lib/utils";
 import type { Metadata } from "next";
-import { DM_Sans } from "next/font/google";
+import { GeistSans } from "geist/font/sans";
+import { GeistMono } from "geist/font/mono";
 
 import Sidebar from "@/components/Sidebar";
 import MobileNav from "@/components/MobileNav";
-
-const dm_sans = DM_Sans({
-  subsets: ["latin"],
-  weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"],
-  variable: "--font-inter",
-});
 
 export const metadata: Metadata = {
   title: "Sougata Das",
@@ -24,7 +19,13 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className="scroll-pt-[2rem]">
-      <body className={cn("overflow-y-scroll", dm_sans.className)}>
+      <body
+        className={cn(
+          "overflow-y-scroll font-sans",
+          GeistSans.variable,
+          GeistMono.variable
+        )}
+      >
         <MobileNav />
         <main className="overflow-x-clip text-light mx-auto flex min-h-screen w-full max-w-4xl gap-12 px-8">
           <Sidebar />

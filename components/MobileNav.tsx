@@ -29,7 +29,7 @@ const MobileNav = () => {
         filter: "blur(0px)",
         transition: {
           ease: "easeIn",
-          duration: 0.4,
+          duration: 0.8,
         },
       }}
     >
