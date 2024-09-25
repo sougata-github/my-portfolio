@@ -1,6 +1,5 @@
 import Image from "next/image";
 import { Download } from "lucide-react";
-import { Separator } from "../ui/separator";
 import { Button } from "@/components/ui/button";
 
 const About = () => {
@@ -28,8 +27,6 @@ const About = () => {
           <p className="secondary-text">Hi, I&apos;m Sougata.</p>
         </div>
       </div>
-
-      <Separator className="h-[0.2px] mt-5 bg-background/10 w-full" />
 
       {/* About */}
       <div className="pt-6 flex flex-col sm:flex-row gap-6">
