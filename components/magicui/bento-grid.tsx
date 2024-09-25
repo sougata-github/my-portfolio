@@ -1,10 +1,13 @@
 "use client";
 
-import { ReactNode } from "react";
+import Link from "next/link";
 
 import { cn } from "@/lib/utils";
-import Link from "next/link";
+import { ReactNode } from "react";
 import { Eye } from "lucide-react";
+import { motion } from "framer-motion";
+
+const MotionLink = motion(Link);
 
 const BentoGrid = ({ children }: { children: ReactNode }) => {
   return (
@@ -28,7 +31,21 @@ const BentoCard = ({
   index: number;
 }) => {
   return (
-    <Link
+    <MotionLink
+      initial={{
+        opacity: 0,
+        y: 20,
+        filter: "blur(5px)",
+      }}
+      animate={{
+        opacity: 100,
+        y: 0,
+        filter: "blur(0px)",
+      }}
+      transition={{
+        delay: 0.4 * (index + 1),
+        duration: 1,
+      }}
       href={href}
       key={name}
       className={cn(
@@ -49,7 +66,7 @@ const BentoCard = ({
         <Eye className="h-4 w-4 opacity-100" />
       </div>
       <div className="pointer-events-none absolute inset-0 transform-gpu transition-all duration-300 group-hover:bg-black/[.03] group-hover:dark:bg-neutral-800/10" />
-    </Link>
+    </MotionLink>
   );
 };
 
