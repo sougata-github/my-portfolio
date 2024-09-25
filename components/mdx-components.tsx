@@ -1,8 +1,8 @@
 import Image from "next/image";
-// import { HTMLAttributes } from "react";
 import * as runtime from "react/jsx-runtime";
-import MoreCode from "./blog/MoreCode";
+
 import { cn } from "@/lib/utils";
+import MoreCode from "./blog/MoreCode";
 
 const useMDXComponent = (code: string) => {
   const fn = new Function(code);

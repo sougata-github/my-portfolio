@@ -16,7 +16,7 @@ interface Props {
   };
 }
 
-// tells Next.js that the posts will be generated at build time and not route.
+// tells Next.js that the posts will be generated at build time.
 export async function generateStaticParams(): Promise<Props["params"][]> {
   return posts.map((post) => ({ slug: post.slugAsParams }));
 }
