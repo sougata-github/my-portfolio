@@ -38,7 +38,7 @@ const About = () => {
           </p>
 
           <Button className="max-sm:justify-center p-4 bg-background/5 rounded-md text-light w-full sm:w-fit hover:bg-background/10 transition duration-500">
-            <a href="/" className="flex gap-2 items-center">
+            <a href="/resume.pdf" className="flex gap-2 items-center" download>
               Download CV <Download className="h-4 w-4" />
             </a>
           </Button>
