@@ -1,9 +1,9 @@
-import { type ClassValue, clsx } from "clsx";
+import { Post } from "@/.velite";
 import { twMerge } from "tailwind-merge";
+import { type ClassValue, clsx } from "clsx";
 
 import { Element } from "hast";
 import { visit } from "unist-util-visit";
-import { Post } from "@/.velite";
 
 export function cn(...inputs: ClassValue[]) {
   return twMerge(clsx(inputs));

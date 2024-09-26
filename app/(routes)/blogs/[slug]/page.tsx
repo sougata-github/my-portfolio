@@ -16,6 +16,25 @@ interface Props {
   };
 }
 
+export async function getPostFromParams(params: Props["params"]) {
+  const slug = params?.slug;
+  const post = posts.find((post) => post.slugAsParams === slug);
+
+  return post;
+}
+
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
+  const post = await getPostFromParams(params);
+
+  if (!post) {
+    return {};
+  }
+
+  return {
+    title: `Sougata Das | ${post.title}`,
+  };
+}
+
 // tells Next.js that the posts will be generated at build time.
 export async function generateStaticParams(): Promise<Props["params"][]> {
   return posts.map((post) => ({ slug: post.slugAsParams }));

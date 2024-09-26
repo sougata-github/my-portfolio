@@ -1,3 +1,4 @@
+import { Metadata } from "next";
 import Image from "next/image";
 import { notFound } from "next/navigation";
 
@@ -13,6 +14,25 @@ import PageTransition from "@/components/animations/PageTransition";
 interface Props {
   params: {
     slug: string;
+  };
+}
+
+export async function getProjectFromParams(params: Props["params"]) {
+  const slug = params?.slug;
+  const post = projects.find((project) => project.slugAsParams === slug);
+
+  return post;
+}
+
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
+  const project = await getProjectFromParams(params);
+
+  if (!project) {
+    return {};
+  }
+
+  return {
+    title: `Sougata Das | ${project.title}`,
   };
 }
 
