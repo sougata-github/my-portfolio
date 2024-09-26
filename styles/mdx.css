@@ -1,14 +1,19 @@
 @import url("https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap");
 
 pre {
-  white-space: pre-wrap;
   overflow-x: auto;
-  max-width: 576px;
+  max-width: 510px;
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 767px) {
   pre {
     max-width: 100%;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  pre {
+    max-width: 576px;
   }
 }
 
