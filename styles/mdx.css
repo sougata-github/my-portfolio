@@ -1,7 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap");
 
 pre {
-  font-family: "Rubik", Arial, Helvetica, sans-serif;
   white-space: pre-wrap;
   overflow-x: auto;
   max-width: 576px;
