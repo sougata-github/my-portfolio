@@ -8,7 +8,7 @@ export const projectsData = [
     href: "/projects/devoverflow",
     background: (
       <Image
-        priority
+        priority={true}
         src="/project-thumbnails/devoverflow.png"
         alt="DevOverFlow thumbnail"
         fill
@@ -24,7 +24,7 @@ export const projectsData = [
     href: "/projects/jotion",
     background: (
       <Image
-        priority
+        priority={true}
         src="/project-thumbnails/jotion.png"
         alt="Jotion thumbnail"
         fill
@@ -41,7 +41,7 @@ export const projectsData = [
     href: "/projects/iphone",
     background: (
       <Image
-        priority
+        priority={true}
         src="/project-thumbnails/apple.png"
         alt="iPhone thumbnail"
         fill
@@ -57,7 +57,7 @@ export const projectsData = [
     href: "/projects/team-chat",
     background: (
       <Image
-        priority
+        priority={true}
         src="/project-thumbnails/team-chat.png"
         alt="Team Chat thumbnail"
         fill

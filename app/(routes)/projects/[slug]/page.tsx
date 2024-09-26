@@ -45,9 +45,10 @@ const page = ({ params }: { params: { slug: string } }) => {
           <div className="pt-6">
             <Image
               unoptimized
+              priority={true}
               quality={100}
               src={project.imageUrl}
-              alt="devoverflow image"
+              alt={`${project.title} image`}
               height={800}
               width={800}
               className="max-w-full w-full h-full object-cover rounded-sm outline outline-4 outline-white/10"

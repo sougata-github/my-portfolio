@@ -18,6 +18,7 @@ const About = () => {
             width={72}
             quality={100}
             unoptimized
+            priority={true}
             className="rounded-full object-center"
           />
         </div>

@@ -47,12 +47,12 @@ const Projects = () => {
               viewport={{ once: true }}
             >
               <Image
+                priority
                 src={project.imageUrl}
                 alt={`${project.title} thumbnail`}
                 height={64}
                 width={68}
                 quality={100}
-                unoptimized
                 className="rounded-xl object-center"
               />
 

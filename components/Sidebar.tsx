@@ -39,6 +39,8 @@ const Sidebar = () => {
         <div className="w-full tracking-wide text-left flex flex-col gap-4">
           <div className="flex items-center justify-center w-fit rounded-full p-0.5 bg-background/5">
             <Image
+              priority={true}
+              unoptimized
               src="/emoji.png"
               alt="profile picture"
               placeholder="blur"
@@ -46,7 +48,6 @@ const Sidebar = () => {
               height={72}
               width={72}
               quality={100}
-              unoptimized
               className="rounded-full object-center"
             />
           </div>
