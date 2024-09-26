@@ -16,7 +16,7 @@ interface Props {
   };
 }
 
-export async function getPostFromParams(params: Props["params"]) {
+async function getPostFromParams(params: Props["params"]) {
   const slug = params?.slug;
   const post = posts.find((post) => post.slugAsParams === slug);
 
