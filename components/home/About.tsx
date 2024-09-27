@@ -35,7 +35,7 @@ const About = () => {
         <div className="flex flex-col gap-8">
           <p className="secondary-text max-w-lg">
             I am a Frontend Developer from India with expertise in React.js,
-            Next.js, TypeScript and Tailwid CSS for creating dynamic and
+            Next.js, TypeScript and Tailwind CSS for creating dynamic and
             responsive web applications.
           </p>
 
