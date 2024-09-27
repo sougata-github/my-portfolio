@@ -11,6 +11,8 @@ import { usePathname } from "next/navigation";
 
 import CopyButton from "./CopyButton";
 
+import emoji from "@/public/emoji.png";
+
 const Sidebar = () => {
   const pathname = usePathname();
 
@@ -39,9 +41,8 @@ const Sidebar = () => {
         <div className="w-full tracking-wide text-left flex flex-col gap-4">
           <div className="flex items-center justify-center w-fit rounded-full p-0.5 bg-background/5">
             <Image
-              priority={true}
               unoptimized
-              src="/emoji.png"
+              src={emoji}
               alt="profile picture"
               placeholder="blur"
               blurDataURL="https://placehold.co/76x76"

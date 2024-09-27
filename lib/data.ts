@@ -1,3 +1,14 @@
+import appleThumbnail from "@/public/projects-home/apple.png";
+import jotionThumbnail from "@/public/projects-home/jotion.png";
+import teamChatThumbnail from "@/public/projects-home/team-chat.png";
+import devoverflowThumbnail from "@/public/projects-home/devoverflow.png";
+
+import aiSaas from "@/public/projects-page/ai-saas.png";
+import darkSaas from "@/public/projects-page/dark-saas.png";
+import lightSaas from "@/public/projects-page/light-saas.png";
+import dashboardDark from "@/public/projects-page/dashboard-1.png";
+import dashboardLight from "@/public/projects-page/dashboard-2.png";
+
 export const links = [
   {
     label: "Home",
@@ -21,13 +32,13 @@ export const projectsData = [
   {
     title: "DevOverFlow",
     href: "/projects/devoverflow",
-    imageUrl: "/projects/devoverflow.png",
+    imageUrl: devoverflowThumbnail,
     description: "A community-driven Q&A platform for programming enthusiasts.",
   },
   {
     title: "Jotion",
     href: "/projects/jotion",
-    imageUrl: "/projects/jotion.png",
+    imageUrl: jotionThumbnail,
     description:
       "Productivity and note-taking web application built using Next.js",
   },
@@ -35,13 +46,13 @@ export const projectsData = [
   {
     title: "Team Chat",
     href: "/projects/team-chat",
-    imageUrl: "/projects/team-chat.png",
+    imageUrl: teamChatThumbnail,
     description: "Full-Stack Discord clone built using Next.js.",
   },
   {
     title: "iPhone 15",
     href: "/projects/iphone",
-    imageUrl: "/projects/apple.png",
+    imageUrl: appleThumbnail,
     description:
       "iPhone 15 Pro landing page built using React, GSAP and Three.js.",
   },
@@ -122,29 +133,29 @@ export const landingPageData = [
   {
     name: "Dark-themed Saas landing page",
     href: "https://dark-saas-page.vercel.app",
-    imageUrl: "/project-thumbnails/dark-saas.png",
+    imageUrl: lightSaas,
   },
   {
     name: "Light-themed Saas landing page",
     href: "https://light-saas-page.vercel.app",
-    imageUrl: "/project-thumbnails/light-saas.png",
+    imageUrl: darkSaas,
   },
   {
     name: "Ai-themed Saas landing page",
     href: "https://ai-saas-page.vercel.app",
-    imageUrl: "/project-thumbnails/ai-saas.png",
+    imageUrl: aiSaas,
   },
 ];
 
 export const dashboardsData = [
   {
-    name: "Admin Dashboard 1",
+    name: "Admin Dashboard Dark",
     href: "https://nextjs-admin-dashboard-1.vercel.app",
-    imageUrl: "/project-thumbnails/dashboard-1.png",
+    imageUrl: dashboardDark,
   },
   {
-    name: "Admin Dashboard 2",
+    name: "Admin Dashboard Light",
     href: "https://nextjs-admin-dashboard-2.vercel.app",
-    imageUrl: "/project-thumbnails/dashboard-2.png",
+    imageUrl: dashboardLight,
   },
 ];

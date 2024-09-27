@@ -2,14 +2,20 @@ import Image from "next/image";
 import { Separator } from "../ui/separator";
 import { BentoCard, BentoGrid } from "../magicui/bento-grid";
 
+import appleThumbnail from "@/public/projects-page/apple.png";
+import jotionThumbnail from "@/public/projects-page/jotion.png";
+import teamChatThumbnail from "@/public/projects-page/team-chat.png";
+import devoverflowThumbnail from "@/public/projects-page/devoverflow.png";
+
 export const projectsData = [
   {
     name: "DevOverFlow",
     href: "/projects/devoverflow",
     background: (
       <Image
+        placeholder="blur"
         priority={true}
-        src="/project-thumbnails/devoverflow.png"
+        src={devoverflowThumbnail}
         alt="DevOverFlow thumbnail"
         fill
         unoptimized
@@ -24,8 +30,9 @@ export const projectsData = [
     href: "/projects/jotion",
     background: (
       <Image
+        placeholder="blur"
         priority={true}
-        src="/project-thumbnails/jotion.png"
+        src={jotionThumbnail}
         alt="Jotion thumbnail"
         fill
         unoptimized
@@ -41,8 +48,9 @@ export const projectsData = [
     href: "/projects/iphone",
     background: (
       <Image
+        placeholder="blur"
         priority={true}
-        src="/project-thumbnails/apple.png"
+        src={appleThumbnail}
         alt="iPhone thumbnail"
         fill
         unoptimized
@@ -57,8 +65,9 @@ export const projectsData = [
     href: "/projects/team-chat",
     background: (
       <Image
+        placeholder="blur"
         priority={true}
-        src="/project-thumbnails/team-chat.png"
+        src={teamChatThumbnail}
         alt="Team Chat thumbnail"
         fill
         unoptimized

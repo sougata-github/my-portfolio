@@ -47,7 +47,6 @@ const Projects = () => {
               viewport={{ once: true }}
             >
               <Image
-                priority
                 src={project.imageUrl}
                 alt={`${project.title} thumbnail`}
                 height={64}

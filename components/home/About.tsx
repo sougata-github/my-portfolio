@@ -2,6 +2,8 @@ import Image from "next/image";
 import { Download } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
+import emoji from "@/public/emoji.png";
+
 const About = () => {
   return (
     <section className="flex flex-col">
@@ -10,7 +12,7 @@ const About = () => {
 
         <div className="md:hidden flex items-center justify-center w-fit rounded-full p-0.5 bg-background/5">
           <Image
-            src="/emoji.png"
+            src={emoji}
             alt="profile picture"
             placeholder="blur"
             blurDataURL="https://placehold.co/76x76"
@@ -18,7 +20,6 @@ const About = () => {
             width={72}
             quality={100}
             unoptimized
-            priority={true}
             className="rounded-full object-center"
           />
         </div>

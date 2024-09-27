@@ -75,10 +75,9 @@ const Services = () => {
                 alt={`${item.name} thumbnail`}
                 height={200}
                 width={200}
-                priority={true}
                 quality={100}
                 unoptimized
-                className="w-full outline outline-4 outline-white/10 rounded-sm"
+                className="w-full outline outline-2 outline-white/10 rounded"
               />
             </Link>
           </motion.div>
@@ -145,10 +144,9 @@ const Services = () => {
                   alt={`${item.name} thumbnail`}
                   height={200}
                   width={200}
-                  priority={true}
                   quality={100}
                   unoptimized
-                  className="w-full outline outline-4 outline-white/10 rounded-sm"
+                  className="w-full outline outline-2 outline-white/10 rounded"
                 />
               </Link>
             </motion.div>
