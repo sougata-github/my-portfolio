@@ -32,12 +32,10 @@ const Projects = () => {
               className="flex flex-row gap-4 items-center"
               initial={{
                 opacity: 0,
-                y: 20,
-                filter: "blur(5px)",
+                filter: "blur(10px)",
               }}
               whileInView={{
                 opacity: 100,
-                y: 0,
                 filter: "blur(0px)",
               }}
               transition={{

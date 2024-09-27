@@ -23,17 +23,14 @@ const Sidebar = () => {
       <motion.div
         className="flex flex-col gap-8"
         initial={{
-          y: 20,
           opacity: 0,
           filter: "blur(10px)",
         }}
         animate={{
-          y: 0,
           opacity: 100,
           filter: "blur(0px)",
           transition: {
-            duration: 0.8,
-            ease: "easeIn",
+            duration: 1,
           },
         }}
       >
@@ -70,32 +67,9 @@ const Sidebar = () => {
         {/* links */}
         <nav className="w-full text-base text-light/60 flex flex-col gap-2 items-start">
           {links.map((link, index) => (
-            <motion.div
+            <div
               className="relative flex w-full items-start justify-start rounded-md p-[12px]"
               key={link.label}
-              initial={{
-                y: 20,
-                opacity: 0,
-                filter: "blur(10px)",
-              }}
-              animate={{
-                y: 0,
-                opacity: 100,
-                filter: "blur(0px)",
-                transition: {
-                  delay: 0.2 * index,
-                  duration: 0.8,
-                  ease: [0.25, 0.1, 0.25, 1],
-                },
-              }}
-              exit={{
-                y: 20,
-                opacity: 0,
-                filter: "blur(10px)",
-                transition: {
-                  duration: 0.4,
-                },
-              }}
             >
               {((isProjects && link.link === "/projects" && "text-light") ||
                 (pathname === link.link && "text-light")) && (
@@ -126,7 +100,7 @@ const Sidebar = () => {
               >
                 {link.label}
               </Link>
-            </motion.div>
+            </div>
           ))}
           <CopyButton />
         </nav>
