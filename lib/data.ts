@@ -133,12 +133,12 @@ export const landingPageData = [
   {
     name: "Dark-themed Saas landing page",
     href: "https://dark-saas-page.vercel.app",
-    imageUrl: lightSaas,
+    imageUrl: darkSaas,
   },
   {
     name: "Light-themed Saas landing page",
     href: "https://light-saas-page.vercel.app",
-    imageUrl: darkSaas,
+    imageUrl: lightSaas,
   },
   {
     name: "Ai-themed Saas landing page",
