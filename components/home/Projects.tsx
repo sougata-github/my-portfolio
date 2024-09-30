@@ -10,6 +10,8 @@ import { ChevronRight } from "lucide-react";
 
 import { motion } from "framer-motion";
 
+const MotionLink = motion(Link);
+
 const Projects = () => {
   return (
     <section className="flex flex-col">
@@ -66,7 +68,7 @@ const Projects = () => {
         ))}
       </ul>
 
-      <motion.a
+      <MotionLink
         href="/projects"
         className="mt-6 text-sm px-2 group flex flex-row items-center gap-1"
         initial={{
@@ -85,7 +87,7 @@ const Projects = () => {
       >
         View All
         <ChevronRight className="h-5 w-5 text-light/60 md:group-hover:translate-x-1 transition duration-500" />
-      </motion.a>
+      </MotionLink>
     </section>
   );
 };

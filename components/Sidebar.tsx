@@ -30,7 +30,7 @@ const Sidebar = () => {
           opacity: 100,
           filter: "blur(0px)",
           transition: {
-            duration: 1,
+            duration: 1.2,
           },
         }}
       >
