@@ -104,26 +104,27 @@
   .project-content-styles {
     @apply prose
 
-    prose-strong:font-semibold
-
-    prose-h1:heading-text
-    prose-h1:mt-16
     prose-h1:mb-0
+    prose-h1:mt-16
+    prose-h1:heading-text
     
-    prose-h2:secondary-text
     prose-h2:mt-0
+    prose-h2:secondary-text
 
+    prose-strong:font-semibold
     prose-strong:secondary-text 
+    
     prose-p:secondary-text 
-    prose-li:secondary-text
 
-    prose-a:secondary-text 
     prose-a:font-bold
     prose-a:no-underline
+    prose-a:secondary-text 
     
     prose-ul:pl-0 
+    
+    prose-li:pl-0
     prose-li:list-none 
-    prose-li:pl-0;
+    prose-li:secondary-text
 
     h2 a {
       @apply secondary-text font-normal;
@@ -133,33 +134,34 @@
   .blog-content-styles {
     @apply prose
     
-    prose-h1:text-light
-    prose-h1:text-xl
-    prose-h1:font-normal
-    prose-h1:max-w-lg
     prose-h1:mt-8
+    prose-h1:text-xl
+    prose-h1:max-w-lg
+    prose-h1:font-normal
+    prose-h1:text-light
 
-    prose-h2:heading-text
     prose-h2:mb-2
     prose-h2:mt-8
+    prose-h2:heading-text
     
-    prose-h3:text-light
     prose-h3:text-[17px]
-    
-    prose-strong:secondary-text
-    prose-strong:font-bold 
+    prose-h3:text-light
+        
+    prose-strong:font-bold
+    prose-strong:secondary-text 
     
     prose-p:max-w-xl
-    prose-p:max-md:max-w-full
     prose-p:secondary-text
-    prose-li:secondary-text
-    
-    prose-a:text-light/60
-    prose-a:no-underline
+    prose-p:max-md:max-w-full
+       
     prose-a:font-bold
+    prose-a:no-underline
+    prose-a:text-light/60
+    
+    prose-ul:pl-0
 
-    prose-ul:pl-0 
-    prose-li:pl-0;
+    prose-li:pl-0
+    prose-li:secondary-text
 
     h2 a {
       @apply heading-text hover:no-underline;

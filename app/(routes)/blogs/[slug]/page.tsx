@@ -46,7 +46,7 @@ const page = ({ params }: Props) => {
   const post = posts.find((post) => post.slugAsParams === slug);
 
   if (!post || !post.published) {
-    notFound();
+    return notFound();
   }
 
   return (
