@@ -124,7 +124,7 @@
     
     prose-li:pl-0
     prose-li:list-none 
-    prose-li:secondary-text
+    prose-li:secondary-text;
 
     h2 a {
       @apply secondary-text font-normal;
@@ -161,7 +161,7 @@
     prose-ul:pl-0
 
     prose-li:pl-0
-    prose-li:secondary-text
+    prose-li:secondary-text;
 
     h2 a {
       @apply heading-text hover:no-underline;
