@@ -15,13 +15,11 @@ const page = async () => {
   return (
     <PageTransition>
       <section className="section-container lg:max-w-lg">
-        <div className="flex flex-col gap-10">
-          <About />
-          <Blogs />
-        </div>
+        <About />
         <Projects />
         <Services />
         <Stack />
+        <Blogs />
         <Connect />
       </section>
     </PageTransition>

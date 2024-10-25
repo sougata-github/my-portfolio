@@ -90,11 +90,11 @@
   }
 
   .section-container {
-    @apply w-full flex flex-col gap-16 pb-16;
+    @apply w-full flex flex-col gap-16 md:gap-20 pb-16;
   }
 
   .heading-text {
-    @apply text-light text-lg font-medium;
+    @apply text-light text-xl font-semibold;
   }
 
   .secondary-text {
@@ -104,13 +104,12 @@
   .project-content-styles {
     @apply prose
 
-    prose-h1:mb-0
-    prose-h1:mt-16
-    prose-h1:heading-text
+    prose-h2:mb-0
+    prose-h2:mt-16
+    prose-h2:text-light
+    prose-h2:text-lg
+    prose-h2:font-medium
     
-    prose-h2:mt-0
-    prose-h2:secondary-text
-
     prose-strong:font-semibold
     prose-strong:secondary-text 
     
@@ -127,7 +126,7 @@
     prose-li:secondary-text;
 
     h2 a {
-      @apply secondary-text font-normal;
+      @apply text-light font-medium text-lg hover:no-underline;
     }
   }
 
@@ -142,7 +141,9 @@
 
     prose-h2:mb-2
     prose-h2:mt-8
-    prose-h2:heading-text
+    prose-h2:text-light
+    prose-h2:text-lg
+    prose-h2:font-medium
     
     prose-h3:text-[17px]
     prose-h3:text-light
@@ -164,7 +165,7 @@
     prose-li:secondary-text;
 
     h2 a {
-      @apply heading-text hover:no-underline;
+      @apply text-light font-medium text-lg hover:no-underline;
     }
 
     p code {

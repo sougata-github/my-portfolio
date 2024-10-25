@@ -16,7 +16,7 @@ const BlogPost = ({
   return (
     <Link
       href={`/${slug}`}
-      className="rounded-lg flex flex-col gap-4 text-left p-4 relative"
+      className="flex flex-col gap-4 text-left pl-0 p-4 relative"
     >
       <div className="flex flex-col gap-1">
         <h2 className="heading-text">{title}</h2>

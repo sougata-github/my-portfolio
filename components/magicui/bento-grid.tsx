@@ -11,7 +11,7 @@ const MotionLink = motion(Link);
 
 const BentoGrid = ({ children }: { children: ReactNode }) => {
   return (
-    <div className="pt-6 grid w-full auto-rows-[12rem] sm:auto-rows-[16rem] lg:auto-rows-[16rem] grid-cols-2 md:grid-cols-3 gap-4">
+    <div className="pt-6 hidden sm:grid w-full auto-rows-[12rem] sm:auto-rows-[16rem] lg:auto-rows-[16rem] grid-cols-3 gap-4">
       {children}
     </div>
   );

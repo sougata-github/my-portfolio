@@ -17,7 +17,7 @@ const ProjectLinks = ({ links }: linkType) => {
   return (
     <section className="mt-16 flex flex-col">
       <div className="flex flex-col">
-        <h1 className="heading-text">Links</h1>
+        <h1 className="text-light text-lg font-medium">Links</h1>
         <p className="secondary-text">Related links</p>
       </div>
 

@@ -1,10 +1,14 @@
+import { IoLogoNodejs } from "react-icons/io";
 import { GrMysql, GrReactjs } from "react-icons/gr";
 import { FaCss3Alt, FaHtml5 } from "react-icons/fa";
-import { TbBrandFramerMotion, TbBrandThreejs } from "react-icons/tb";
-import { BiLogoMongodb, BiLogoTypescript } from "react-icons/bi";
-import { SiGreensock, SiMongoose, SiNextdotjs, SiPrisma } from "react-icons/si";
+import { SiMongoose, SiNextdotjs, SiPrisma } from "react-icons/si";
 import { RiTailwindCssFill, RiJavascriptFill } from "react-icons/ri";
-import { IoIosGitBranch, IoLogoGithub, IoLogoNodejs } from "react-icons/io";
+import { TbBrandFramerMotion, TbBrandThreejs } from "react-icons/tb";
+import {
+  BiLogoPostgresql,
+  BiLogoMongodb,
+  BiLogoTypescript,
+} from "react-icons/bi";
 
 export const skillsData = [
   {
@@ -33,7 +37,7 @@ export const skillsData = [
   },
   {
     label: "React.js",
-    icon: <GrReactjs className="h-7 w-7" />,
+    icon: <GrReactjs className="h-6 w-6" />,
   },
   {
     label: "Next.js",
@@ -56,11 +60,11 @@ export const skillsData = [
     icon: <SiMongoose className="h-8 w-8" />,
   },
   {
-    label: "MySql",
-    icon: <GrMysql className="h-7 w-7" />,
+    label: "PostgreSQL",
+    icon: <BiLogoPostgresql className="h-7 w-7" />,
   },
   {
     label: "Prisma",
-    icon: <SiPrisma className="h-7 w-7" />,
+    icon: <SiPrisma className="h-6 w-6" />,
   },
 ];

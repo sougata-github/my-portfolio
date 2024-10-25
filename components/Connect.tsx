@@ -40,7 +40,7 @@ const Connect = () => {
         </ul>
       </div>
 
-      <div className="pt-10">
+      <div className="pt-16">
         <p className="text-xs text-light/40 w-full text-center">
           &#169; Sougata Das | 2024
         </p>

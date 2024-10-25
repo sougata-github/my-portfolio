@@ -55,14 +55,12 @@ const page = ({ params }: { params: { slug: string } }) => {
         <div className="flex flex-col">
           <BackButton href="/projects" />
           <div className="flex flex-col">
-            <h1 className="text-light text-2xl font-semibold">
-              {project.title}
-            </h1>
+            <h1 className="heading-text">{project.title}</h1>
             <p className="secondary-text">{project.description}</p>
           </div>
 
           {/* Project Image */}
-          <div className="pt-6 rounded">
+          <div className="pt-12">
             <Image
               unoptimized
               quality={100}

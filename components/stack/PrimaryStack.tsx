@@ -1,5 +1,5 @@
-import { primaryStackData } from "@/lib/data";
 import { Separator } from "../ui/separator";
+import { primaryStackData } from "@/lib/data";
 
 const PrimaryStack = () => {
   return (
@@ -16,7 +16,7 @@ const PrimaryStack = () => {
 
       <div className="pt-6 flex flex-col gap-6">
         {primaryStackData.map((item) => (
-          <p className="secondary-text" key={item.title}>
+          <p className="secondary-text md:max-w-xl" key={item.title}>
             <a href={item.href} target="_blank" className="text-light">
               {item.title}
             </a>{" "}
@@ -24,7 +24,7 @@ const PrimaryStack = () => {
           </p>
         ))}
 
-        <p className="secondary-text">
+        <p className="secondary-text md:max-w-lg">
           <a
             href="https://www.mongodb.com/"
             target="_blank"

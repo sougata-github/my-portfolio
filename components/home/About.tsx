@@ -1,8 +1,7 @@
 import Image from "next/image";
+import emoji from "@/public/emoji.png";
 import { Download } from "lucide-react";
 import { Button } from "@/components/ui/button";
-
-import emoji from "@/public/emoji.png";
 
 const About = () => {
   return (
@@ -25,17 +24,16 @@ const About = () => {
         </div>
 
         <div>
-          <h1 className="heading-text">About</h1>
-          <p className="secondary-text">Hi, I&apos;m Sougata.</p>
+          <h1 className="heading-text text-2xl">Hi, I&apos;m Sougata.</h1>
         </div>
       </div>
 
       {/* About */}
       <div className="pt-6 flex flex-col sm:flex-row gap-6">
         <div className="flex flex-col gap-8">
-          <p className="secondary-text max-w-lg">
+          <p className="secondary-text sm:max-w-lg">
             I am a Frontend Developer from India with expertise in React.js,
-            Next.js, TypeScript and Tailwind CSS for creating dynamic and
+            Next.js, TypeScript & Tailwind CSS for creating dynamic and
             responsive web applications.
           </p>
 

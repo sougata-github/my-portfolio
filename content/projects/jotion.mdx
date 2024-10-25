@@ -12,25 +12,19 @@ nextProject:
   link: "/projects/team-chat"
 ---
 
-# Features
-
-## Core features
+## Features
 
 Main Features include **authentication**, **archive notes**, **restore notes**, **infinite child notes** along with a **notion-style editor**.
 
 Additionally, users can also **publish their notes**, **add** or **edit** cover image of their notes, all of this with **real-time updates**.
 
-# Stack
-
-## Primary stack
+## Stack
 
 Main technologies are **[Next.js 14](https://nextjs.org/)** with **[TypeScript](https://www.typescriptlang.org/)**, **[Tailwind CSS](https://tailwindcss.com/)** for styling, and **[Shadcn UI](https://ui.shadcn.com/)**, **[Clerk](https://clerk.com/)** for authentication.
 
 For real-time updates I used a backend service called **[Convex](https://www.convex.dev/)**. For the editor I used **[BlockNote](https://www.blocknotejs.org/)**, an open-source React rich text editor with support for block-based editing and **[EdgeStore](https://edgestore.dev/)** for uploading images.
 
-# Problems
-
-## Development roadbloacks
+## Problems
 
 This application is basically a minimalistic Notion clone. One issue I encountered was with the document restoration feature. After restoring an archived document, I was unable to fetch it because I had forgotten to return the document in the query.
 
@@ -38,9 +32,7 @@ Implementing the expandable sidebar was quite complex. I had to account for both
 
 Integrating the Block Note Editor was another major hurdle. I frequently referred to the documentation to tailor it to my needs. Initially, the editor overflowed out of the screen, so I had to explicitly copy the editor styles and customize them accordingly.
 
-# Lessons
-
-## Key takeaways
+## Lessons
 
 For the first time, I delved into Recursive React Components. By implementing a functional component that calls itself, I achieved the creation of infinite children documents, each linked to a parent document via its ID.
 

@@ -26,7 +26,7 @@ const Blogs = () => {
         {sortedPosts.map((post) => (
           <Link
             href={`/${post.slug}`}
-            className="flex flex-col gap-1 items-start rounded-xl w-full p-1"
+            className="flex flex-col gap-1 items-start rounded-xl w-full pl-0 p-1"
             key={post.title}
           >
             <h1 className="heading-text text-[1.025rem]">{post.title}</h1>
@@ -37,7 +37,7 @@ const Blogs = () => {
 
       <Link
         href="/blogs"
-        className="mt-6 text-sm group px-1 flex flex-row items-center gap-1"
+        className="mt-6 text-sm group flex flex-row items-center gap-1"
       >
         View All
         <ChevronRight className="h-5 w-5 text-light/60 md:group-hover:translate-x-1 transition duration-500" />

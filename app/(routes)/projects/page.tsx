@@ -12,7 +12,7 @@ const page = () => {
   return (
     <PageTransition>
       <section className="section-container">
-        <div className="flex flex-col gap-10">
+        <div className="flex flex-col gap-12">
           <div className="flex flex-col">
             <h1 className="heading-text">Projects</h1>
             <p className="secondary-text">My personal projects.</p>
