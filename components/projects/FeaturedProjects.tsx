@@ -101,7 +101,7 @@ const FeaturedProjects = () => {
         <p className="secondary-text">Selection of personal projects.</p>
       </div>
 
-      <Separator className="h-[0.2px] mt-5 bg-background/10 w-full" />
+      <Separator className="h-[0.2px] mt-5 bg-background/20 w-full" />
 
       <BentoGrid>
         {projectsData.map((project, index) => (

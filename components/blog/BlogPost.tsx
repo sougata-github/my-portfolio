@@ -24,7 +24,7 @@ const BlogPost = ({
       </div>
       <p className="secondary-text max-w-md">{description}</p>
 
-      <Separator className="h-[0.2px] mt-4 bg-background/10 w-full" />
+      <Separator className="h-[0.2px] mt-4 bg-background/20 w-full" />
     </Link>
   );
 };

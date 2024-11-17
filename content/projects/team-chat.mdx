@@ -28,13 +28,13 @@ I used **[Socket IO](https://socket.io/)** for real-time messaging and **[NeonDB
 
 Implementing WebSockets, particularly Socket IO, for the first time presented a valuable learning opportunity.
 
-One notable issue arose with null first names for users who signed up without providing this essential detail. This issue became critical as the media room failed to render without a first name. Fortunately, I resolved this by implementing a default first name for users who hadn't specified one.
+One notable issue was with null first names for users who signed up without providing this essential detail. This issue became critical as the media room failed to render without a first name. Fortunately, I resolved this by implementing a default first name for users who hadn't specified one.
 
 Developing the Chat Component proved to be highly challenging due to its requirement for infinite scrolling of messages. To address this, I employed a custom hook for prefetching older messages and utilized refs for seamless auto-scrolling to the latest message.
 
 ## Lessons
 
-Building this project underscored the significance of custom hooks in streamlining code and facilitating reusability. I discovered their versatility in various contexts and learned to leverage them effectively. Additionally, I explored the efficient utilization of Next.js' API routes, ensuring secure querying on both client and server sides.
+Building this project underscored the significance of custom hooks in streamlining code and facilitating reusability. I discovered their versatility in various contexts and learned to leverage them effectively. Additionally, I explored the efficient utilization of Next.js API routes, ensuring secure querying on both client and server sides.
 
 A key focus was on integrating forms as modals and managing them using global state management. I used WebSockets and their integration with React Query to enhance user experience.
 

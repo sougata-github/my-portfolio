@@ -21,27 +21,27 @@ const ProjectLinks = ({ links }: linkType) => {
         <p className="secondary-text">Related links</p>
       </div>
 
-      <Separator className="h-[0.2px] mt-5 bg-background/10 w-full" />
+      <Separator className="h-[0.2px] mt-5 bg-background/20 w-full" />
 
       <div className="text-sm secondary-text pt-6 flex gap-5">
         <Link
           target="_blank"
           href={links.liveLink}
-          className="rounded-md bg-background/5 p-2 flex items-center gap-2 hover:bg-background/10 hover:text-light transition duration-500"
+          className="rounded-md bg-background/10 p-2 flex items-center gap-2 hover:bg-background/15 hover:text-light transition duration-500"
         >
           Live <PiFireFill className="h-[18px] w-[18px]" />
         </Link>
         <Link
           target="_blank"
           href={links.srcLink}
-          className="rounded-md bg-background/5 p-2 flex items-center gap-2 hover:bg-background/10 hover:text-light transition duration-500"
+          className="rounded-md bg-background/10 p-2 flex items-center gap-2 hover:bg-background/15 hover:text-light transition duration-500"
         >
           Star <Star className="h-[18px] w-[18px]" />
         </Link>
         <Link
           target="_blank"
           href={links.forkLink}
-          className="rounded-md bg-background/5 p-2 flex items-center gap-2 hover:bg-background/10 hover:text-light transition duration-500"
+          className="rounded-md bg-background/10 p-2 flex items-center gap-2 hover:bg-background/15 hover:text-light transition duration-500"
         >
           Fork <LuGitFork className="h-[18px] w-[18px]" />
         </Link>

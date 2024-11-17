@@ -15,18 +15,18 @@ const Skills = () => {
         <p className="secondary-text">Technologies I feel comfortable with.</p>
       </div>
 
-      <Separator className="h-[0.2px] mt-5 bg-background/10 w-full" />
+      <Separator className="h-[0.2px] mt-5 bg-background/20 w-full" />
 
       <div className="pt-6 flex flex-wrap gap-4 max-w-[520px]">
         {skillsData.map((skill) => (
           <div
-            className="cursor-pointer p-7 bg-background/5 text-light flex items-center justify-center rounded-xl h-[50px] w-[50px]"
+            className="cursor-pointer p-7 bg-background/10 text-light flex items-center justify-center rounded-xl h-[50px] w-[50px]"
             key={skill.label}
           >
             <TooltipProvider>
               <Tooltip>
                 <TooltipTrigger>{skill.icon}</TooltipTrigger>
-                <TooltipContent className="mb-4 bg-black text-light border-none">
+                <TooltipContent className="mb-4 bg-neutral-900 text-light border-none opacity-100">
                   {skill.label}
                 </TooltipContent>
               </Tooltip>

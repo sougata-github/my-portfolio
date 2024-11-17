@@ -19,21 +19,21 @@ const Connect = () => {
           <Link
             target="_blank"
             href="https://github.com/sougata-github"
-            className="group p-3 rounded-md bg-background/5 hover:bg-background/10 transition-all flex items-center justify-center "
+            className="group p-3 rounded-md bg-background/10 hover:bg-background/15 transition-all flex items-center justify-center "
           >
             <FiGithub className="h-[1.2rem] w-[1.2rem] text-light/60 group-hover:text-light transition-all" />
           </Link>
           <Link
             target="_blank"
             href="https://x.com/sougata_x"
-            className="group p-3 rounded-md   bg-background/5 hover:bg-background/10 transition-all flex items-center justify-center "
+            className="group p-3 rounded-md   bg-background/10 hover:bg-background/15 transition-all flex items-center justify-center "
           >
             <FaXTwitter className="h-[1.2rem] w-[1.2rem] text-light/60 group-hover:text-light transition-all" />
           </Link>
           <Link
             target="_blank"
             href="https://www.linkedin.com/in/sougata-linkdin"
-            className="group p-3 rounded-md bg-background/5 hover:bg-background/10 transition-all flex items-center justify-center "
+            className="group p-3 rounded-md bg-background/10 hover:bg-background/15 transition-all flex items-center justify-center "
           >
             <FaLinkedinIn className="h-[1.2rem] w-[1.2rem] text-light/60 group-hover:text-light transition-all" />
           </Link>

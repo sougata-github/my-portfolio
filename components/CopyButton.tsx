@@ -19,7 +19,7 @@ const CopyButton = () => {
 
   return (
     <Button
-      className="w-[100px] bg-background/5 rounded-md mt-1 p-[12px] hover:bg-background/10 transition duration-500 flex items-center justify-center"
+      className="w-[100px] bg-background/10 rounded-md mt-1 p-[12px] hover:bg-background/15 transition duration-500 flex items-center justify-center"
       onClick={onCopy}
     >
       {copied ? (

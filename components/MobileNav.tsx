@@ -15,9 +15,12 @@ import { motion } from "framer-motion";
 const MobileNav = () => {
   const pathname = usePathname();
 
+  const isProjects = pathname.startsWith("/projects");
+  const isBlogs = pathname.startsWith("/blogs");
+
   return (
     <motion.nav
-      className="backdrop-blur bg-dark/50 z-10 sticky top-0 flex items-center justify-between py-4 px-8 md:hidden border-b-light/20 border-b-[0.5px]"
+      className="backdrop-blur bg-dark/50 z-10 sticky top-0 flex items-center justify-between py-4 px-8 md:hidden border-b-light/10 border-b-[0.5px]"
       initial={{
         y: -5,
         opacity: 0,
@@ -35,15 +38,15 @@ const MobileNav = () => {
     >
       {/* title */}
       <Link href="/" className="flex flex-col">
-        <h1 className="text-light text-lg">Sougata Das</h1>
-        <p className="text-light/60 text-base">Developer</p>
+        <h1 className="heading-text text-2xl">Sougata Das</h1>
+        {/* <p className="text-light/60 text-base">Developer</p> */}
       </Link>
 
       {/* links */}
       <Sheet>
         <SheetTrigger>
-          <div className="rounded-md p-3 border-light/20 border-[0.5px] bg-background/5 hover:bg-background/10 hover:border-light/30 transition-all">
-            <Menu className="h-5 w-5 text-light/40 hover:text-light/50 transition-all" />
+          <div className="rounded-md p-3 border-light/10 border-[0.5px] bg-background/5">
+            <Menu className="h-5 w-5 text-light/40" />
           </div>
         </SheetTrigger>
         <SheetContent
@@ -57,13 +60,17 @@ const MobileNav = () => {
                 key={link.label}
                 className={cn(
                   "px-4 py-2 relative hover:text-light transition-all",
-                  pathname === link.link && "text-light"
+                  (isProjects && link.link === "/projects" && "text-light") ||
+                    (isBlogs && link.link === "/blogs" && "text-light") ||
+                    (pathname === link.link && "text-light")
                 )}
               >
                 {link.label}
-                {pathname === link.link && (
+                {((isProjects && link.link === "/projects" && "text-light") ||
+                  (isBlogs && link.link === "/blogs" && "text-light") ||
+                  (pathname === link.link && "text-light")) && (
                   <motion.span
-                    className="absolute inset-0 bg-background/5 rounded-md"
+                    className="absolute inset-0 bg-background/10 rounded-md"
                     initial={{
                       scale: 0,
                       opacity: 0,

@@ -17,6 +17,7 @@ const Sidebar = () => {
   const pathname = usePathname();
 
   const isProjects = pathname.startsWith("/projects");
+  const isBlogs = pathname.startsWith("/blogs");
 
   return (
     <aside className="sticky top-0 w-48 hidden h-screen md:block py-20">
@@ -36,7 +37,7 @@ const Sidebar = () => {
       >
         {/* Siderbar Image and title */}
         <div className="w-full tracking-wide text-left flex flex-col gap-4">
-          <div className="flex items-center justify-center w-fit rounded-full p-0.5 bg-background/5">
+          <div className="flex items-center justify-center w-fit rounded-full p-0.5 bg-background/10">
             <Image
               unoptimized
               src={emoji}
@@ -72,9 +73,10 @@ const Sidebar = () => {
               key={link.label}
             >
               {((isProjects && link.link === "/projects" && "text-light") ||
+                (isBlogs && link.link === "/blogs" && "text-light") ||
                 (pathname === link.link && "text-light")) && (
                 <motion.span
-                  className="absolute inset-0 bg-background/5 rounded-md"
+                  className="absolute inset-0 bg-background/10 rounded-md"
                   initial={{
                     scale: 0,
                     opacity: 0,

@@ -40,7 +40,7 @@ export const projectsData = [
     href: "/projects/jotion",
     imageUrl: jotionThumbnail,
     description:
-      "Productivity and note-taking web application built using Next.js",
+      "Productivity and note-taking web application built using Next.js.",
   },
 
   {

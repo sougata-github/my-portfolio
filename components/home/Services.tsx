@@ -13,7 +13,7 @@ const Services = () => {
         <p className="secondary-text">What I offer.</p>
       </div>
 
-      {/* <Separator className="h-[0.2px] mt-5 bg-background/10 w-full" /> */}
+      <Separator className="h-[0.2px] mt-5 bg-background/20 w-full" />
 
       <ul className="pt-6 flex flex-col gap-6">
         {servicesData.map((service) => (
@@ -29,7 +29,7 @@ const Services = () => {
       </ul>
 
       <Link
-        href="/projects"
+        href="/projects#services"
         className="mt-6 text-sm group flex flex-row items-center gap-1"
       >
         View All

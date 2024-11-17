@@ -45,7 +45,7 @@ export const addSeparatorAfterH2 = () => {
                 "h-[0.2px]",
                 "mt-5",
                 "mb-6",
-                "bg-background/10",
+                "bg-background/20",
                 "w-full",
               ],
             },

@@ -12,7 +12,7 @@ const PrimaryStack = () => {
         </p>
       </div>
 
-      <Separator className="h-[0.2px] mt-5 bg-background/10 w-full" />
+      <Separator className="h-[0.2px] mt-5 bg-background/20 w-full" />
 
       <div className="pt-6 flex flex-col gap-6">
         {primaryStackData.map((item) => (

@@ -25,8 +25,8 @@ const config = {
         mono: ["var(--font-geist-mono)"],
       },
       colors: {
-        dark: "#101010",
-        light: "#e2e2e2",
+        dark: "#000000",
+        light: "#ffffff",
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
         ring: "hsl(var(--ring))",

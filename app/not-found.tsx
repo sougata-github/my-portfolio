@@ -6,7 +6,7 @@ const NotFound = () => {
     <div className="overflow-hidden max-w-full h-[200px] bg-dark flex flex-col items-start">
       <Link
         href="/"
-        className="mb-6 group rounded-md p-2 flex flex-row items-center gap-1 text-light/60 text-sm w-fit bg-background/5"
+        className="mb-6 group rounded-md p-2 flex flex-row items-center gap-1 text-light/60 text-sm w-fit bg-background/10"
       >
         <ChevronLeft className="h-4 w-4 md:group-hover:-translate-x-1 transition duration-500" />
         Home
