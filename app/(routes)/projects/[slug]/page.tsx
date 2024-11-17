@@ -12,13 +12,13 @@ import ProjectLinks from "@/components/projects/ProjectLinks";
 import PageTransition from "@/components/animations/PageTransition";
 
 interface Props {
-  params: {
+  params: Promise<{
     slug: string;
-  };
+  }>;
 }
 
 async function getProjectFromParams(params: Props["params"]) {
-  const slug = params?.slug;
+  const slug = (await params)?.slug;
   const post = projects.find((project) => project.slugAsParams === slug);
 
   return post;
@@ -36,12 +36,14 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   };
 }
 
-export async function generateStaticParams(): Promise<Props["params"][]> {
+export async function generateStaticParams(): Promise<
+  Awaited<Props["params"]>[]
+> {
   return projects.map((project) => ({ slug: project.slugAsParams }));
 }
 
-const page = ({ params }: { params: { slug: string } }) => {
-  const slug = params.slug;
+const page = async ({ params }: Props) => {
+  const slug = (await params)?.slug;
 
   const project = projects.find((project) => project.slugAsParams === slug);
 

@@ -2,7 +2,6 @@
 
 import Link from "next/link";
 import Image from "next/image";
-import { motion } from "framer-motion";
 import { Separator } from "../ui/separator";
 import { ArrowUpRight } from "lucide-react";
 import { BentoCard, BentoGrid } from "../magicui/bento-grid";
@@ -16,6 +15,7 @@ import appleThumbnail from "@/public/projects-page/apple.png";
 import jotionThumbnail from "@/public/projects-page/jotion.png";
 import teamChatThumbnail from "@/public/projects-page/team-chat.png";
 import devoverflowThumbnail from "@/public/projects-page/devoverflow.png";
+import { MotionDiv } from "@/types";
 
 export const projectsData = [
   {
@@ -111,7 +111,7 @@ const FeaturedProjects = () => {
 
       <div className="sm:hidden pt-6 flex flex-col gap-12">
         {projectsData.map((item, index) => (
-          <motion.div
+          <MotionDiv
             key={item.name}
             initial={{
               opacity: 0,
@@ -147,7 +147,7 @@ const FeaturedProjects = () => {
                 className="h-auto w-full outline outline-2 outline-white/10 rounded"
               />
             </Link>
-          </motion.div>
+          </MotionDiv>
         ))}
       </div>
     </section>

@@ -12,6 +12,7 @@ import { usePathname } from "next/navigation";
 import CopyButton from "./CopyButton";
 
 import emoji from "@/public/emoji.png";
+import { MotionDiv, MotionSpan } from "@/types";
 
 const Sidebar = () => {
   const pathname = usePathname();
@@ -21,7 +22,7 @@ const Sidebar = () => {
 
   return (
     <aside className="sticky top-0 w-48 hidden h-screen md:block py-20">
-      <motion.div
+      <MotionDiv
         className="flex flex-col gap-8"
         initial={{
           opacity: 0,
@@ -75,7 +76,7 @@ const Sidebar = () => {
               {((isProjects && link.link === "/projects" && "text-light") ||
                 (isBlogs && link.link === "/blogs" && "text-light") ||
                 (pathname === link.link && "text-light")) && (
-                <motion.span
+                <MotionSpan
                   className="absolute inset-0 bg-background/10 rounded-md"
                   initial={{
                     scale: 0,
@@ -106,7 +107,7 @@ const Sidebar = () => {
           ))}
           <CopyButton />
         </nav>
-      </motion.div>
+      </MotionDiv>
     </aside>
   );
 };

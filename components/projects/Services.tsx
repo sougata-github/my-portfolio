@@ -2,10 +2,10 @@
 
 import Link from "next/link";
 import Image from "next/image";
-import { motion } from "framer-motion";
 import { ArrowUpRight } from "lucide-react";
 import { Separator } from "../ui/separator";
 import { dashboardsData, landingPageData } from "@/lib/data";
+import { MotionDiv, MotionP } from "@/types";
 
 const Services = () => {
   return (
@@ -17,7 +17,7 @@ const Services = () => {
 
       <Separator className="h-[0.2px] mt-5 bg-background/20 w-full" />
 
-      <motion.p
+      <MotionP
         className="secondary-text mt-5 mb-2"
         initial={{
           opacity: 0,
@@ -37,10 +37,10 @@ const Services = () => {
       >
         I create visually stunning and modern looking landing pages, that will
         help you land more clients for your online business.
-      </motion.p>
+      </MotionP>
       <div className="pt-6 flex flex-col gap-12">
         {landingPageData.map((item, index) => (
-          <motion.div
+          <MotionDiv
             key={item.name}
             initial={{
               opacity: 0,
@@ -80,12 +80,12 @@ const Services = () => {
                 className="w-full outline outline-2 outline-white/10 rounded"
               />
             </Link>
-          </motion.div>
+          </MotionDiv>
         ))}
       </div>
 
       <div className="mt-12">
-        <motion.p
+        <MotionP
           className="secondary-text mt-5 mb-2"
           initial={{
             opacity: 0,
@@ -106,10 +106,10 @@ const Services = () => {
           I develop intuitive, data-driven dashboards that provide actionable
           insights, helping you track performance and make informed business
           decisions.
-        </motion.p>
+        </MotionP>
         <div className="pt-6 flex flex-col gap-12">
           {dashboardsData.map((item, index) => (
-            <motion.div
+            <MotionDiv
               key={item.name}
               initial={{
                 opacity: 0,
@@ -149,7 +149,7 @@ const Services = () => {
                   className="w-full outline outline-2 outline-white/10 rounded"
                 />
               </Link>
-            </motion.div>
+            </MotionDiv>
           ))}
         </div>
       </div>

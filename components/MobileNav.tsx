@@ -8,9 +8,14 @@ import Link from "next/link";
 
 import { usePathname } from "next/navigation";
 
-import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
+import {
+  Sheet,
+  SheetContent,
+  SheetTitle,
+  SheetTrigger,
+} from "@/components/ui/sheet";
 
-import { motion } from "framer-motion";
+import { MotionN, MotionSpan } from "@/types";
 
 const MobileNav = () => {
   const pathname = usePathname();
@@ -19,8 +24,8 @@ const MobileNav = () => {
   const isBlogs = pathname.startsWith("/blogs");
 
   return (
-    <motion.nav
-      className="backdrop-blur bg-dark/50 z-10 sticky top-0 flex items-center justify-between py-4 px-8 md:hidden border-b-light/10 border-b-[0.5px]"
+    <MotionN
+      className="backdrop-blur bg-dark/50 z-10 sticky top-0 flex items-center justify-between py-4 px-8 md:hidden border-b-light/15 border-b-[0.5px]"
       initial={{
         y: -5,
         opacity: 0,
@@ -38,21 +43,22 @@ const MobileNav = () => {
     >
       {/* title */}
       <Link href="/" className="flex flex-col">
-        <h1 className="heading-text text-2xl">Sougata Das</h1>
-        {/* <p className="text-light/60 text-base">Developer</p> */}
+        <h1 className="heading-text text-2xl">sougata.dev</h1>
       </Link>
 
       {/* links */}
       <Sheet>
         <SheetTrigger>
-          <div className="rounded-md p-3 border-light/10 border-[0.5px] bg-background/5">
+          <div className="rounded-md p-3 border-light/15 border-[0.5px] bg-background/5">
             <Menu className="h-5 w-5 text-light/40" />
           </div>
         </SheetTrigger>
+
         <SheetContent
           className="backdrop-blur bg-dark/50 flex flex-col items-center justify-center text-base h-60 border-none text-light/40"
           side="top"
         >
+          <SheetTitle></SheetTitle>
           <ul className="grid grid-cols-2 place-items-center gap-4">
             {links.map((link) => (
               <Link
@@ -69,7 +75,7 @@ const MobileNav = () => {
                 {((isProjects && link.link === "/projects" && "text-light") ||
                   (isBlogs && link.link === "/blogs" && "text-light") ||
                   (pathname === link.link && "text-light")) && (
-                  <motion.span
+                  <MotionSpan
                     className="absolute inset-0 bg-background/10 rounded-md"
                     initial={{
                       scale: 0,
@@ -91,7 +97,7 @@ const MobileNav = () => {
           </ul>
         </SheetContent>
       </Sheet>
-    </motion.nav>
+    </MotionN>
   );
 };
 

@@ -1,6 +1,6 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { MotionDiv } from "@/types";
 import { usePathname } from "next/navigation";
 
 const PageTransition = ({ children }: { children: React.ReactNode }) => {
@@ -8,7 +8,7 @@ const PageTransition = ({ children }: { children: React.ReactNode }) => {
 
   return (
     <div key={pathname}>
-      <motion.div
+      <MotionDiv
         initial={{
           opacity: 0,
         }}
@@ -22,7 +22,7 @@ const PageTransition = ({ children }: { children: React.ReactNode }) => {
         }}
       >
         {children}
-      </motion.div>
+      </MotionDiv>
     </div>
   );
 };

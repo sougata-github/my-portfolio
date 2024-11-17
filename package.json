@@ -5,7 +5,7 @@
   "scripts": {
     "dev:content": "velite --watch",
     "build:content": "velite --clean",
-    "dev": "next dev",
+    "dev": "next dev --turbopack",
     "build": "next build",
     "start": "next start",
     "lint": "next lint"
@@ -14,7 +14,7 @@
     "@gsap/react": "^2.1.1",
     "@mdx-js/loader": "^3.0.1",
     "@mdx-js/react": "^3.0.1",
-    "@next/mdx": "^14.2.13",
+    "@next/mdx": "15.0.3",
     "@radix-ui/react-dialog": "^1.1.1",
     "@radix-ui/react-icons": "^1.3.0",
     "@radix-ui/react-separator": "^1.1.0",
@@ -30,10 +30,10 @@
     "hast": "^1.0.0",
     "lucide-react": "^0.424.0",
     "mdast-util-mdx": "^3.0.0",
-    "next": "14.2.5",
-    "react": "^18",
+    "next": "15.0.3",
+    "react": "19.0.0-rc-66855b96-20241106",
     "react-countup": "^6.5.3",
-    "react-dom": "^18",
+    "react-dom": "19.0.0-rc-66855b96-20241106",
     "react-icons": "^5.2.1",
     "rehype": "^13.0.1",
     "rehype-autolink-headings": "^7.1.0",
@@ -56,13 +56,17 @@
     "@tailwindcss/typography": "^0.5.15",
     "@types/hast": "^3.0.4",
     "@types/node": "^20",
-    "@types/react": "^18",
-    "@types/react-dom": "^18",
+    "@types/react": "npm:types-react@19.0.0-rc.1",
+    "@types/react-dom": "npm:types-react-dom@19.0.0-rc.1",
     "eslint": "^8",
-    "eslint-config-next": "14.2.5",
+    "eslint-config-next": "15.0.3",
     "postcss": "^8",
     "tailwindcss": "^3.4.1",
     "typescript": "^5",
     "velite": "^0.1.1"
+  },
+  "overrides": {
+    "@types/react": "npm:types-react@19.0.0-rc.1",
+    "@types/react-dom": "npm:types-react-dom@19.0.0-rc.1"
   }
 }

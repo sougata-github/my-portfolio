@@ -11,13 +11,13 @@ import BackButton from "@/components/projects/BackButton";
 import PageTransition from "@/components/animations/PageTransition";
 
 interface Props {
-  params: {
+  params: Promise<{
     slug: string;
-  };
+  }>;
 }
 
 async function getPostFromParams(params: Props["params"]) {
-  const slug = params?.slug;
+  const slug = (await params)?.slug;
   const post = posts.find((post) => post.slugAsParams === slug);
 
   return post;
@@ -36,12 +36,14 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 }
 
 // tells Next.js that the posts will be generated at build time.
-export async function generateStaticParams(): Promise<Props["params"][]> {
+export async function generateStaticParams(): Promise<
+  Awaited<Props["params"]>[]
+> {
   return posts.map((post) => ({ slug: post.slugAsParams }));
 }
 
-const page = ({ params }: Props) => {
-  const slug = params.slug;
+const page = async ({ params }: Props) => {
+  const slug = (await params)?.slug;
 
   const post = posts.find((post) => post.slugAsParams === slug);
 
