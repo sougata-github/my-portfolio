@@ -1,7 +1,7 @@
-import Image from "next/image";
-import emoji from "@/public/emoji.png";
-import { Download } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { Download } from "lucide-react";
+import emoji from "@/public/emoji.png";
+import Image from "next/image";
 
 const About = () => {
   return (
@@ -32,7 +32,7 @@ const About = () => {
       <div className="pt-6 flex flex-col sm:flex-row gap-6">
         <div className="flex flex-col gap-8">
           <p className="secondary-text sm:max-w-lg text-[16.5px] text-light/80">
-            I’m a 22-year-old Frontend Developer from India with expertise in
+            I’m a 23-year-old Frontend Developer from India with expertise in
             React.js, Next.js, TypeScript, and TailwindCSS.
           </p>
 
