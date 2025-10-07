@@ -1,11 +1,25 @@
 import "./globals.css";
-import { cn } from "@/lib/utils";
-import type { Metadata } from "next";
-import { GeistSans } from "geist/font/sans";
-import { GeistMono } from "geist/font/mono";
 
-import Sidebar from "@/components/Sidebar";
+import { Geist, Geist_Mono, Inter } from "next/font/google";
 import MobileNav from "@/components/MobileNav";
+import Sidebar from "@/components/Sidebar";
+import type { Metadata } from "next";
+import { cn } from "@/lib/utils";
+
+const geistSans = Geist({
+  variable: "--font-geist-sans",
+  subsets: ["latin"],
+});
+
+const geistMono = Geist_Mono({
+  variable: "--font-geist-mono",
+  subsets: ["latin"],
+});
+
+const inter = Inter({
+  variable: "--font-inter",
+  subsets: ["latin"],
+});
 
 export const metadata: Metadata = {
   title: "Sougata Das",
@@ -22,8 +36,9 @@ export default function RootLayout({
       <body
         className={cn(
           "overflow-y-scroll font-sans",
-          GeistSans.variable,
-          GeistMono.variable
+          inter.variable,
+          geistSans.variable,
+          geistMono.variable
         )}
       >
         <MobileNav />
