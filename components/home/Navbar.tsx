@@ -3,6 +3,7 @@ import Link from "next/link";
 
 import ThemeToggle from "../ThemeToggle";
 
+
 const Header = () => {
   return (
     <header className="flex justify-between items-center py-4">
@@ -13,7 +14,7 @@ const Header = () => {
           </Link>
         ))}
       </nav>
-
+      {/* AI Summarise Button */}
       <ThemeToggle />
     </header>
   );

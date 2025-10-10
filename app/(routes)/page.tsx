@@ -1,4 +1,5 @@
 import Header from "@/components/home/Navbar";
+import About from "@/components/home/About";
 import { Metadata } from "next";
 
 
@@ -10,6 +11,7 @@ const page = async () => {
   return (
     <>
       <Header />
+      <About />
     </>
   );
 };
