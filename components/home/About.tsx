@@ -1,7 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { Download } from "lucide-react";
-import emoji from "@/public/emoji.png";
 import Image from "next/image";
+
 
 const About = () => {
   return (
@@ -9,19 +9,7 @@ const About = () => {
       <div className="flex flex-row md:flex-col max-md:items-center gap-4">
         {/* Introduction */}
 
-        <div className="md:hidden flex items-center justify-center w-fit rounded-full p-0.5 bg-background/10">
-          <Image
-            src={emoji}
-            alt="profile picture"
-            placeholder="blur"
-            blurDataURL="https://placehold.co/76x76"
-            height={72}
-            width={72}
-            quality={100}
-            unoptimized
-            className="rounded-full object-center"
-          />
-        </div>
+        <div className="md:hidden flex items-center justify-center w-fit rounded-full p-0.5 bg-background/10"></div>
 
         <div>
           <h1 className="heading-text text-2xl">Hi, I&apos;m Sougata.</h1>

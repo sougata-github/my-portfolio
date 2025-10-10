@@ -1,14 +1,12 @@
 import "@/styles/mdx.css";
+
+import { MDXContent } from "@/components/mdx-components";
+import Connect from "@/components/Connect";
+import { notFound } from "next/navigation";
+import { formatDate } from "@/lib/utils";
+import { posts } from "#site/content";
 import { Metadata } from "next";
 
-import { posts } from "#site/content";
-import { formatDate } from "@/lib/utils";
-import { notFound } from "next/navigation";
-
-import Connect from "@/components/Connect";
-import { MDXContent } from "@/components/mdx-components";
-import BackButton from "@/components/projects/BackButton";
-import PageTransition from "@/components/animations/PageTransition";
 
 interface Props {
   params: Promise<{
@@ -52,30 +50,27 @@ const page = async ({ params }: Props) => {
   }
 
   return (
-    <PageTransition>
-      <section className="flex flex-col pb-16">
-        <div className="flex flex-col">
-          <BackButton href="/blogs" />
-          <div className="flex flex-col gap-4">
-            <div>
-              <h1 className="heading-text">{post.title}</h1>
-              <p className="secondary-text">
-                {post.description ? post.description : ""}
-              </p>
-            </div>
-
-            <p className="text-sm text-light/40">{formatDate(post.date)}</p>
+    <section className="flex flex-col pb-16">
+      <div className="flex flex-col">
+        <div className="flex flex-col gap-4">
+          <div>
+            <h1 className="heading-text">{post.title}</h1>
+            <p className="secondary-text">
+              {post.description ? post.description : ""}
+            </p>
           </div>
 
-          {/* Content */}
-          <MDXContent code={post.body} className="blog-content-styles" />
-
-          <div className="mt-8">
-            <Connect />
-          </div>
+          <p className="text-sm text-light/40">{formatDate(post.date)}</p>
         </div>
-      </section>
-    </PageTransition>
+
+        {/* Content */}
+        <MDXContent code={post.body} className="blog-content-styles" />
+
+        <div className="mt-8">
+          <Connect />
+        </div>
+      </div>
+    </section>
   );
 };
 
