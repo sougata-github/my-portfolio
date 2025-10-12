@@ -18,17 +18,14 @@ const CopyButton = () => {
   };
 
   return (
-    <Button
-      className="w-[100px] bg-background/10 rounded-md mt-1 p-[12px] hover:bg-background/15 transition duration-500 flex items-center justify-center"
-      onClick={onCopy}
-    >
+    <Button variant="ghost" size="sm" onClick={onCopy} className="w-[82px]">
       {copied ? (
         <>
-          <span>Copied</span>
+          <span>copied</span>
         </>
       ) : (
         <>
-          <span>Copy Mail</span>
+          <span>copy mail</span>
         </>
       )}
     </Button>

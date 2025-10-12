@@ -2,9 +2,8 @@ import Header from "@/components/home/Navbar";
 import About from "@/components/home/About";
 import { Metadata } from "next";
 
-
 export const metadata: Metadata = {
-  title: "Sougata Das | Home",
+  title: "Sougata Das",
 };
 
 const page = async () => {
