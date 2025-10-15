@@ -18,7 +18,7 @@ const CopyButton = () => {
   };
 
   return (
-    <Button variant="ghost" size="sm" onClick={onCopy} className="w-[82px]">
+    <Button variant="ghost" size="sm" onClick={onCopy} className="w-[92px]">
       {copied ? (
         <>
           <span>copied</span>

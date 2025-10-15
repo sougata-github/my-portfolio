@@ -21,7 +21,7 @@ export function MagicReveal({
     <span className={cn("relative inline-block align-baseline", className)}>
       <motion.span
         style={{
-          ["--s" as any]: "80px",
+          ["--s" as any]: "0.2px",
           ["--p" as any]: "0%",
           WebkitMaskImage:
             "linear-gradient(to right, black 0%, black calc(var(--p) - var(--s)), transparent calc(var(--p) + var(--s)), transparent 100%)",
