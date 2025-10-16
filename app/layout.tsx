@@ -5,7 +5,6 @@ import { Geist, Geist_Mono, Inter } from "next/font/google";
 import type { Metadata } from "next";
 import { cn } from "@/lib/utils";
 
-
 const geistSans = Geist({
   variable: "--font-geist-sans",
   subsets: ["latin"],
@@ -50,7 +49,7 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
-          <main className="overflow-x-clip mx-auto w-full max-w-3xl pt-10 px-4">
+          <main className="overflow-x-clip mx-auto w-full max-w-3xl pt-10 px-4 pb-50">
             {children}
           </main>
         </ThemeProvider>

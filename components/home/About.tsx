@@ -9,15 +9,10 @@ import CopyButton from "../CopyButton";
 const sectionVariants = {
   initial: {
     opacity: 0,
-    filter: "blur(10px)",
   },
   animate: {
     opacity: 1,
-    filter: "blur(0px)",
     transition: {
-      duration: 1,
-      ease: [0.16, 1, 0.3, 1],
-      when: "beforeChildren",
       staggerChildren: 0.5,
     },
   },
@@ -26,7 +21,6 @@ const sectionVariants = {
 const itemVariants = {
   initial: {
     opacity: 0,
-
     filter: "blur(10px)",
   },
   animate: {

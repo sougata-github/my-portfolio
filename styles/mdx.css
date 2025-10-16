@@ -1,8 +1,7 @@
-@import url("https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap");
-
 pre {
   overflow-x: auto;
   max-width: 510px;
+  font-family: "Geist Mono", monospace;
 }
 
 @media screen and (max-width: 767px) {
