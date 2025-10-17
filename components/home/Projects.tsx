@@ -23,6 +23,8 @@ const Projects = () => {
       >
         PROJECTS
       </motion.h1>
+
+      <div className="mt-2 grid w-full grid-cols-5 grid-rows-4"></div>
     </div>
   );
 };
