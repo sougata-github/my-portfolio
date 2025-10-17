@@ -21,7 +21,7 @@ const Experience = () => {
   };
 
   return (
-    <section className="mt-10" id="work">
+    <div id="work">
       <motion.h1
         className="font-bold uppercase"
         initial={{
@@ -40,7 +40,7 @@ const Experience = () => {
       >
         EXPERIENCE
       </motion.h1>
-      <div className="mt-5 flex flex-col gap-4">
+      <div className="mt-2 flex flex-col gap-4">
         {experienceData.map((experience, index) => (
           <Accordian
             index={index}
@@ -51,7 +51,7 @@ const Experience = () => {
           />
         ))}
       </div>
-    </section>
+    </div>
   );
 };
 

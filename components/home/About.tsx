@@ -1,7 +1,7 @@
 "use client";
 
-import { MagicReveal } from "../animations/MagicReveal";
 import { ChevronDown } from "lucide-react";
+import { MagicReveal } from "../animations/MagicReveal";
 
 import { motion } from "framer-motion";
 import CopyButton from "../CopyButton";
@@ -13,7 +13,7 @@ const sectionVariants = {
   animate: {
     opacity: 1,
     transition: {
-      staggerChildren: 0.5,
+      staggerChildren: 0.2,
     },
   },
 };
@@ -21,13 +21,13 @@ const sectionVariants = {
 const itemVariants = {
   initial: {
     opacity: 0,
-    filter: "blur(10px)",
+    filter: "blur(8px)",
   },
   animate: {
     opacity: 1,
     filter: "blur(0px)",
     transition: {
-      duration: 1.2,
+      duration: 0.4,
       ease: [0.22, 1, 0.36, 1],
     },
   },
@@ -35,29 +35,18 @@ const itemVariants = {
 
 const About = () => {
   return (
-    <motion.section
+    <motion.div
       className="py-5"
       variants={sectionVariants}
       initial="initial"
       animate="animate"
     >
-      {/* <div className="flex items-center gap-1 px-2.5 py-0.5 border rounded-full w-fit">
-        <div className="size-2 rounded-full bg-green-500 animate-pulse" />
-        <div className="p-0.5 flex items-center justify-center">
-          <span className="text-xs">available for hire</span>
-        </div>
-      </div> */}
-      <motion.div
-        className="mt-4"
-        variants={itemVariants}
-        initial="initial"
-        animate="animate"
-      >
+      <motion.div className="mt-5" variants={itemVariants}>
         <h1 className="text-balance text-4xl font-bold leading-tight tracking-tight md:text-5xl font-[family-name:var(--font-inter)]">
           <MagicReveal delay={0.05}>Sougata Das</MagicReveal>
         </h1>
-        <p className="mt-4 text-pretty font-[family-name:var(--font-inter)] text-foreground/60 text-sm md:text-lg max-w-xl">
-          React developer based in India. I specialize in building modern,
+        <p className="mt-4 text-pretty font-[family-name:var(--font-inter)] text-sm md:text-lg max-w-lg">
+          React developer based in India. I specialize in building modern and
           performant applications using Next.js and TypeScript.
         </p>
       </motion.div>
@@ -65,10 +54,7 @@ const About = () => {
       <motion.div
         className="mt-4 flex pl-0 p-2 items-center gap-4"
         variants={itemVariants}
-        initial="initial"
-        animate="animate"
       >
-        <CopyButton />
         <a
           href="/resume.pdf"
           className="text-sm font-medium flex gap-1 items-center relative overflow-y-clip group"
@@ -78,8 +64,9 @@ const About = () => {
           <ChevronDown className="size-4 md:group-hover:translate-y-5 duration-500 transition mt-0.5" />
           resume
         </a>
+        <CopyButton />
       </motion.div>
-    </motion.section>
+    </motion.div>
   );
 };
 

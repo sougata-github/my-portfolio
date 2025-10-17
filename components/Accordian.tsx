@@ -97,16 +97,16 @@ const Accordian = ({
             ref={ref}
             initial={false}
             animate={{
-              scale: expanded ? 1 : 0.98,
+              scale: 1,
               filter: expanded ? "blur(0px)" : "blur(4px)",
             }}
             transition={{
-              duration: 0.6,
+              duration: 0.4,
               ease: [0.22, 1, 0.36, 1],
             }}
             className="pt-4"
           >
-            <p className="text-sm text-pretty leading-relaxed text-foreground/90">
+            <p className="text-sm leading-relaxed text-foreground/90 font-[family-name:var(--font-inter)] max-w-2xl">
               {description}
             </p>
           </motion.div>

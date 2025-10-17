@@ -49,9 +49,9 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
-          <main className="overflow-x-clip mx-auto w-full max-w-3xl pt-10 px-4 pb-50">
+          <div className="overflow-x-clip mx-auto w-full max-w-3xl pt-10 px-4 pb-50">
             {children}
-          </main>
+          </div>
         </ThemeProvider>
       </body>
     </html>
