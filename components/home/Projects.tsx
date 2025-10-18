@@ -1,9 +1,9 @@
 "use client";
 
-import { animate, motion } from "framer-motion";
+import { motion } from "framer-motion";
 import { Button } from "../ui/button";
 import Link from "next/link";
-import { ArrowUpRight, Heart, SquareChevronRight } from "lucide-react";
+import { SquareCode, ArrowUpRight, SquareChevronRight } from "lucide-react";
 import { useTheme } from "next-themes";
 import { useEffect, useState } from "react";
 import ResponsiveModal from "../ResponsiveModal";
@@ -140,8 +140,8 @@ const ProjectCard = ({
         onOpenChange={(v) => setOpen(v)}
       >
         <div className="flex flex-col items-start gap-4 sm:gap-8">
-          <div className="p-4 rounded-lg border bg-muted-foreground/5">
-            <p className="text-xs sm:text-sm mt-2 leading-relaxed whitespace-pre-line font-[family-name:var(--font-inter)]">
+          <div className="p-4 pt-2 rounded-lg border bg-muted-foreground/5">
+            <p className="text-xs sm:text-sm mt-2 leading-relaxed whitespace-pre-line">
               {summary}
             </p>
           </div>
@@ -169,7 +169,7 @@ const ProjectCard = ({
                 >
                   Live
                 </Link>
-                <SquareChevronRight className="size-3.5 sm:size-4" />
+                <SquareChevronRight className="size-3.5 sm:size-4.5" />
               </Button>
 
               <Button variant="ghost" size="sm">
@@ -180,7 +180,7 @@ const ProjectCard = ({
                 >
                   Source
                 </Link>
-                <Heart className="size-3.5 sm:size-4" />
+                <SquareCode className="size-4 sm:size-5" />
               </Button>
             </div>
           </div>
