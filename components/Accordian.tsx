@@ -1,9 +1,9 @@
 "use client";
 
-import { ChevronDown } from "lucide-react";
-import { motion, AnimatePresence } from "framer-motion";
-import { useRef, useEffect, useState } from "react";
 import { cn } from "@/lib/utils";
+import { ChevronDown } from "lucide-react";
+import { useRef, useEffect, useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
 
 interface Props {
   index: number;
