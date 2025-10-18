@@ -3,6 +3,7 @@
 import { motion } from "framer-motion";
 
 interface Props {
+  id: string;
   index: number;
   children: React.ReactNode;
 }
@@ -27,9 +28,10 @@ const sectionVariants = {
   }),
 };
 
-const AnimatedSection = ({ index, children }: Props) => {
+const AnimatedSection = ({ id, index, children }: Props) => {
   return (
     <motion.section
+      id={id}
       custom={index}
       variants={sectionVariants}
       initial="hidden"

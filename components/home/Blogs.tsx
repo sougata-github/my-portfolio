@@ -1,9 +1,9 @@
-import { posts } from "#site/content";
-import { sortPosts } from "@/lib/utils";
+"use client";
 
 import Link from "next/link";
-import { Separator } from "../ui/separator";
-import { ChevronRight } from "lucide-react";
+import { posts } from "#site/content";
+import { motion } from "framer-motion";
+import { formatDate, sortPosts } from "@/lib/utils";
 
 const Blogs = () => {
   const sortedPosts = sortPosts(posts.filter((post) => post.published)).slice(
@@ -14,35 +14,62 @@ const Blogs = () => {
   if (!sortPosts) return null;
 
   return (
-    <section className="flex flex-col">
-      <div className="flex flex-col">
-        <h1 className="heading-text">Blogs</h1>
-        <p className="secondary-text">Recent Posts.</p>
-      </div>
-
-      <Separator className="h-[0.2px] mt-5 bg-background/20 w-full" />
-
-      <ul className="pt-6 flex flex-col gap-6">
-        {sortedPosts.map((post) => (
-          <Link
-            href={`/${post.slug}`}
-            className="flex flex-col gap-1 items-start rounded-xl w-full pl-0 p-1"
-            key={post.title}
-          >
-            <h1 className="heading-text text-[1.025rem]">{post.title}</h1>
-            <p className="secondary-text">{post.description}</p>
-          </Link>
-        ))}
-      </ul>
-
-      <Link
-        href="/blogs"
-        className="mt-6 text-sm group flex flex-row items-center gap-1"
+    <div>
+      <motion.h1
+        className="font-bold uppercase"
+        initial={{
+          opacity: 0,
+          filter: "blur(8px)",
+        }}
+        animate={{
+          opacity: 1,
+          filter: "blur(0px)",
+          transition: {
+            delay: 0.2,
+            duration: 1.2,
+            ease: [0.22, 1, 0.36, 1],
+          },
+        }}
       >
-        View All
-        <ChevronRight className="h-5 w-5 text-light/60 md:group-hover:translate-x-1 transition duration-500" />
-      </Link>
-    </section>
+        BLOGS
+      </motion.h1>
+      <div className="mt-2 flex flex-col gap-4">
+        {sortedPosts.map((post) => (
+          <BlogCard
+            key={post.slug}
+            slug={post.slug}
+            title={post.title}
+            description={post.description!}
+            published={post.date}
+          />
+        ))}
+      </div>
+    </div>
+  );
+};
+
+interface Props {
+  slug: string;
+  title: string;
+  description: string;
+  published: string;
+}
+
+const BlogCard = ({ slug, title, description, published }: Props) => {
+  return (
+    <Link href={`/${slug}`}>
+      <div className="flex justify-between items-center py-4">
+        <div className="flex flex-col items-start">
+          <span className="text-xs sm:text-sm text-muted-foreground">
+            {formatDate(published)}
+          </span>
+          <h2 className="text-lg sm:text-xl font-semibold">{title}</h2>
+          <p className="mt-2 text-sm sm:text-base text-muted-foreground">
+            {description}
+          </p>
+        </div>
+      </div>
+    </Link>
   );
 };
 

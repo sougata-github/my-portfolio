@@ -1,15 +1,15 @@
 "use client";
 
-import { motion } from "framer-motion";
-import { Button } from "../ui/button";
 import Link from "next/link";
-import { SquareCode, ArrowUpRight, SquareChevronRight } from "lucide-react";
-import { useTheme } from "next-themes";
-import { useEffect, useState } from "react";
-import ResponsiveModal from "../ResponsiveModal";
 import Image from "next/image";
 import { cn } from "@/lib/utils";
+import { Button } from "../ui/button";
+import { motion } from "framer-motion";
+import { useTheme } from "next-themes";
 import { projectData } from "@/constants";
+import { useEffect, useState } from "react";
+import ResponsiveModal from "../ResponsiveModal";
+import { SquareCode, ArrowUpRight, SquareChevronRight } from "lucide-react";
 
 const Projects = () => {
   const [openIndex, setOpenIndex] = useState<number | null>(null);

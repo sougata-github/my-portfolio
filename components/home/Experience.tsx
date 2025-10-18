@@ -21,7 +21,7 @@ const Experience = () => {
   };
 
   return (
-    <div id="work">
+    <div>
       <motion.h1
         className="font-bold uppercase"
         initial={{

@@ -47,7 +47,7 @@ export const projectData = [
   },
   {
     title: "Jotion",
-    summary: `This is a modern productivity and note-taking web application built using Next.js 14 and Convex. I have used Next.js as the full-stack framework, Convex as the real-time database and backend logic layer, and Clerk for authentication. \n\n Features include a Notion-style editor built with BlockNote, real-time updates, infinite nested documents, file uploads with Edgestore, recoverable trash system, and the ability to publish notes to the web. It also includes an expandable sidebar, cover images for each document, soft delete and recovery, and full responsiveness across devices.`,
+    summary: `This is a modern productivity and note-taking web application built using Next.js 14 and Convex. I have used Next.js as the full-stack framework, Convex as the real-time database and backend logic layer, and Clerk for authentication. \n\n Features include a Notion-style editor built with BlockNote, real-time updates, infinite nested documents, file uploads with Edgestore, recoverable trash system, and the ability to publish notes to the web. \n\n It also includes an expandable sidebar, cover images for each document, soft delete and recovery, and full responsiveness across devices.`,
     stack: [
       "Next.js",
       "TypeScript",

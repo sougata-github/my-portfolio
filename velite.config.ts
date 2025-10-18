@@ -1,10 +1,8 @@
-import { Element } from "hast";
-import { addSeparatorAfterH2 } from "./lib/utils";
-import { defineConfig, defineCollection, s } from "velite";
-
-import rehypeSlug from "rehype-slug";
-import rehypePrettyCode from "rehype-pretty-code";
 import rehypeAutolinkHeadings from "rehype-autolink-headings";
+import { defineConfig, defineCollection, s } from "velite";
+import rehypePrettyCode from "rehype-pretty-code";
+import rehypeSlug from "rehype-slug";
+import { Element } from "hast";
 
 const computedFields = <T extends { slug: string }>(data: T) => ({
   ...data,
@@ -27,32 +25,6 @@ const posts = defineCollection({
     .transform(computedFields),
 });
 
-//project schema
-const projects = defineCollection({
-  name: "Project",
-  pattern: "projects/**/*.mdx",
-  schema: s
-    .object({
-      slug: s.path(),
-      title: s.string().max(99),
-      description: s.string().max(999).optional(),
-      imageUrl: s.string().max(99),
-      body: s.mdx(),
-      links: s.object({
-        liveLink: s.string().max(99),
-        srcLink: s.string().max(99),
-        forkLink: s.string().max(99),
-      }),
-      nextProject: s
-        .object({
-          title: s.string().max(99),
-          link: s.string().max(99),
-        })
-        .optional(),
-    })
-    .transform(computedFields),
-});
-
 export default defineConfig({
   root: "content",
   output: {
@@ -62,7 +34,7 @@ export default defineConfig({
     name: "[name]-[hash:6].[ext]",
     clean: true,
   },
-  collections: { posts, projects },
+  collections: { posts },
   mdx: {
     rehypePlugins: [
       rehypeSlug,
@@ -83,7 +55,6 @@ export default defineConfig({
           test: (node: Element) => node.tagName === "h2",
         },
       ],
-      addSeparatorAfterH2,
     ],
     remarkPlugins: [],
   },
