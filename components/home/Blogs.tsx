@@ -60,10 +60,10 @@ const BlogCard = ({ slug, title, description, published }: Props) => {
     <Link href={`/${slug}`}>
       <div className="flex justify-between items-center py-4">
         <div className="flex flex-col items-start">
-          <span className="text-xs sm:text-sm text-muted-foreground">
+          <span className="text-xs text-muted-foreground font-mono">
             {formatDate(published)}
           </span>
-          <h2 className="text-lg sm:text-xl font-semibold">{title}</h2>
+          <h2 className="text-lg sm:text-xl font-semibold mt-0.5">{title}</h2>
           <p className="mt-2 text-sm sm:text-base text-muted-foreground">
             {description}
           </p>
