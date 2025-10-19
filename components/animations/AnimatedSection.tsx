@@ -1,10 +1,12 @@
 "use client";
 
+import { cn } from "@/lib/utils";
 import { motion } from "framer-motion";
 
 interface Props {
-  id: string;
+  id?: string;
   index: number;
+  className?: string;
   children: React.ReactNode;
 }
 
@@ -28,7 +30,7 @@ const sectionVariants = {
   }),
 };
 
-const AnimatedSection = ({ id, index, children }: Props) => {
+const AnimatedSection = ({ id, index, className, children }: Props) => {
   return (
     <motion.section
       id={id}
@@ -37,7 +39,7 @@ const AnimatedSection = ({ id, index, children }: Props) => {
       initial="hidden"
       whileInView="visible"
       viewport={{ once: true, amount: 0.2 }}
-      className="overflow-hidden will-change-transform"
+      className={cn("overflow-hidden will-change-transform", className)}
     >
       {children}
     </motion.section>

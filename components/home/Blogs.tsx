@@ -2,8 +2,11 @@
 
 import Link from "next/link";
 import { posts } from "#site/content";
+import { Button } from "../ui/button";
 import { motion } from "framer-motion";
+import { ArrowUpRight } from "lucide-react";
 import { formatDate, sortPosts } from "@/lib/utils";
+import BlogCard from "../BlogCard";
 
 const Blogs = () => {
   const sortedPosts = sortPosts(posts.filter((post) => post.published)).slice(
@@ -15,24 +18,37 @@ const Blogs = () => {
 
   return (
     <div>
-      <motion.h1
-        className="font-bold uppercase"
-        initial={{
-          opacity: 0,
-          filter: "blur(8px)",
-        }}
-        animate={{
-          opacity: 1,
-          filter: "blur(0px)",
-          transition: {
-            delay: 0.2,
-            duration: 1.2,
-            ease: [0.22, 1, 0.36, 1],
-          },
-        }}
-      >
-        BLOGS
-      </motion.h1>
+      <div className="flex items-center justify-between">
+        <motion.h1
+          className="font-bold uppercase"
+          initial={{
+            opacity: 0,
+            filter: "blur(8px)",
+          }}
+          animate={{
+            opacity: 1,
+            filter: "blur(0px)",
+            transition: {
+              delay: 0.2,
+              duration: 1.2,
+              ease: [0.22, 1, 0.36, 1],
+            },
+          }}
+        >
+          RECENT WRITINGS
+        </motion.h1>
+
+        <Button
+          variant="link"
+          size="sm"
+          className="text-muted-foreground gap-0.5"
+        >
+          <Link className="text-sm" href="/blogs">
+            View All
+          </Link>
+          <ArrowUpRight />
+        </Button>
+      </div>
       <div className="mt-2 flex flex-col gap-4">
         {sortedPosts.map((post) => (
           <BlogCard
@@ -45,31 +61,6 @@ const Blogs = () => {
         ))}
       </div>
     </div>
-  );
-};
-
-interface Props {
-  slug: string;
-  title: string;
-  description: string;
-  published: string;
-}
-
-const BlogCard = ({ slug, title, description, published }: Props) => {
-  return (
-    <Link href={`/${slug}`}>
-      <div className="flex justify-between items-center py-4">
-        <div className="flex flex-col items-start">
-          <span className="text-xs text-muted-foreground font-mono">
-            {formatDate(published)}
-          </span>
-          <h2 className="text-lg sm:text-xl font-semibold mt-0.5">{title}</h2>
-          <p className="mt-2 text-sm sm:text-base text-muted-foreground">
-            {description}
-          </p>
-        </div>
-      </div>
-    </Link>
   );
 };
 

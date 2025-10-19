@@ -1,4 +1,4 @@
-import BlogPost from "@/components/blog/BlogPost";
+import BlogCard from "@/components/BlogCard";
 import { sortPosts } from "@/lib/utils";
 import { posts } from "#site/content";
 import { Metadata } from "next";
@@ -8,28 +8,25 @@ export const metadata: Metadata = {
   title: "Sougata Das | Blogs",
 };
 
-const page = () => {
+export default function BlogPage() {
   const sortedPosts = sortPosts(posts.filter((post) => post.published));
 
   return (
-    <section className="section-container relative">
-      <div className="flex flex-col gap-8">
-        <div className="flex flex-col">
-          <h1 className="heading-text">Blogs</h1>
-          <p className="secondary-text">My blog posts.</p>
-        </div>
-
-        {/* Blog List */}
-        <div className="flex flex-col gap-8">
-          {sortedPosts.length > 0 ? (
-            posts.map((post) => <BlogPost key={post.title} {...post} />)
-          ) : (
-            <p className="secondary-text">Nothing to see here</p>
-          )}
+    <section className="mt-10">
+      <div>
+        <h1 className="font-bold uppercase">BLOGS</h1>
+        <div className="flex flex-col gap-4">
+          {sortedPosts.map((post) => (
+            <BlogCard
+              key={post.slug}
+              slug={post.slug}
+              title={post.title}
+              description={post.description!}
+              published={post.date}
+            />
+          ))}
         </div>
       </div>
     </section>
   );
-};
-
-export default page;
+}

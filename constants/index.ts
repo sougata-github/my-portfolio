@@ -1,4 +1,9 @@
-export const navLinks = [
+import { RiTwitterXLine } from "react-icons/ri";
+import { FiGithub } from "react-icons/fi";
+import { Linkedin } from "lucide-react";
+
+
+export const navLinksHome = [
   {
     label: "work",
     href: "#work",
@@ -9,7 +14,18 @@ export const navLinks = [
   },
   {
     label: "blogs",
-    href: "#blogs",
+    href: "/blogs",
+  },
+] as const;
+
+export const navLinksBlogs = [
+  {
+    label: "home",
+    href: "/",
+  },
+  {
+    label: "blogs",
+    href: "/blogs",
   },
 ] as const;
 
@@ -102,5 +118,25 @@ export const projectData = [
       live: "https://iphone-15-pro-landing-page.vercel.app",
       src: "https://github.com/sougata-github/iPhone-15-pro-landing-page",
     },
+  },
+];
+
+export const footerLinks = [
+  {
+    label: "Linkedin",
+    icon: Linkedin,
+    href: "https://www.linkedin.com/in/sougata-linkdin",
+  },
+  {
+    label: "Github",
+    icon: FiGithub,
+    href: "https://github.com/sougata-github",
+    className: "size-3.5",
+  },
+
+  {
+    label: "X(Twitter)",
+    icon: RiTwitterXLine,
+    href: "https://x.com/sougata_x",
   },
 ];
