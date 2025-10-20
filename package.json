@@ -7,8 +7,8 @@
     "build:content": "velite --clean",
     "dev": "next dev --turbopack",
     "build": "next build",
-    "start": "next start",
-    "lint": "next lint"
+    "build:prod": "npm run build:content && npm run build",
+    "start": "next start"
   },
   "dependencies": {
     "@mdx-js/loader": "^3.0.1",
