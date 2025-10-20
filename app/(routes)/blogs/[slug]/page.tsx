@@ -1,11 +1,10 @@
-import "@/styles/mdx.css";
-
 import { MDXContent } from "@/components/mdx-components";
-import Connect from "@/components/Connect";
 import { notFound } from "next/navigation";
 import { formatDate } from "@/lib/utils";
+import { ArrowUp } from "lucide-react";
 import { posts } from "#site/content";
 import { Metadata } from "next";
+import Link from "next/link";
 
 
 interface Props {
@@ -50,24 +49,41 @@ const page = async ({ params }: Props) => {
   }
 
   return (
-    <section className="flex flex-col pb-16">
+    <section className="flex flex-col">
       <div className="flex flex-col">
-        <div className="flex flex-col gap-4">
-          <div>
-            <h1 className="heading-text">{post.title}</h1>
-            <p className="secondary-text">
+        <div className="flex flex-col gap-4 border-b pb-2">
+          <div className="mt-4 sm:mt-8">
+            <h1 className="font-semibold text-xl md:text-2xl font-[family-name:var(--font-inter)]">
+              {post.title}
+            </h1>
+            <p className="text-base md:text-lg mt-1">
               {post.description ? post.description : ""}
             </p>
           </div>
 
-          <p className="text-sm text-light/40">{formatDate(post.date)}</p>
+          <p className="text-sm font-mono text-muted-foreground">
+            {formatDate(post.date)}
+          </p>
         </div>
 
         {/* Content */}
-        <MDXContent code={post.body} className="blog-content-styles" />
+        <MDXContent code={post.body} />
 
-        <div className="mt-8">
-          <Connect />
+        <div className="mt-4 max-w-xl">
+          <Link
+            href="https://github.com/sougata-github/TypeScript"
+            target="_blank"
+            className="flex items-center gap-2"
+          >
+            <span className="font-medium text-lg md:text-xl font-[family-name:var(--font-inter)]">
+              Code
+            </span>
+            <ArrowUp className="size-4 rotate-45 mt-0.5" />
+          </Link>
+          <p className="mt-2">
+            Feel free to browse the repository, raise issues, share your
+            feedback, and contribute to the project.
+          </p>
         </div>
       </div>
     </section>

@@ -17,7 +17,7 @@ const Blogs = () => {
   if (!sortPosts) return null;
 
   return (
-    <div>
+    <div className="pb-22">
       <div className="flex items-center justify-between">
         <motion.h1
           className="font-bold uppercase"

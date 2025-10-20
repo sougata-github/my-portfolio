@@ -982,7 +982,7 @@ feedPet(myFish);
 feedPet(myBird);
 ```
 
-In the **isFish** function, we define a type predicate `pet is Fish`, indicating that if the condition **(pet as Fish).swim !== undefined** is true, then pet is indeed a **Fish**. Within the **feedPet** function, when we call **isFish(pet)**, TypeScript narrows down the type of pet to Fish if the condition is met, allowing us to safely call **pet.swim()** without TypeScript throwing errors.
+In the `isFish` function, we define a type predicate `pet is Fish`, indicating that if the condition `(pet as Fish).swim !== undefined` is true, then pet is indeed a `Fish`. Within the `feedPet` function, when we call `isFish(pet)`, TypeScript narrows down the type of pet to Fish if the condition is met, allowing us to safely call `pet.swim()` without TypeScript throwing errors.
 
 ### Discriminated Union & Exhaustive Checking
 
@@ -1040,5 +1040,3 @@ console.log(getShape(square));
 console.log(Number(getArea(circle).toFixed(2)));
 console.log(Number(getArea(square).toFixed(2)));
 ```
-
-<MoreCode />

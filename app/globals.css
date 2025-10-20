@@ -1,6 +1,5 @@
 @import "tailwindcss";
 @import "tw-animate-css";
-@plugin "@tailwindcss/typography";
 
 @custom-variant dark (&:is(.dark *));
 
@@ -198,6 +197,10 @@
   }
 }
 
+h2.heading-link a {
+  @apply text-xl md:text-2xl;
+}
+
 .scrollbar-hidden {
   -ms-overflow-style: none;
   scrollbar-width: none;
@@ -205,30 +208,4 @@
 
 .scrollbar-hidden::-webkit-scrollbar {
   display: none;
-}
-
-h2 a {
-  @apply text-foreground font-medium text-lg hover:no-underline;
-}
-
-p code {
-  @apply cursor-pointer bg-background/15 px-1 py-0.5 rounded text-foreground;
-  font-family: "Source Code Pro", monospace;
-}
-
-li::marker {
-  @apply text-foreground/20;
-}
-
-li code {
-  @apply cursor-pointer bg-background/15 px-1 py-0.5 rounded text-foreground;
-  font-family: "Source Code Pro", monospace;
-}
-
-code::before {
-  content: "";
-}
-
-code::after {
-  content: "";
 }

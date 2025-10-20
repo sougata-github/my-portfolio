@@ -1,8 +1,10 @@
 import rehypeAutolinkHeadings from "rehype-autolink-headings";
 import { defineConfig, defineCollection, s } from "velite";
-import rehypePrettyCode from "rehype-pretty-code";
 import rehypeSlug from "rehype-slug";
 import { Element } from "hast";
+
+import rehypeInlineCodeProperty from "./components/mdx-components";
+
 
 const computedFields = <T extends { slug: string }>(data: T) => ({
   ...data,
@@ -37,13 +39,8 @@ export default defineConfig({
   collections: { posts },
   mdx: {
     rehypePlugins: [
+      rehypeInlineCodeProperty,
       rehypeSlug,
-      [
-        rehypePrettyCode,
-        {
-          theme: "houston",
-        },
-      ],
       [
         rehypeAutolinkHeadings,
         {
