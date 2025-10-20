@@ -29,6 +29,27 @@ const inter = Inter({
 export const metadata: Metadata = {
   title: "Sougata Das",
   description: "Welcome to my portfolio website.",
+  openGraph: {
+    title: "Sougata Das",
+    description: "Welcome to my portfolio website.",
+    url: "https://sougata.me",
+    siteName: "Sougata Das",
+    images: [
+      {
+        url: "/og-image.png",
+        width: 64,
+        height: 64,
+        alt: "Sougata Das Portfolio og image",
+      },
+    ],
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Sougata Das",
+    description: "Welcome to my portfolio website.",
+    images: ["/og-image.png"],
+  },
 };
 
 export default function RootLayout({
