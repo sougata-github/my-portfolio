@@ -39,7 +39,7 @@ export const metadata: Metadata = {
         url: "/og-image.png",
         width: 64,
         height: 64,
-        alt: "Sougata Das Portfolio og image",
+        alt: "Sougata Das Portfolio OG Image",
       },
     ],
     type: "website",
