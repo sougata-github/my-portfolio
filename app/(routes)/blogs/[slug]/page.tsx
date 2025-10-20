@@ -6,7 +6,6 @@ import { posts } from "#site/content";
 import { Metadata } from "next";
 import Link from "next/link";
 
-
 interface Props {
   params: Promise<{
     slug: string;
@@ -28,7 +27,8 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   }
 
   return {
-    title: `Sougata Das | ${post.title}`,
+    title: `${post.title}`,
+    description: `${post.description ?? "Blog by Sougata"}`,
   };
 }
 

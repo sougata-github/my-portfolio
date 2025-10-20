@@ -3,10 +3,10 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev:content": "velite --watch",
     "build:content": "velite --clean",
+    "build:next": "next build",
     "dev": "next dev --turbopack",
-    "build": "npm run build:content && next build",
+    "build": "pnpm run build:content && pnpm run build:next",
     "start": "next start"
   },
   "dependencies": {

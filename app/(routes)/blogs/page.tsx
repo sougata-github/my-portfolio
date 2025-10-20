@@ -3,9 +3,10 @@ import { sortPosts } from "@/lib/utils";
 import { posts } from "#site/content";
 import { Metadata } from "next";
 
-
 export const metadata: Metadata = {
-  title: "Sougata Das | Blogs",
+  title: "Blogs | Sougata Das",
+  description:
+    "Read my latest blogs and thoughts on web development, design, and technology.",
 };
 
 export default function BlogPage() {
