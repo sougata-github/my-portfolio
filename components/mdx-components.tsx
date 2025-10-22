@@ -33,7 +33,7 @@ export default function rehypeInlineCodeProperty() {
 
 type ElementProps<T> = React.HTMLAttributes<T> & { className?: string };
 
-const components = {
+export const components = {
   h1: ({ className, ...props }: ElementProps<HTMLHeadingElement>) => (
     <h1
       className={cn(

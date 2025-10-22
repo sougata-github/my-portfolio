@@ -21,7 +21,12 @@ const Summary = () => {
     return (
       <>
         <SummaryModal isOpen={isOpen} setIsOpen={setIsOpen} />
-        <Button variant="ghost" size="icon" onClick={() => setIsOpen(true)}>
+        <Button
+          variant="ghost"
+          size="icon"
+          onClick={() => setIsOpen(true)}
+          aria-label="AI Summary"
+        >
           <Box className="size-[18px]" />
           <span className="sr-only">Generate Summary</span>
         </Button>
@@ -35,7 +40,12 @@ const Summary = () => {
       <TooltipProvider>
         <Tooltip>
           <TooltipTrigger asChild>
-            <Button variant="ghost" size="icon" onClick={() => setIsOpen(true)}>
+            <Button
+              variant="ghost"
+              size="icon"
+              onClick={() => setIsOpen(true)}
+              aria-label="AI Summary"
+            >
               <Box className="size-[18px]" />
               <span className="sr-only">Generate Summary</span>
             </Button>

@@ -10,9 +10,12 @@
     "start": "next start"
   },
   "dependencies": {
+    "@ai-sdk/google": "^2.0.23",
+    "@ai-sdk/react": "^2.0.76",
     "@mdx-js/loader": "^3.0.1",
     "@mdx-js/react": "^3.0.1",
     "@next/mdx": "15.0.3",
+    "@openrouter/ai-sdk-provider": "^1.2.0",
     "@radix-ui/react-accordion": "^1.2.12",
     "@radix-ui/react-avatar": "^1.1.10",
     "@radix-ui/react-dialog": "^1.1.1",
@@ -22,6 +25,7 @@
     "@radix-ui/react-tooltip": "^1.1.2",
     "@tailwindcss/postcss": "^4.1.14",
     "@types/mdx": "^2.0.13",
+    "ai": "^5.0.76",
     "class-variance-authority": "^0.7.0",
     "clsx": "^2.1.1",
     "framer-motion": "^11.18.2",
@@ -49,13 +53,15 @@
     "remark-parse": "^11.0.0",
     "remark-rehype": "^11.1.0",
     "shiki": "^3.13.0",
+    "sonner": "^2.0.7",
     "tailwind-merge": "^2.4.0",
     "tailwindcss-animate": "^1.0.7",
     "tw-animate-css": "^1.4.0",
     "unist-util-visit": "^5.0.0",
     "use-stick-to-bottom": "^1.1.1",
     "usehooks-ts": "^3.1.0",
-    "vaul": "^1.1.2"
+    "vaul": "^1.1.2",
+    "zod": "^4.1.12"
   },
   "devDependencies": {
     "@tailwindcss/typography": "^0.5.19",

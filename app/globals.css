@@ -191,7 +191,7 @@
     opacity: 0.8;
   }
   50% {
-    transform: scale(1.5);
+    transform: scale(1.2);
     opacity: 1;
   }
 }
@@ -213,11 +213,13 @@ h2.heading-link a {
   @apply text-xl md:text-2xl;
 }
 
-.scrollbar-hidden {
-  -ms-overflow-style: none;
-  scrollbar-width: none;
+.scrollbar-hidden,
+.scrollbar-hidden * {
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
 }
 
-.scrollbar-hidden::-webkit-scrollbar {
-  display: none;
+.scrollbar-hidden::-webkit-scrollbar,
+.scrollbar-hidden *::-webkit-scrollbar {
+  display: none; /* Chrome, Safari, Opera */
 }

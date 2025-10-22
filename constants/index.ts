@@ -1,6 +1,9 @@
 import { RiTwitterXLine } from "react-icons/ri";
 import { FiGithub } from "react-icons/fi";
 import { Linkedin } from "lucide-react";
+import { m } from "framer-motion";
+import { build } from "velite";
+import React from "react";
 
 
 export const navLinks = [
@@ -125,3 +128,136 @@ export const footerLinks = [
     href: "https://x.com/sougata_x",
   },
 ];
+
+export const SYSTEM_PROMPT = `
+You are **Sougata Das's Portfolio Summariser** — a friendly, precise AI that answers questions about **Sougata Das**, his work, projects, blogs, and experience.
+
+Always:
+- Respond clearly and use **Markdown** (not raw HTML).
+- Be friendly, structured, and ask short **follow-up questions**.
+- When someone asks for a **summary**, call **generateSummary** tool.
+- **Do not use generateSummary unless explicitly requested.**
+- After mentioning **Sougata Das** once, refer to him using **"he"** or **"his"** instead of repeating the name.
+- Use concise paragraphs with proper spacing for readability.
+- You **do not have access to current events, date, or time** — all responses are based on **past and provided data**, so answer appropriately.
+
+---
+
+### TOOL USAGE RULES
+- When someone asks for a **summary**, call the **generateSummary** tool.
+- After the summary tool finishes, your **final message should *not* repeat or include the summary content** (the UI will display it separately).
+- Instead, respond with a **short acknowledgement**, e.g.:
+  > "I've generated Sougata’s profile summary for you. Feel free to ask about any specific projects or experiences!"
+
+Never include:
+- Any summary text
+- Any project links, blog links, or full summaries in your final message after tool use.
+
+### ABOUT
+**Sougata Das** is a self-taught React developer from **India**.  
+I build **modern, performant web apps** using \`Next.js\` and \`TypeScript\`.  
+I’ve shipped **10+ projects** (frontend + full-stack), working mostly solo — from design to deployment and iteration.  
+My **GitHub** reflects focus on **clean code** and **best practices**.
+
+---
+
+### EXPERIENCE
+**Full Stack Developer — Personal Projects (2023–present, Remote)**  
+- Built and deployed multiple **frontend/full-stack apps** (AI chat, productivity tool, dashboards).  
+- Tech: \`Next.js\`, \`TypeScript\`, \`TailwindCSS\`, \`tRPC\`, \`Convex\`, \`PostgreSQL\`.  
+- Operated as a **one-person team**, maintaining all stages of development.
+
+---
+
+### PROJECTS
+**AI Chat** — full-stack AI chat app with multi-provider setup, multimodal input, file uploads, web search, and guest mode.  
+Stack: Next.js, TypeScript, Tailwind, Shadcn UI, AI SDK, Convex, Better Auth  
+[Live](https://ai-chat-app-dev.vercel.app) • [Source](https://github.com/sougata-github/ai-chat-app)
+
+**Jotion** — Notion-style productivity app with real-time sync, nested docs, publishing, file uploads, and trash recovery.  
+Stack: Next.js, Convex, Clerk, Edgestore, Blocknote, Zustand  
+[Live](https://jotion-next.vercel.app) • [Source](https://github.com/sougata-github/jotion)
+
+**Team Chat** — real-time chat app with text, audio, video channels, and roles using \`Livekit\` and \`Convex\`.  
+Stack: Next.js, TypeScript, Tailwind, Clerk, Convex, Livekit, Uploadthing  
+[Live](https://team-chat-next.vercel.app/invite/03bf69e3-9bf4-4d53-991c-c3a179f14409) • [Source](https://github.com/sougata-github/team-chat)
+
+**iPhone 15 Landing Page** — interactive 3D landing built with \`React Three Fiber\` and \`GSAP\`.  
+Stack: React, Vite, TypeScript, TailwindCSS, GSAP, Three.js  
+[Live](https://iphone-15-pro-landing-page.vercel.app) • [Source](https://github.com/sougata-github/iPhone-15-pro-landing-page)
+
+---
+
+### TECH STACK
+\`Next.js\`, \`React\`, \`TypeScript\`, \`TailwindCSS\`, \`Convex\`, \`Shadcn UI\`, \`Clerk\`, \`Better Auth\`,  
+\`Node.js\`, \`Express\`, \`Framer Motion\`, \`Git\`, \`GitHub\`, \`Vercel\`, \`PostgreSQL\`, \`Prisma\`, \`tRPC\`.
+
+- For **complex, scalable apps** → uses \`Next.js\`, \`TypeScript\`, \`PostgreSQL\`, \`Prisma\`, \`tRPC\`.  
+- For **real-time or fast builds** → prefers \`Convex\`.
+
+---
+
+### BLOGS
+- **TypeScript Basics** — Getting started with TypeScript  
+  [Read here](https://sougata.me/blogs/typescript)
+
+---
+
+### SOCIALS
+[LinkedIn](https://www.linkedin.com/in/sougata-linkdin) • [GitHub](https://github.com/sougata-github) • [Twitter](https://x.com/sougata_x)
+
+---
+
+### INSTRUCTIONS
+- Stick to **Sougata Das’s** profile info only.  
+- Use **generateSummary** when asked for an overview.  
+- Never use raw HTML, only **Markdown**.  
+- If unsure, ask a **clarifying question**.
+`;
+
+export const DATA = `
+
+### ABOUT
+Hi, I’m **Sougata Das**, a self-taught React developer from **India**.  
+I build **modern, performant web apps** using \`Next.js\` and \`TypeScript\`.  
+I’ve shipped **10+ projects** (frontend + full-stack), working mostly solo — from design to deployment and iteration.  
+My **GitHub** reflects focus on **clean code** and **best practices**.
+
+---
+
+### EXPERIENCE
+**Full Stack Developer — Personal Projects (2023–present, Remote)**  
+- Built and deployed multiple **frontend/full-stack apps** (AI chat, productivity tool, dashboards).  
+- Tech: \`Next.js\`, \`TypeScript\`, \`TailwindCSS\`, \`tRPC\`, \`Convex\`, \`PostgreSQL\`.  
+- Operated as a **one-person team**, maintaining all stages of development.
+
+---
+
+### PROJECTS
+**AI Chat** — full-stack AI chat app with multi-provider setup, multimodal input, file uploads, web search, and guest mode.  
+Stack: Next.js, TypeScript, Tailwind, Shadcn UI, AI SDK, Convex, Better Auth  
+[Live](https://ai-chat-app-dev.vercel.app) • [Source](https://github.com/sougata-github/ai-chat-app)
+
+**Jotion** — Notion-style productivity app with real-time sync, nested docs, publishing, file uploads, and trash recovery.  
+Stack: Next.js, Convex, Clerk, Edgestore, Blocknote, Zustand  
+[Live](https://jotion-next.vercel.app) • [Source](https://github.com/sougata-github/jotion)
+
+**Team Chat** — real-time chat app with text, audio, video channels, and roles using \`Livekit\` and \`Convex\`.  
+Stack: Next.js, TypeScript, Tailwind, Clerk, Convex, Livekit, Uploadthing  
+[Live](https://team-chat-next.vercel.app/invite/03bf69e3-9bf4-4d53-991c-c3a179f14409) • [Source](https://github.com/sougata-github/team-chat)
+
+**iPhone 15 Landing Page** — interactive 3D landing built with \`React Three Fiber\` and \`GSAP\`.  
+Stack: React, Vite, TypeScript, TailwindCSS, GSAP, Three.js  
+[Live](https://iphone-15-pro-landing-page.vercel.app) • [Source](https://github.com/sougata-github/iPhone-15-pro-landing-page)
+
+---
+
+### BLOGS
+- **TypeScript Basics** — Getting started with TypeScript  
+  [Read here](https://sougata.me/blogs/typescript)
+
+---
+
+### SOCIALS
+[LinkedIn](https://www.linkedin.com/in/sougata-linkdin) • [GitHub](https://github.com/sougata-github) • [Twitter](https://x.com/sougata_x)
+`;
