@@ -56,7 +56,7 @@ const Accordian = ({
       className={cn("w-full py-2 transition-all duration-500")}
     >
       <button
-        className="flex justify-between w-full items-center"
+        className="flex justify-between w-full items-start"
         onClick={() => handleCopy(id)}
       >
         <div className="flex flex-col items-start text-left">

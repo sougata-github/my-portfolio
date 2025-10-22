@@ -2,7 +2,7 @@ import "./globals.css";
 
 import { ThemeProvider } from "@/components/providers/ThemeProvider";
 import { Geist, Geist_Mono, Inter } from "next/font/google";
-import Header from "@/components/home/Navbar";
+import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import type { Metadata } from "next";
 import { cn } from "@/lib/utils";
@@ -74,7 +74,7 @@ export default function RootLayout({
           disableTransitionOnChange
         >
           <div className="min-h-screen flex flex-col flex-1 overflow-x-clip mx-auto w-full max-w-3xl pt-10 px-4 pb-2">
-            <Header />
+            <Navbar />
             <main className="flex flex-col flex-1">{children}</main>
             <Footer />
           </div>

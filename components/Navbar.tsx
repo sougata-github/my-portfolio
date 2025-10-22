@@ -2,10 +2,10 @@
 
 import { navLinks } from "@/constants";
 import Link from "next/link";
+import ThemeToggle from "./ThemeToggle";
+import Summary from "./summary/Summary";
 
-import ThemeToggle from "../ThemeToggle";
-
-const Header = () => {
+const Navbar = () => {
   return (
     <header className="flex justify-between items-center py-4">
       <nav className="flex items-center justify-start gap-2 text-sm sm:text-base">
@@ -15,10 +15,12 @@ const Header = () => {
           </Link>
         ))}
       </nav>
-      {/* AI Summarise Button */}
-      <ThemeToggle />
+      <div className="flex items-center gap-1">
+        <Summary />
+        <ThemeToggle />
+      </div>
     </header>
   );
 };
 
-export default Header;
+export default Navbar;
