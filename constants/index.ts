@@ -3,22 +3,7 @@ import { FiGithub } from "react-icons/fi";
 import { Linkedin } from "lucide-react";
 
 
-export const navLinksHome = [
-  {
-    label: "work",
-    href: "#work",
-  },
-  {
-    label: "projects",
-    href: "#projects",
-  },
-  {
-    label: "blogs",
-    href: "/blogs",
-  },
-] as const;
-
-export const navLinksBlogs = [
+export const navLinks = [
   {
     label: "home",
     href: "/",

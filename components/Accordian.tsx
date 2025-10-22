@@ -106,7 +106,7 @@ const Accordian = ({
             }}
             className="pt-4"
           >
-            <p className="text-xs sm:text-sm leading-relaxed text-foreground/90 font-[family-name:var(--font-inter)] max-w-2xl">
+            <p className="text-sm leading-relaxed text-foreground/90 font-[family-name:var(--font-inter)] max-w-2xl">
               {description}
             </p>
           </motion.div>

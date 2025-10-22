@@ -4,7 +4,6 @@ import { cn } from "@/lib/utils";
 import { motion } from "framer-motion";
 
 interface Props {
-  id?: string;
   index: number;
   className?: string;
   children: React.ReactNode;
@@ -30,15 +29,13 @@ const sectionVariants = {
   }),
 };
 
-const AnimatedSection = ({ id, index, className, children }: Props) => {
+const AnimatedSection = ({ index, className, children }: Props) => {
   return (
     <motion.section
-      id={id}
       custom={index}
       variants={sectionVariants}
       initial="hidden"
-      whileInView="visible"
-      viewport={{ once: true, amount: 0.2 }}
+      animate="visible"
       className={cn("overflow-hidden will-change-transform", className)}
     >
       {children}
