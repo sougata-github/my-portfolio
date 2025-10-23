@@ -1,9 +1,6 @@
 import { RiTwitterXLine } from "react-icons/ri";
 import { FiGithub } from "react-icons/fi";
 import { Linkedin } from "lucide-react";
-import { m } from "framer-motion";
-import { build } from "velite";
-import React from "react";
 
 
 export const navLinks = [
