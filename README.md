@@ -80,4 +80,4 @@ Just push your code to GitHub and import it into your [Vercel dashboard](https:/
 ## Contributing
 
 Found a bug, idea, or improvement?
-Feel free to open an issue or submit a pull request — contributions are always welcome
+Feel free to open an issue or submit a pull request — contributions are always welcome.
