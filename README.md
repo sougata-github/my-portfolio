@@ -2,7 +2,6 @@
 
 ## Preview of Live Site
 <img width="1271" height="715" alt="portfolio-1" src="https://github.com/user-attachments/assets/1e5a9cd5-6697-4fd5-ba42-d067a9e5aa13" />
-<img width="1854" height="1069" alt="portfolio-2" src="https://github.com/user-attachments/assets/f6a5002a-f096-410b-9c27-7ca0ce8ab5e2" />
 
 ## Use it as a Template
 
