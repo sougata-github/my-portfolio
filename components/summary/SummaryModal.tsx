@@ -109,7 +109,7 @@ const SummaryModal = ({ isOpen, setIsOpen }: Props) => {
               My Portfolio Summarizer
             </h2>
             <p className="text-sm text-muted-foreground">
-              Get an insightful summary of my portfolio in seconds.
+              Get an insightful summary of my work in seconds.
             </p>
             <Button
               variant="outline"
