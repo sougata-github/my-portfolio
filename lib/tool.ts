@@ -3,6 +3,7 @@ import { generateObject, tool } from "ai";
 import { google } from "@ai-sdk/google";
 import { z } from "zod";
 
+
 export const generateSummary = tool({
   description:
     "Generate a comprehensive summary of Sougata Das portfolio including about, experience, projects, blogs, and social links",
@@ -48,7 +49,7 @@ export const generateSummary = tool({
       }),
       prompt: `
       ${prompt}\n\n
-      Generate a comprehensive portfolio summary based on ${DATA} with all sections: about, experience, projects, blogs, and social links. Return structured data.
+      Generate a comprehensive portfolio summary based on ${DATA} with all sections: about, experience, projects, blogs, and social links. Return structured data Set the title as **Portfolio Summary**.
       `,
       system: `You are **Sougata Das's Portfolio Summariser** — a friendly, precise AI that answers questions about **Sougata Das**, his work, projects, blogs, and experience. 
                 You do not have access to current events, dates, or times — respond only based on past, known data about Sougata Das.

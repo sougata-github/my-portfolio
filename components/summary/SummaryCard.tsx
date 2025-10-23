@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { ArrowUpRight, Globe, Linkedin, Loader } from "lucide-react";
+import { ArrowUpRight, Globe, Linkedin, Loader2 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { FiGithub } from "react-icons/fi";
 import { RiTwitterXLine } from "react-icons/ri";
@@ -63,7 +63,7 @@ export const SummaryCardSkeleton = () => {
   return (
     <div className="w-full pt-4">
       <div className="flex items-center gap-2">
-        <Loader className="size-4 animate-spin transition" />
+        <Loader2 className="size-4 animate-spin transition" />
         <p className="text-sm text-muted-foreground">Generating Summary</p>
       </div>
     </div>
@@ -77,12 +77,12 @@ export function SummaryCard({ data }: SummaryCardProps) {
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.4, ease: "easeOut" }}
     >
-      <Card className="dark:border p-4 pt-0 bg-transparent">
+      <Card className="rounded-xl dark:border pb-4 pt-0 bg-transparent mt-2 shadow-xs dark:shadow-none">
         <CardHeader>
           <CardTitle className="text-xl font-semibold text-foreground">
             {data.title}
           </CardTitle>
-          <CardDescription className="text-sm text-foreground/70 leading-relaxed">
+          <CardDescription className="text-sm text-foreground/70 leading-relaxed font-[family-name:var(--font-inter)]">
             {data.about}
           </CardDescription>
         </CardHeader>
@@ -90,7 +90,7 @@ export function SummaryCard({ data }: SummaryCardProps) {
         <CardContent className="space-y-6 pt-2">
           <div>
             <h3 className="font-semibold text-foreground mb-2">Experience</h3>
-            <p className="text-sm text-foreground/80 leading-relaxed">
+            <p className="text-sm text-foreground/80 leading-relaxed font-[family-name:var(--font-inter)]">
               {data.experienceSummary}
             </p>
           </div>
@@ -105,7 +105,7 @@ export function SummaryCard({ data }: SummaryCardProps) {
                     initial={{ opacity: 0, x: -10 }}
                     animate={{ opacity: 1, x: 0 }}
                     transition={{ delay: idx * 0.05 }}
-                    className="flex items-start justify-between gap-4 p-3 rounded-lg bg-muted-foreground/10"
+                    className="flex items-start justify-between gap-4 p-3 rounded-lg bg-muted-foreground/5 dark:bg-muted-foreground/10"
                   >
                     <div className="flex-1 min-w-0">
                       <p className="text-sm font-medium text-foreground truncate">
@@ -161,7 +161,7 @@ export function SummaryCard({ data }: SummaryCardProps) {
                     initial={{ opacity: 0, x: -10 }}
                     animate={{ opacity: 1, x: 0 }}
                     transition={{ delay: idx * 0.05 }}
-                    className="p-3 rounded-lg bg-muted-foreground/10 group cursor-pointer"
+                    className="p-3 rounded-lg bg-muted-foreground/5 dark:bg-muted-foreground/10 group cursor-pointer"
                   >
                     <Link
                       href={blog.link}

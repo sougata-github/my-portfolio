@@ -15,7 +15,7 @@ const Thinking = ({ className }: { className?: string }) => {
         },
       }}
     >
-      <div className="bg-foreground border-none animate-[pulse-dot_1.5s_ease-in-out_infinite] rounded-full border-2 size-2" />
+      <div className="bg-foreground border-none animate-[pulse-dot_1.5s_ease-in-out_infinite] rounded-full border-2 size-2.5" />
       <span className="sr-only">Loading</span>
     </motion.div>
   );

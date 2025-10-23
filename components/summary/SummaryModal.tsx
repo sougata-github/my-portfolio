@@ -1,28 +1,32 @@
 "use client";
 
-import ResponsiveModal from "../ResponsiveModal";
 import { useChat } from "@ai-sdk/react";
 import { DefaultChatTransport, InferUITool } from "ai";
-import { useEffect, useMemo, useState } from "react";
+
+import { useEffect, useState } from "react";
+
+import { toast } from "sonner";
+import { cn } from "@/lib/utils";
+import { generateSummary } from "@/lib/tool";
+
 import {
   ChatContainerContent,
   ChatContainerRoot,
 } from "../prompt-kit/chat-container";
-import { Message, MessageContent } from "../prompt-kit/message";
-import { Markdown } from "../prompt-kit/markdown";
-import { cn } from "@/lib/utils";
-import { toast } from "sonner";
-import { generateSummary } from "@/lib/tool";
-import { SummaryCard, SummaryCardSkeleton } from "./SummaryCard";
 import {
   PromptInput,
   PromptInputActions,
   PromptInputTextarea,
 } from "../prompt-kit/prompt-input";
 import Thinking from "../prompt-kit/thinking";
+import { Markdown } from "../prompt-kit/markdown";
+import { Message, MessageContent } from "../prompt-kit/message";
+
 import { Button } from "../ui/button";
 import { ArrowUp } from "lucide-react";
-import { components, MDXContent } from "../mdx-components";
+import { components } from "../mdx-components";
+import ResponsiveModal from "../ResponsiveModal";
+import { SummaryCard, SummaryCardSkeleton } from "./SummaryCard";
 
 interface Props {
   isOpen: boolean;
@@ -79,7 +83,8 @@ const SummaryModal = ({ isOpen, setIsOpen }: Props) => {
   };
 
   const handleSubmit = () => {
-    if (input.trim() === "") return;
+    if (input.trim() === "" || status === "submitted" || status === "streaming")
+      return;
 
     sendMessage({
       role: "user" as const,
@@ -99,12 +104,12 @@ const SummaryModal = ({ isOpen, setIsOpen }: Props) => {
       <div className="flex h-[400px] flex-col overflow-hidden relative">
         {/* Welcome Message */}
         {messages.length === 0 && (
-          <div className="flex flex-col gap-2 items-start mt-8 font-[family-name:var(--font-inter)]">
+          <div className="flex flex-col gap-2 items-start mt-8">
             <h2 className="text-lg sm:text-xl font-semibold text-center">
-              Hello! 👋 Curious about me?
+              My Portfolio Summarizer
             </h2>
             <p className="text-sm text-muted-foreground">
-              Get a concise, insightful summary of my portfolio in seconds.
+              Get an insightful summary of my portfolio in seconds.
             </p>
             <Button
               variant="outline"
@@ -169,7 +174,7 @@ const SummaryModal = ({ isOpen, setIsOpen }: Props) => {
                           className={cn(
                             "text-foreground prose py-2 pr-2.5 text-sm text-left",
                             !isAssistant &&
-                              "bg-accent-foreground/5 rounded-lg pl-2.5 text-right w-fit ml-auto"
+                              "bg-accent-foreground/5 rounded-lg pl-2.5 text-right w-fit ml-auto py-1"
                           )}
                         >
                           {isAssistant ? (
