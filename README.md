@@ -15,13 +15,13 @@ cd my-portfolio
 
 ### 2. Install Dependencies
 
-- using pnpm
+Using pnpm
 
 ```bash
 pnpm install
 ```
 
-- using npm
+Using npm
 
 ```bash
 npm install
