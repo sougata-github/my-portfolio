@@ -38,8 +38,8 @@ GOOGLE_GENERATIVE_AI_API_KEY=your_gemini_api_key
 
 You can get your API keys from:
 
-[Google AI Studio](https://aistudio.google.com/app/api-keys)
-[OpenRouter](https://openrouter.ai/sign-in?redirect_url=https%3A%2F%2Fopenrouter.ai%2Fsettings%2Fkeys)
+- [Google AI Studio](https://aistudio.google.com/app/api-keys)
+- [OpenRouter](https://openrouter.ai/sign-in?redirect_url=https%3A%2F%2Fopenrouter.ai%2Fsettings%2Fkeys)
 
 ### 4. Configure Velite for Production
 
