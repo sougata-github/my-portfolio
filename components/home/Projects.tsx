@@ -169,7 +169,7 @@ const ProjectCard = ({
                 >
                   Live
                 </Link>
-                <SquareChevronRight className="size-3.5 sm:size-4.5" />
+                <ArrowUpRight className="size-3.5 sm:size-4.5" />
               </Button>
 
               <Button variant="ghost" size="sm">
@@ -180,7 +180,7 @@ const ProjectCard = ({
                 >
                   Source
                 </Link>
-                <SquareCode className="size-4 sm:size-5" />
+                <ArrowUpRight className="size-3.5 sm:size-4.5" />
               </Button>
             </div>
           </div>
