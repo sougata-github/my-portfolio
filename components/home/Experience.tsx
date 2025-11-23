@@ -8,7 +8,7 @@ import { experienceData } from "@/constants";
 const Experience = () => {
   const [expanded, setExpanded] = useState<Record<string, boolean>>({});
 
-  const handleCopy = (id: string) => {
+  const handleExpand = (id: string) => {
     const newExpanded: Record<string, boolean> = {};
 
     experienceData.forEach((item) => {
@@ -45,7 +45,7 @@ const Experience = () => {
           <Accordian
             index={index}
             key={experience.id}
-            handleCopy={handleCopy}
+            handleExpand={handleExpand}
             expanded={expanded[experience.id]}
             {...experience}
           />

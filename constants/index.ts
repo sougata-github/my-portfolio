@@ -2,7 +2,6 @@ import { RiTwitterXLine } from "react-icons/ri";
 import { FiGithub } from "react-icons/fi";
 import { Linkedin } from "lucide-react";
 
-
 export const navLinks = [
   {
     label: "home",
@@ -16,13 +15,26 @@ export const navLinks = [
 
 export const experienceData = [
   {
+    id: "full-stack-developer",
+    date: "Oct 2025-present",
+    position: "Full Stack Developer",
+    company: "AdVran",
+    type: "Remote",
+    description: [
+      "Shipped high-quality frontend and full-stack applications for multiple clients using Next.js, TypeScript, and TailwindCSS.",
+      "Built reusable components, responsive UIs, SEO-optimized pages, and production-ready multi-step forms, utilizing Zod validation and Zustand persistence.",
+      "Implemented end-to-end email automation with server actions and Nodemailer, owning projects from design system to final deployment.",
+    ],
+  },
+  {
     id: "personal-projects",
     date: "2023-present",
     position: "Full Stack Developer",
     company: "Personal Projects",
     type: "Remote",
-    description:
-      "Designed, built and deployed multiple frontend and full-stack applications (AI chat app, productivity tool, interactive landing pages and dashboards) using Next.js, TypeScript, Tailwind, tRPC, Convex, and PostgreSQL.",
+    description: [
+      "Built and deployed multiple frontend and full-stack applications (AI chat app, productivity tool, interactive landing pages and dashboards) using Next.js, TypeScript, Tailwind, tRPC, Convex, and PostgreSQL.",
+    ],
   },
 ];
 
@@ -159,6 +171,11 @@ My **GitHub** reflects focus on **clean code** and **best practices**.
 ---
 
 ### EXPERIENCE
+**Full Stack Developer — AdVran (Oct 2025–present, Remote)**  
+- Shipped high-quality **frontend and full-stack applications** for multiple clients using Next.js, TypeScript, and TailwindCSS.  
+- Built reusable components, responsive UIs, SEO-optimized pages, and production-ready multi-step forms, utilizing Zod validation and Zustand persistence.  
+- Implemented end-to-end email automation with server actions and Nodemailer, owning projects from design system to final deployment.
+
 **Full Stack Developer — Personal Projects (2023–present, Remote)**  
 - Built and deployed multiple **frontend/full-stack apps** (AI chat, productivity tool, dashboards).  
 - Tech: \`Next.js\`, \`TypeScript\`, \`TailwindCSS\`, \`tRPC\`, \`Convex\`, \`PostgreSQL\`.  
@@ -223,6 +240,11 @@ My **GitHub** reflects focus on **clean code** and **best practices**.
 ---
 
 ### EXPERIENCE
+**Full Stack Developer — AdVran (Oct 2025–present, Remote)**  
+- Shipped high-quality **frontend and full-stack applications** for multiple clients using Next.js, TypeScript, and TailwindCSS.  
+- Built reusable components, responsive UIs, SEO-optimized pages, and production-ready multi-step forms, utilizing Zod validation and Zustand persistence.  
+- Implemented end-to-end email automation with server actions and Nodemailer, owning projects from design system to final deployment.
+
 **Full Stack Developer — Personal Projects (2023–present, Remote)**  
 - Built and deployed multiple **frontend/full-stack apps** (AI chat, productivity tool, dashboards).  
 - Tech: \`Next.js\`, \`TypeScript\`, \`TailwindCSS\`, \`tRPC\`, \`Convex\`, \`PostgreSQL\`.  

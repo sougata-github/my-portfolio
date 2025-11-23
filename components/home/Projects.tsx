@@ -9,7 +9,7 @@ import { useTheme } from "next-themes";
 import { projectData } from "@/constants";
 import { useEffect, useState } from "react";
 import ResponsiveModal from "../ResponsiveModal";
-import { SquareCode, ArrowUpRight, SquareChevronRight } from "lucide-react";
+import { ArrowUpRight } from "lucide-react";
 
 const Projects = () => {
   const [openIndex, setOpenIndex] = useState<number | null>(null);
@@ -92,6 +92,35 @@ const iconSelect = {
   ],
 };
 
+const thumbnailSelect = {
+  light: [
+    "/thumbnails/ai-chat-light.png",
+    "/thumbnails/jotion-light.png",
+    "/thumbnails/team-chat-light.png",
+    "/thumbnails/iphone-15.png",
+  ],
+  dark: [
+    "/thumbnails/ai-chat.png",
+    "/thumbnails/jotion.png",
+    "/thumbnails/team-chat.png",
+    "/thumbnails/iphone-15.png",
+  ],
+};
+
+const getThumbnailPath = (
+  title: string,
+  theme: string | undefined,
+  index: number
+): string => {
+  if (title === "iPhone 15") {
+    return "/thumbnails/iphone-15.png";
+  }
+
+  return theme === "light"
+    ? thumbnailSelect.light[index]
+    : thumbnailSelect.dark[index];
+};
+
 interface Props {
   title: string;
   summary: string;
@@ -109,7 +138,6 @@ interface Props {
 
 const ProjectCard = ({
   title,
-  summary,
   stack,
   links,
   index,
@@ -140,10 +168,18 @@ const ProjectCard = ({
         onOpenChange={(v) => setOpen(v)}
       >
         <div className="flex flex-col items-start gap-4 sm:gap-8">
-          <div className="p-4 pt-2 rounded-lg border bg-muted-foreground/5">
-            <p className="text-xs sm:text-sm mt-2 leading-relaxed whitespace-pre-line">
-              {summary}
-            </p>
+          <div className="w-full rounded-md overflow-hidden border p-1.5 bg-muted-foreground/5 backdrop-blur-sm">
+            {mounted ? (
+              <Image
+                src={getThumbnailPath(title, resolvedTheme, index)}
+                alt={title}
+                width={1200}
+                height={675}
+                className="w-full h-auto object-cover rounded-md"
+              />
+            ) : (
+              <div className="w-full h-48 bg-muted/40 animate-pulse" />
+            )}
           </div>
 
           <div className="w-full">

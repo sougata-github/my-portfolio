@@ -9,10 +9,10 @@ interface Props {
   index: number;
   id: string;
   expanded: boolean;
-  handleCopy: (id: string) => void;
+  handleExpand: (id: string) => void;
   date: string;
   position: string;
-  description: string;
+  description: string[];
   company: string;
   type: string;
 }
@@ -26,7 +26,7 @@ const Accordian = ({
   type,
   description,
   expanded,
-  handleCopy,
+  handleExpand,
 }: Props) => {
   const ref = useRef<HTMLDivElement>(null);
   const [height, setHeight] = useState(0);
@@ -57,12 +57,12 @@ const Accordian = ({
     >
       <button
         className="flex justify-between w-full items-start"
-        onClick={() => handleCopy(id)}
+        onClick={() => handleExpand(id)}
       >
         <div className="flex flex-col items-start text-left">
-          <h3 className="font-medium text-base md:text-lg">{position}</h3>
+          <h3 className="font-medium text-base md:text-lg">{company}</h3>
           <p className="text-foreground/60 text-sm">
-            <span className="capitalize">{company}</span> /{" "}
+            <span className="capitalize">{position}</span> •{" "}
             <span className="lowercase">{type}</span>
           </p>
         </div>
@@ -106,14 +106,18 @@ const Accordian = ({
             }}
             className="pt-4"
           >
-            <p className="text-sm leading-relaxed text-foreground/90 font-[family-name:var(--font-inter)] max-w-2xl">
-              {description}
-            </p>
+            {description.map((item, index) => (
+              <p
+                key={index}
+                className="text-sm leading-relaxed text-foreground/90 font-[family-name:var(--font-inter)] not-first:mt-2"
+              >
+                {item}
+              </p>
+            ))}
           </motion.div>
         </motion.div>
       </AnimatePresence>
     </motion.div>
   );
 };
-
 export default Accordian;

@@ -32,10 +32,17 @@ interface SocialLink {
   url: string;
 }
 
+interface ExperienceEntry {
+  position: string;
+  company: string;
+  date: string;
+  description: string[];
+}
+
 interface SummaryData {
   title: string;
   about: string;
-  experienceSummary: string;
+  experienceSummary: ExperienceEntry[];
   projects: Project[];
   blogs: Blog[];
   socialLinks: SocialLink[];
@@ -89,10 +96,32 @@ export function SummaryCard({ data }: SummaryCardProps) {
 
         <CardContent className="space-y-6 pt-2">
           <div>
-            <h3 className="font-semibold text-foreground mb-2">Experience</h3>
-            <p className="text-sm text-foreground/80 leading-relaxed font-[family-name:var(--font-inter)]">
-              {data.experienceSummary}
-            </p>
+            <h3 className="font-semibold text-foreground mb-3">Experience</h3>
+            <div className="space-y-4">
+              {data.experienceSummary.map((experience, idx) => (
+                <motion.div
+                  key={idx}
+                  initial={{ opacity: 0, x: -10 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  transition={{ delay: idx * 0.05 }}
+                >
+                  <p className="text-sm font-medium text-foreground mb-1.5 font-[family-name:var(--font-inter)]">
+                    {experience.position} — {experience.company} (
+                    {experience.date})
+                  </p>
+                  <ul className="space-y-4 list-disc list-inside ml-2 mt-4 [&_li::marker]:content-['']">
+                    {experience.description.map((point, pointIdx) => (
+                      <li
+                        key={pointIdx}
+                        className="text-sm text-foreground/80 leading-relaxed font-[family-name:var(--font-inter)]"
+                      >
+                        {point}
+                      </li>
+                    ))}
+                  </ul>
+                </motion.div>
+              ))}
+            </div>
           </div>
 
           {data.projects.length > 0 && (
