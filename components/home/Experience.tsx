@@ -1,25 +1,9 @@
 "use client";
 
-import { useState } from "react";
-import Accordian from "../Accordian";
 import { motion } from "framer-motion";
 import { experienceData } from "@/constants";
 
 const Experience = () => {
-  const [expanded, setExpanded] = useState<Record<string, boolean>>({});
-
-  const handleExpand = (id: string) => {
-    const newExpanded: Record<string, boolean> = {};
-
-    experienceData.forEach((item) => {
-      if (item.id !== id) {
-        newExpanded[id] = false;
-      }
-    });
-
-    setExpanded((prev) => ({ ...newExpanded, [id]: !prev[id] }));
-  };
-
   return (
     <div>
       <motion.h1
@@ -41,14 +25,25 @@ const Experience = () => {
         EXPERIENCE
       </motion.h1>
       <div className="mt-2 flex flex-col gap-4">
-        {experienceData.map((experience, index) => (
-          <Accordian
-            index={index}
+        {experienceData.map((experience) => (
+          <div
             key={experience.id}
-            handleExpand={handleExpand}
-            expanded={expanded[experience.id]}
-            {...experience}
-          />
+            className="flex w-full justify-between items-start gap-4 border-b pb-4 last:border-b-0"
+          >
+            <div className="flex flex-col items-start text-left">
+              <h3 className="font-medium text-base md:text-lg">
+                {experience.company}
+              </h3>
+              <p className="text-foreground/60 text-sm">
+                <span className="capitalize">{experience.position}</span> •{" "}
+                <span className="lowercase">{experience.type}</span>
+              </p>
+            </div>
+
+            <span className="text-foreground/60 text-sm shrink-0">
+              {experience.date}
+            </span>
+          </div>
         ))}
       </div>
     </div>

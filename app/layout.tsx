@@ -5,7 +5,6 @@ import { Geist, Geist_Mono, Inter } from "next/font/google";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import type { Metadata } from "next";
-import { Toaster } from "sonner";
 import { cn } from "@/lib/utils";
 
 const geistSans = Geist({
@@ -73,7 +72,6 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
-          <Toaster expand={false} duration={2000} />
           <div className="min-h-screen flex flex-col flex-1 overflow-x-clip mx-auto w-full max-w-3xl pt-10 px-4 pb-2">
             <Navbar />
             <main className="flex flex-col flex-1">{children}</main>

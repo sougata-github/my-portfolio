@@ -1,14 +1,8 @@
-"use client";
-
 import { navLinks } from "@/constants";
 import Link from "next/link";
 import ThemeToggle from "./ThemeToggle";
-import Summary from "./summary/Summary";
-import { usePathname } from "next/navigation";
 
 const Navbar = () => {
-  const pathname = usePathname();
-
   return (
     <header className="flex justify-between items-center py-4">
       <nav className="flex items-center justify-start gap-2 text-sm sm:text-base">
@@ -19,8 +13,6 @@ const Navbar = () => {
         ))}
       </nav>
       <div className="flex items-center gap-1">
-        {pathname === "/" && <Summary />}
-
         <ThemeToggle />
       </div>
     </header>

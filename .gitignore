@@ -38,3 +38,6 @@ next-env.d.ts
 
 # velite files
 .velite
+
+# claude code (personal, machine-local overrides)
+.claude/settings.local.json
