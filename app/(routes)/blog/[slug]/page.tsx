@@ -32,11 +32,23 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   };
 }
 
+/*
+  dynamicParams false means any slug outside the list below is treated as a
+  route that does not exist, rather than a route that renders and then calls
+  notFound(). That difference matters: notFound() thrown inside this segment
+  renders the 404 *within* the (routes) layout, so it keeps the nav and
+  footer. An unmatched URL resolves against the root not-found instead and
+  gets the full-bleed shell.
+*/
+export const dynamicParams = false;
+
 // tells Next.js that the posts will be generated at build time.
 export async function generateStaticParams(): Promise<
   Awaited<Props["params"]>[]
 > {
-  return posts.map((post) => ({ slug: post.slugAsParams }));
+  return posts
+    .filter((post) => post.published)
+    .map((post) => ({ slug: post.slugAsParams }));
 }
 
 const page = async ({ params }: Props) => {

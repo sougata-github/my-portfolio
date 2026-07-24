@@ -38,6 +38,13 @@ pnpm build           # build:content + next build
 
 `pnpm dev` and `pnpm start` exist but are run by the human, not by Claude.
 
+## Writing style
+
+Applies to all prose: site copy, MDX posts, docs, code comments, and chat replies.
+
+- **Never use em dashes (`—`) or semicolons (`;`) in wordings.** Rewrite the sentence, split it in two, or use a comma, colon, or parentheses instead.
+- This is about human-readable prose only. Semicolons in code are untouched.
+
 ## Conventions
 
 - App Router conventions: server components by default, `"use client"` only where it is genuinely needed.

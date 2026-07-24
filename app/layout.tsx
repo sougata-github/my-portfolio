@@ -1,10 +1,10 @@
 import "./globals.css";
 
 import { ThemeProvider } from "@/components/providers/ThemeProvider";
-import { Geist, Geist_Mono, Inter } from "next/font/google";
-import Navbar from "@/components/Navbar";
-import Footer from "@/components/Footer";
+import ThemeShortcutProvider from "@/components/providers/ThemeShortcutProvider";
+import { Geist, Geist_Mono, Inter, Space_Grotesk } from "next/font/google";
 import type { Metadata } from "next";
+import { SITE_URL } from "@/lib/site";
 import { cn } from "@/lib/utils";
 
 const geistSans = Geist({
@@ -25,13 +25,23 @@ const inter = Inter({
   fallback: ["Helvetica", "Arial", "sans-serif"],
 });
 
+// Display face, used for the wordmark and the hero name.
+const spaceGrotesk = Space_Grotesk({
+  variable: "--font-space-grotesk",
+  subsets: ["latin"],
+  fallback: ["Helvetica", "Arial", "sans-serif"],
+});
+
 export const metadata: Metadata = {
+  // Resolves relative OG and twitter image paths against the real origin.
+  // Without it Next falls back to localhost:3000 and warns at build time.
+  metadataBase: new URL(SITE_URL),
   title: "Sougata Das",
   description: "Welcome to my portfolio website.",
   openGraph: {
     title: "Sougata Das",
     description: "Welcome to my portfolio website.",
-    url: "https://sougata.me",
+    url: SITE_URL,
     siteName: "Sougata Das",
     images: [
       {
@@ -63,7 +73,8 @@ export default function RootLayout({
           "overflow-y-scroll font-sans",
           inter.variable,
           geistSans.className,
-          geistMono.variable
+          geistMono.variable,
+          spaceGrotesk.variable
         )}
       >
         <ThemeProvider
@@ -72,11 +83,13 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
-          <div className="min-h-screen flex flex-col flex-1 overflow-x-clip mx-auto w-full max-w-3xl pt-10 px-4 pb-2">
-            <Navbar />
-            <main className="flex flex-col flex-1">{children}</main>
-            <Footer />
-          </div>
+          {/*
+            The root layout deliberately holds providers only. Nav, footer
+            and the page container live in app/(routes)/layout.tsx so that
+            not-found.tsx, which sits outside that group, can render its own
+            full-bleed shell instead of being boxed into the site chrome.
+          */}
+          <ThemeShortcutProvider>{children}</ThemeShortcutProvider>
         </ThemeProvider>
       </body>
     </html>

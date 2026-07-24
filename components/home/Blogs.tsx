@@ -43,7 +43,7 @@ const Blogs = () => {
           size="sm"
           className="text-muted-foreground gap-0.5"
         >
-          <Link className="text-sm" href="/blogs">
+          <Link className="text-sm" href="/blog">
             View All
           </Link>
           <ArrowUpRight />

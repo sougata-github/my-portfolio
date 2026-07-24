@@ -5,8 +5,8 @@ import { Metadata } from "next";
 
 
 export const metadata: Metadata = {
-  title: "Blogs | Sougata Das",
-  description: "Read my latest blogs.",
+  title: "Posts | Sougata Das",
+  description: "Read my latest posts.",
 };
 
 export default function BlogPage() {
@@ -15,7 +15,7 @@ export default function BlogPage() {
   return (
     <section className="mt-10">
       <div>
-        <h1 className="font-bold uppercase">BLOGS</h1>
+        <h1 className="font-bold uppercase">POSTS</h1>
         <div className="flex flex-col gap-4">
           {sortedPosts.map((post) => (
             <BlogCard

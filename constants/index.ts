@@ -2,17 +2,6 @@ import { RiTwitterXLine } from "react-icons/ri";
 import { FiGithub } from "react-icons/fi";
 import { Linkedin } from "lucide-react";
 
-export const navLinks = [
-  {
-    label: "home",
-    href: "/",
-  },
-  {
-    label: "blogs",
-    href: "/blogs",
-  },
-] as const;
-
 export const experienceData = [
   {
     id: "full-stack-developer",
