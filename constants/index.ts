@@ -2,27 +2,29 @@ import { RiTwitterXLine } from "react-icons/ri";
 import { FiGithub } from "react-icons/fi";
 import { Linkedin } from "lucide-react";
 
-export const experienceData = [
+interface Experience {
+  id: string;
+  date: string;
+  position: string;
+  company: string;
+  type: string;
+  /* Optional. The company name renders as a link only when present. */
+  href?: string;
+  description: string[];
+}
+
+export const experienceData: Experience[] = [
   {
     id: "full-stack-developer",
     date: "Oct 2025-present",
     position: "Full Stack Developer",
     company: "AdVran",
     type: "Remote",
+    href: "https://advran.com",
     description: [
       "Shipped high-quality frontend and full-stack applications for multiple clients using Next.js, TypeScript, and TailwindCSS.",
       "Built reusable components, responsive UIs, SEO-optimized pages, and production-ready multi-step forms, utilizing Zod validation and Zustand persistence.",
       "Implemented end-to-end email automation with server actions and Nodemailer, owning projects from design system to final deployment.",
-    ],
-  },
-  {
-    id: "personal-projects",
-    date: "2023-present",
-    position: "Full Stack Developer",
-    company: "Personal Projects",
-    type: "Remote",
-    description: [
-      "Built and deployed multiple frontend and full-stack applications (AI chat app, productivity tool, interactive landing pages and dashboards) using Next.js, TypeScript, Tailwind, tRPC, Convex, and PostgreSQL.",
     ],
   },
 ];
