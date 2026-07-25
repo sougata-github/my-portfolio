@@ -77,6 +77,25 @@ export default function RootLayout({
           spaceGrotesk.variable
         )}
       >
+        {/*
+          Runs during HTML parse, before the load event, which is the only
+          point early enough to beat the browser's scroll restoration.
+
+          Without it a refresh renders the page at the top, starts the hero
+          reveal, then jumps to the previously saved scroll position partway
+          through. Whether the jump lands before or after first paint varies
+          per reload, which is why the symptom is intermittent.
+
+          Trade-off: back and forward no longer restore position natively.
+          The App Router handles scroll for client-side navigation itself,
+          so in practice this only changes hard reloads.
+        */}
+        <script
+          dangerouslySetInnerHTML={{
+            __html:
+              "if('scrollRestoration' in history){history.scrollRestoration='manual'}",
+          }}
+        />
         <ThemeProvider
           attribute="class"
           defaultTheme="system"

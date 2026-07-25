@@ -141,7 +141,12 @@
   }
 }
 
-* {
+/*
+  html only. Applying smooth scrolling to the universal selector puts it on
+  every scrollable descendant too, which fights scroll-driven transforms and
+  shows up as a faint shimmer as the scroll settles.
+*/
+html {
   scroll-behavior: smooth;
 }
 
@@ -172,6 +177,88 @@
 
 h2.heading-link a {
   @apply text-xl md:text-2xl;
+}
+
+/*
+  Hero entrance, in CSS rather than JS.
+
+  Framer drives these from an effect, which means the server HTML ships in
+  the hidden state and the hero stays blank until React hydrates. On a slow
+  device that reads as a freeze followed by everything snapping in at once.
+  CSS animations run at first paint with no JS involved.
+
+  animation-fill-mode: both holds the from-state before the delay elapses,
+  so nothing flashes in its final position first. The prefers-reduced-motion
+  block further down neutralises all of these automatically.
+*/
+@keyframes hero-line {
+  from {
+    transform: translateY(115%);
+  }
+  to {
+    transform: translateY(0);
+  }
+}
+
+/*
+  Deliberately no blur here. filter is a paint-stage property, so it cannot
+  be composited: every frame re-rasterises the text regardless of layer
+  promotion, which reads as a stall followed by a snap. Opacity and
+  transform are the only two properties the compositor can animate on its
+  own, so the entrance is built from those alone.
+*/
+@keyframes hero-fade {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes hero-rule {
+  from {
+    transform: scaleX(0);
+  }
+  to {
+    transform: scaleX(1);
+  }
+}
+
+/*
+  will-change and backface-visibility are load-bearing, not decoration.
+
+  A browser promotes an element to its own compositor layer while it
+  animates, then drops the layer the moment the animation ends and
+  re-rasterises the text on the main layer. Text rarely lands on the same
+  sub-pixel position twice, so that de-promotion shows up as a small abrupt
+  jump exactly when the animation finishes.
+
+  Declaring will-change keeps the layer alive afterwards, so there is no
+  second rasterisation. It costs memory per layer, which is why it belongs
+  on these eight hero elements and nowhere else.
+*/
+@layer components {
+  .hero-line {
+    will-change: transform;
+    backface-visibility: hidden;
+    animation: hero-line 1.15s cubic-bezier(0.22, 1, 0.36, 1) both;
+  }
+
+  .hero-fade {
+    will-change: opacity, transform;
+    backface-visibility: hidden;
+    animation: hero-fade 0.9s cubic-bezier(0.22, 1, 0.36, 1) both;
+  }
+
+  .hero-rule {
+    transform-origin: left;
+    will-change: transform;
+    backface-visibility: hidden;
+    animation: hero-rule 1.4s cubic-bezier(0.22, 1, 0.36, 1) both;
+  }
 }
 
 /*

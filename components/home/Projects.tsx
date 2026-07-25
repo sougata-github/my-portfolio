@@ -1,248 +1,77 @@
 "use client";
 
-import Link from "next/link";
-import Image from "next/image";
-import { cn } from "@/lib/utils";
-import { Button } from "../ui/button";
-import { motion } from "framer-motion";
-import { useTheme } from "next-themes";
+import { motion, useReducedMotion } from "framer-motion";
 import { projectData } from "@/constants";
-import { useEffect, useState } from "react";
-import ResponsiveModal from "../ResponsiveModal";
-import { ArrowUpRight } from "lucide-react";
+import ProjectCard from "./ProjectCard";
+
+const EASE = [0.22, 1, 0.36, 1] as const;
+
+const container = {
+  hidden: {},
+  visible: { transition: { staggerChildren: 0.12, delayChildren: 0.08 } },
+};
+
+const makeItem = (reduce: boolean) => ({
+  hidden: reduce
+    ? { opacity: 0, y: 0, filter: "blur(0px)" }
+    : { opacity: 0, y: 18, filter: "blur(7px)" },
+  visible: reduce
+    ? { opacity: 1, y: 0, filter: "blur(0px)", transition: { duration: 0.3 } }
+    : {
+        opacity: 1,
+        y: 0,
+        filter: "blur(0px)",
+        transition: { duration: 0.95, ease: EASE },
+      },
+});
 
 const Projects = () => {
-  const [openIndex, setOpenIndex] = useState<number | null>(null);
+  const reduce = useReducedMotion() ?? false;
+  const item = makeItem(reduce);
 
   return (
-    <div>
-      <div className="flex items-center justify-between">
-        <motion.h1
-          className="font-bold uppercase"
-          initial={{
-            opacity: 0,
-            filter: "blur(8px)",
-          }}
-          animate={{
-            opacity: 1,
-            filter: "blur(0px)",
-            transition: {
-              delay: 0.2,
-              duration: 1.2,
-              ease: [0.22, 1, 0.36, 1],
-            },
-          }}
-        >
-          PROJECTS
-        </motion.h1>
+    <motion.div
+      variants={container}
+      initial="hidden"
+      whileInView="visible"
+      viewport={{ once: true, amount: 0.15 }}
+    >
+      <motion.div
+        variants={item}
+        className="transform-gpu will-change-[opacity,filter,transform]"
+      >
+        <span className="label">Selected Work</span>
+      </motion.div>
 
-        <Button
-          variant="link"
-          size="sm"
-          className="text-muted-foreground gap-0.5"
-        >
-          <Link
-            className="text-sm"
-            target="_blank"
-            href="https://fern-fern-b25.notion.site/My-projects-148fce201b5a803e872ac84df907f4ae"
-          >
-            View All
-          </Link>
-          <ArrowUpRight />
-        </Button>
-      </div>
+      {/*
+        Two columns, never more. Four projects in four columns is a single
+        row with no vertical rhythm for the parallax to act against, and at
+        this container width a quarter-width card is too small for the shader
+        to read as a form.
 
-      <div className="mt-2 grid w-full grid-cols-1 sm:grid-cols-5 gap-5 py-2">
-        {projectData.map((p, i) => (
-          <ProjectCard
-            key={p.title}
+        The static offset on the second column is what actually creates the
+        interlocking grid. The scroll drift is garnish on top of it.
+      */}
+      <div className="mt-6 grid grid-cols-1 gap-x-10 gap-y-14 md:grid-cols-2 md:gap-x-14 md:gap-y-0">
+        {projectData.map((project, index) => (
+          <motion.div
+            key={project.id}
+            variants={item}
             className={
-              i === 0
-                ? "sm:col-span-3"
-                : i === 1
-                ? "sm:col-span-2"
-                : i === 2
-                ? "sm:col-span-2"
-                : "sm:col-span-3"
+              index % 2 === 1 ? "transform-gpu md:mt-24" : "transform-gpu"
             }
-            {...p}
-            index={i}
-            isOpen={openIndex === i}
-            setOpen={(v: boolean) => setOpenIndex(v ? i : null)}
-            openIndex={openIndex}
-          />
+          >
+            <ProjectCard
+              index={index}
+              title={project.title}
+              stack={project.stack}
+              live={project.links.live}
+              shader={project.shader}
+            />
+          </motion.div>
         ))}
       </div>
-    </div>
-  );
-};
-
-const iconSelect = {
-  light: [
-    "/icons/ai-light.png",
-    "/icons/jotion-light.png",
-    "/icons/team-light.png",
-    "/icons/iphone-light.png",
-  ],
-  dark: [
-    "/icons/ai-dark.png",
-    "/icons/jotion-dark.png",
-    "/icons/team-dark.png",
-    "/icons/iphone-dark.png",
-  ],
-};
-
-const thumbnailSelect = {
-  light: [
-    "/thumbnails/ai-chat-light.png",
-    "/thumbnails/jotion-light.png",
-    "/thumbnails/team-chat-light.png",
-    "/thumbnails/iphone-15.png",
-  ],
-  dark: [
-    "/thumbnails/ai-chat.png",
-    "/thumbnails/jotion.png",
-    "/thumbnails/team-chat.png",
-    "/thumbnails/iphone-15.png",
-  ],
-};
-
-const getThumbnailPath = (
-  title: string,
-  theme: string | undefined,
-  index: number
-): string => {
-  if (title === "iPhone 15") {
-    return "/thumbnails/iphone-15.png";
-  }
-
-  return theme === "light"
-    ? thumbnailSelect.light[index]
-    : thumbnailSelect.dark[index];
-};
-
-interface Props {
-  title: string;
-  summary: string;
-  stack: string[];
-  links: {
-    live: string;
-    src: string;
-  };
-  index: number;
-  className: string;
-  isOpen: boolean;
-  setOpen: (open: boolean) => void;
-  openIndex: number | null;
-}
-
-const ProjectCard = ({
-  title,
-  stack,
-  links,
-  index,
-  className,
-  isOpen,
-  setOpen,
-}: Props) => {
-  const { resolvedTheme } = useTheme();
-
-  const [mounted, setMounted] = useState(false);
-
-  //to avoid hydration errors
-  useEffect(() => setMounted(true), []);
-
-  const url: string | null = mounted
-    ? resolvedTheme === "light"
-      ? iconSelect.light[index]
-      : iconSelect.dark[index]
-    : null;
-
-  const iconSize = index === 2 ? 24 : index === 1 ? 32 : 28;
-
-  return (
-    <>
-      <ResponsiveModal
-        title={title}
-        open={isOpen}
-        onOpenChange={(v) => setOpen(v)}
-      >
-        <div className="flex flex-col items-start gap-4 sm:gap-8">
-          <div className="w-full rounded-md overflow-hidden border p-1.5 bg-muted-foreground/5 backdrop-blur-sm">
-            {mounted ? (
-              <Image
-                src={getThumbnailPath(title, resolvedTheme, index)}
-                alt={title}
-                width={1200}
-                height={675}
-                className="w-full h-auto object-cover rounded-md"
-              />
-            ) : (
-              <div className="w-full h-48 bg-muted/40 animate-pulse" />
-            )}
-          </div>
-
-          <div className="w-full">
-            <div className="flex flex-wrap max-w-xl gap-2 mt-2">
-              {stack.map((item) => (
-                <span
-                  key={item}
-                  className="py-0.5 px-2 rounded bg-transparent border text-xs sm:text-sm"
-                >
-                  {item}
-                </span>
-              ))}
-            </div>
-          </div>
-
-          <div className="w-full">
-            <div className="flex items-center gap-2 mt-2">
-              <Button variant="ghost" size="sm">
-                <Link
-                  href={links.live}
-                  target="_blank"
-                  className="max-sm:text-xs"
-                >
-                  Live
-                </Link>
-                <ArrowUpRight className="size-3.5 sm:size-4.5" />
-              </Button>
-
-              <Button variant="ghost" size="sm">
-                <Link
-                  href={links.src}
-                  target="_blank"
-                  className="max-sm:text-xs"
-                >
-                  Source
-                </Link>
-                <ArrowUpRight className="size-3.5 sm:size-4.5" />
-              </Button>
-            </div>
-          </div>
-        </div>
-      </ResponsiveModal>
-
-      <div
-        className={cn(
-          "rounded-2xl border dark:shadow-none col-span-1 h-[220px] flex items-center justify-center cursor-pointer",
-          className
-        )}
-        role="button"
-        onClick={() => setOpen(true)}
-      >
-        {mounted && url ? (
-          <Image
-            height={iconSize}
-            width={iconSize}
-            src={url}
-            alt={`${title}-icon`}
-          />
-        ) : (
-          <div className="size-7 rounded bg-muted/40" />
-        )}
-      </div>
-    </>
+    </motion.div>
   );
 };
 

@@ -1,71 +1,27 @@
 "use client";
 
-import {
-  motion,
-  useReducedMotion,
-  useScroll,
-  useTransform,
-} from "framer-motion";
+import { motion, useReducedMotion, useScroll, useTransform } from "framer-motion";
 import { useRef } from "react";
 import { footerLinks } from "@/constants";
 import CopyButton from "../CopyButton";
 
-const EASE = [0.22, 1, 0.36, 1] as const;
-
 /*
-  Every variant is built from the reduced-motion flag rather than branching
-  at the call site. When motion is reduced, elements still fade in so the
-  page is not jarringly static, but nothing travels and nothing blurs.
+  The entrance is pure CSS (see .hero-line / .hero-fade / .hero-rule in
+  globals.css) so it paints before hydration. Framer is used only for the
+  scroll parallax below, which genuinely needs JS.
 */
-
-/* Each display line rides up from behind its own overflow mask. */
-const makeLine = (reduce: boolean) => ({
-  hidden: reduce ? { y: "0%", opacity: 0 } : { y: "115%" },
-  visible: (i: number) =>
-    reduce
-      ? { y: "0%", opacity: 1, transition: { duration: 0.3 } }
-      : {
-          y: "0%",
-          transition: { duration: 1.15, delay: 0.25 + i * 0.1, ease: EASE },
-        },
-});
-
-const makeFade = (reduce: boolean) => ({
-  hidden: reduce
-    ? { opacity: 0, y: 0, filter: "blur(0px)" }
-    : { opacity: 0, y: 8, filter: "blur(6px)" },
-  visible: (i: number) =>
-    reduce
-      ? { opacity: 1, y: 0, filter: "blur(0px)", transition: { duration: 0.3 } }
-      : {
-          opacity: 1,
-          y: 0,
-          filter: "blur(0px)",
-          transition: { duration: 0.9, delay: 0.5 + i * 0.08, ease: EASE },
-        },
-});
-
-const makeRule = (reduce: boolean) => ({
-  hidden: reduce ? { scaleX: 1, opacity: 0 } : { scaleX: 0 },
-  visible: reduce
-    ? { scaleX: 1, opacity: 1, transition: { duration: 0.3 } }
-    : { scaleX: 1, transition: { duration: 1.4, delay: 0.35, ease: EASE } },
-});
 
 const Hero = () => {
   const reduce = useReducedMotion() ?? false;
-  const line = makeLine(reduce);
-  const fade = makeFade(reduce);
-  const rule = makeRule(reduce);
 
   /*
-    Parallax is measured against the hero's own scroll range, not the page,
-    so it behaves the same whether the section is full height on landscape
-    or content height on portrait. Progress hits 1 as the hero's bottom
-    edge reaches the top of the viewport.
+    Parallax measured against the hero's own scroll range, not the page, so
+    it behaves the same whether the section is full height on landscape or
+    content height on portrait.
 
-    The name drifts roughly twice as far as the bio, which is what reads as
-    depth. Both are transform and opacity only, so nothing reflows.
+    The scroll-driven fade is safe now that scroll restoration is forced to
+    manual in the root layout. Before that, a refresh from further down the
+    page mounted the hero already faded to zero.
   */
   const heroRef = useRef<HTMLElement>(null);
   const { scrollYProgress } = useScroll({
@@ -75,10 +31,10 @@ const Hero = () => {
 
   const nameY = useTransform(scrollYProgress, [0, 1], [0, 110]);
   const bioY = useTransform(scrollYProgress, [0, 1], [0, 55]);
-  const nameOpacity = useTransform(scrollYProgress, [0, 0.85], [1, 0]);
+  const fade = useTransform(scrollYProgress, [0, 0.85], [1, 0]);
 
-  const nameStyle = reduce ? undefined : { y: nameY, opacity: nameOpacity };
-  const bioStyle = reduce ? undefined : { y: bioY, opacity: nameOpacity };
+  const nameStyle = reduce ? undefined : { y: nameY, opacity: fade };
+  const bioStyle = reduce ? undefined : { y: bioY, opacity: fade };
 
   return (
     <section
@@ -86,29 +42,23 @@ const Hero = () => {
       className="flex flex-col justify-between pt-6 pb-10 wide:min-h-[88svh]"
     >
       {/* Top rail: location left, resume pinned right */}
-      <motion.div
-        initial="hidden"
-        animate="visible"
-        className="flex items-center justify-between gap-x-4"
-      >
-        <motion.span
-          custom={0}
-          variants={fade}
-          className="label block transform-gpu will-change-[opacity,filter,transform]"
+      <div className="flex items-center justify-between gap-x-4">
+        <span
+          className="label hero-fade block"
+          style={{ animationDelay: "0.5s" }}
         >
           Based in India
-        </motion.span>
+        </span>
 
-        <motion.a
-          custom={1}
-          variants={fade}
+        <a
           href="/resume.pdf"
           download
-          className="label transform-gpu underline decoration-1 underline-offset-4 transition-colors duration-300 will-change-[opacity,filter,transform] hover:text-foreground"
+          className="label hero-fade underline decoration-1 underline-offset-4 transition-colors duration-300 hover:text-foreground"
+          style={{ animationDelay: "0.58s" }}
         >
           Resume
-        </motion.a>
-      </motion.div>
+        </a>
+      </div>
 
       {/* Name and title, left aligned with the title stepped in */}
       {/*
@@ -118,88 +68,68 @@ const Hero = () => {
       */}
       <div className="py-24 sm:py-28 md:py-20">
         {/*
-          Scalzo alignment: line two is set close to line one's size and
-          stepped in from the left, so its extra characters push it past
-          line one's right edge. The overhang is the whole effect, so the
-          two sizes have to stay close. Widening the gap kills it.
-        */}
-        {/*
           Parallax lives on a wrapper rather than the h1 itself. The entrance
-          variants already drive y on the inner spans, and stacking a scroll
-          transform onto the same element would fight them.
+          animation already drives transform on the inner spans, and stacking
+          a scroll transform onto the same element would fight it.
         */}
         <motion.div style={nameStyle} className="transform-gpu">
-          <motion.h1
-            initial="hidden"
-            animate="visible"
-            className="font-display uppercase"
-          >
-            {/*
-            pb/-mb pair keeps the reveal mask below the baseline so tight
-            leading never clips a glyph, without adding layout height.
+          {/*
+            Scalzo alignment: line two is set close to line one's size and
+            stepped in from the left, so its extra characters push it past
+            line one's right edge. The overhang is the whole effect, so the
+            two sizes have to stay close. Widening the gap kills it.
           */}
+          <h1 className="font-display uppercase">
+            {/*
+              pb/-mb pair keeps the reveal mask below the baseline so tight
+              leading never clips a glyph, without adding layout height.
+            */}
             <span className="block overflow-hidden pb-[0.12em] -mb-[0.12em]">
-              <motion.span
-                custom={0}
-                variants={line}
-                className="block transform-gpu will-change-transform font-light leading-[0.94] tracking-wide text-[clamp(2rem,8.2vw,6.25rem)]"
+              <span
+                className="hero-line block font-light leading-[0.94] tracking-wide text-[clamp(2rem,8.2vw,6.25rem)]"
+                style={{ animationDelay: "0.25s" }}
               >
                 Sougata Das
-              </motion.span>
+              </span>
             </span>
 
             <span className="block overflow-hidden pb-[0.12em] -mb-[0.12em] pl-[6%] md:pl-[8%]">
-              <motion.span
-                custom={1}
-                variants={line}
-                className="block transform-gpu will-change-transform font-medium leading-[0.94] tracking-wide text-[clamp(1.6rem,7vw,5.25rem)]"
+              <span
+                className="hero-line block font-medium leading-[0.94] tracking-wide text-[clamp(1.6rem,7vw,5.25rem)]"
+                style={{ animationDelay: "0.35s" }}
               >
                 React Developer
-              </motion.span>
+              </span>
             </span>
-          </motion.h1>
+          </h1>
         </motion.div>
 
         <motion.div style={bioStyle} className="transform-gpu">
-          <motion.p
-            initial="hidden"
-            animate="visible"
-            custom={0}
-            variants={fade}
-            className="mt-20 max-w-sm transform-gpu text-pretty text-sm leading-relaxed text-muted-foreground will-change-[opacity,filter,transform] sm:mt-24 md:ml-auto md:text-base"
+          <p
+            className="hero-fade mt-20 max-w-sm text-pretty text-sm leading-relaxed text-muted-foreground sm:mt-24 md:ml-auto md:text-base"
+            style={{ animationDelay: "0.5s" }}
           >
             I build modern, performant web applications with React and
             TypeScript, from design system to deployment.
-          </motion.p>
+          </p>
         </motion.div>
       </div>
 
       {/* Rule + actions */}
       <div>
-        <motion.div
-          initial="hidden"
-          animate="visible"
-          variants={rule}
-          className="h-px w-full origin-left transform-gpu bg-border will-change-transform"
-        />
+        <div className="hero-rule h-px w-full bg-border" />
 
-        <motion.div
-          initial="hidden"
-          animate="visible"
-          className="mt-5 flex flex-wrap items-center gap-x-6 gap-y-4 sm:justify-between"
-        >
-          <motion.div
-            custom={0}
-            variants={fade}
-            className="flex transform-gpu items-center gap-5 will-change-[opacity,filter,transform]"
+        <div className="mt-5 flex flex-wrap items-center gap-x-6 gap-y-4 sm:justify-between">
+          <div
+            className="hero-fade flex items-center gap-5"
+            style={{ animationDelay: "0.5s" }}
           >
             <CopyButton />
-          </motion.div>
+          </div>
 
-          <motion.div
-            custom={1}
-            variants={fade}
-            className="flex transform-gpu items-center gap-5 will-change-[opacity,filter,transform]"
+          <div
+            className="hero-fade flex items-center gap-5"
+            style={{ animationDelay: "0.58s" }}
           >
             {footerLinks.map((link) => (
               <a
@@ -212,8 +142,8 @@ const Hero = () => {
                 {link.label}
               </a>
             ))}
-          </motion.div>
-        </motion.div>
+          </div>
+        </div>
       </div>
     </section>
   );

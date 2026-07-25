@@ -24,9 +24,10 @@ export function HomePage() {
       <section className="mt-16 md:mt-24">
         <Experience />
       </section>
-      <AnimatedSection index={2} id="projects" className="mt-10 md:mt-12">
+      {/* Runs its own whileInView stagger, same as Skills and Experience. */}
+      <section id="projects" className="mt-16 md:mt-24">
         <Projects />
-      </AnimatedSection>
+      </section>
       <AnimatedSection index={3} className="mt-10 md:mt-12">
         <Blogs />
       </AnimatedSection>
