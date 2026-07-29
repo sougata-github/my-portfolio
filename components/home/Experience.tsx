@@ -2,6 +2,7 @@
 
 import { motion, useReducedMotion } from "framer-motion";
 import { experienceData } from "@/constants";
+import SectionHeader from "../SectionHeader";
 
 const EASE = [0.22, 1, 0.36, 1] as const;
 
@@ -50,14 +51,13 @@ const Experience = () => {
       {/*
         Marker rule for the page: sections that are lists get one, sections
         that are a single statement (the skills band) do not. No trailing
-        value on the right, since every row already carries its own date and
-        repeating the range here was pure redundancy.
+        action on the right, since every row already carries its own date.
       */}
       <motion.div
         variants={item}
         className="transform-gpu will-change-[opacity,filter,transform]"
       >
-        <span className="label">Experience</span>
+        <SectionHeader label="Experience" />
       </motion.div>
 
       {/*
@@ -66,12 +66,17 @@ const Experience = () => {
         the middle, which fills the space that previously read as a gap.
         Collapses to a stack below md.
       */}
-      <div className="mt-4 flex flex-col">
+      <div className="mt-2 flex flex-col">
         {experienceData.map((experience) => (
           <motion.div
             key={experience.id}
             variants={item}
-            className="flex w-full transform-gpu items-start justify-between gap-4 border-b border-border py-7 will-change-[opacity,filter,transform] last:border-b-0 md:grid md:grid-cols-12 md:items-baseline md:gap-x-6"
+            /*
+              items-center at md, not items-baseline. The company name is
+              roughly 30px and the labels 11px, so sharing a baseline left the
+              small type sitting low against it. Centring reads level.
+            */
+            className="flex w-full transform-gpu items-start justify-between gap-4 border-b border-border py-7 will-change-[opacity,filter,transform] last:border-b-0 md:grid md:grid-cols-12 md:items-center md:gap-x-6"
           >
             <h3 className="font-display uppercase tracking-wide text-xl font-normal leading-[1.1] md:col-span-5 md:text-[clamp(1.375rem,2.3vw,2rem)]">
               {experience.href ? (
@@ -94,14 +99,20 @@ const Experience = () => {
               right-aligned stack, which keeps the row to two columns instead
               of letting role and date wrap onto their own full-width lines.
             */}
+            {/*
+              Source order is date first, then role, which is what mobile
+              wants: date on top of the right-hand stack. Desktop restores
+              the reading order with order-* so role still sits in the middle
+              column and date at the far right.
+            */}
             <div className="flex flex-col items-end gap-1 md:contents">
-              <p className="label text-right md:col-span-4 md:text-left">
-                {experience.position} · {experience.type}
-              </p>
-
-              <span className="label text-right md:col-span-3">
+              <span className="label text-right md:order-2 md:col-span-3">
                 {experience.date}
               </span>
+
+              <p className="label text-right md:order-1 md:col-span-4 md:text-left">
+                {experience.position} · {experience.type}
+              </p>
             </div>
           </motion.div>
         ))}

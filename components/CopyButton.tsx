@@ -19,7 +19,12 @@ const CopyButton = () => {
     <button
       type="button"
       onClick={onCopy}
-      className="label rounded-none border border-border px-2.5 py-1 transition-colors duration-300 hover:border-foreground/20 hover:text-foreground"
+      /*
+        No border of its own. It sits in the hero strip where the cell
+        supplies the dividers, and doubling them would thicken that edge.
+        Full width on mobile so it reads as the CTA.
+      */
+      className="label flex h-full w-full items-center justify-center px-4 py-5 transition-colors duration-300 hover:text-foreground md:justify-start md:px-7"
     >
       {/*
         aria-live: swapping the label text is silent to a screen reader

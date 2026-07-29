@@ -5,10 +5,13 @@ import Link from "next/link";
 
 const Footer = () => {
   return (
-    <footer className="mt-5 flex py-5 justify-between items-center border-t">
-      <p className="text-muted-foreground text-xs">&copy; Sougata Das | 2025</p>
+    <footer className="border-t border-border">
+      <div className="mx-auto flex w-full max-w-5xl items-center justify-between border-border px-4 py-5 md:border-x md:px-8">
+        <p className="text-muted-foreground text-xs">
+          &copy; Sougata Das | 2025
+        </p>
 
-      <ul className="flex items-center gap-2">
+        <ul className="flex items-center gap-2">
         {footerLinks.map((link) => (
           <Link
             target="_blank"
@@ -18,8 +21,9 @@ const Footer = () => {
           >
             <link.icon className={cn("size-4", link.className)} />
           </Link>
-        ))}
-      </ul>
+          ))}
+        </ul>
+      </div>
     </footer>
   );
 };

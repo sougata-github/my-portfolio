@@ -23,7 +23,7 @@ const Hero = () => {
     manual in the root layout. Before that, a refresh from further down the
     page mounted the hero already faded to zero.
   */
-  const heroRef = useRef<HTMLElement>(null);
+  const heroRef = useRef<HTMLDivElement>(null);
   const { scrollYProgress } = useScroll({
     target: heroRef,
     offset: ["start start", "end start"],
@@ -37,9 +37,10 @@ const Hero = () => {
   const bioStyle = reduce ? undefined : { y: bioY, opacity: fade };
 
   return (
-    <section
+    <div
       ref={heroRef}
-      className="flex flex-col justify-between pt-6 pb-10 wide:min-h-[88svh]"
+      /* No bottom padding: the strip below is flush with the section edge. */
+      className="flex flex-col justify-between pt-6 wide:min-h-[88svh]"
     >
       {/* Top rail: location left, resume pinned right */}
       <div className="flex items-center justify-between gap-x-4">
@@ -115,29 +116,42 @@ const Hero = () => {
         </motion.div>
       </div>
 
-      {/* Rule + actions */}
-      <div>
-        <div className="hero-rule h-px w-full bg-border" />
+      {/*
+        Actions strip.
 
-        <div className="mt-5 flex flex-wrap items-center gap-x-6 gap-y-4 sm:justify-between">
-          <div
-            className="hero-fade flex items-center gap-5"
-            style={{ animationDelay: "0.5s" }}
-          >
+        Negative margins cancel the container's horizontal padding so the
+        rule runs the full width of the content column and meets the vertical
+        border-x on both sides, reading as a band rather than a line floating
+        inside the section.
+
+        Every action is a cell with its own divider and stretched to equal
+        height, so the strip reads as part of the same border grid as the
+        page. On mobile copy mail goes full width to act as the CTA and the
+        three links sit side by side beneath it.
+      */}
+      <div
+        className="hero-fade -mx-4 border-t border-border md:-mx-8"
+        style={{ animationDelay: "0.5s" }}
+      >
+        <div className="flex flex-col md:flex-row md:items-stretch md:justify-between">
+          <div className="border-b border-border md:border-b-0 md:border-r">
             <CopyButton />
           </div>
 
-          <div
-            className="hero-fade flex items-center gap-5"
-            style={{ animationDelay: "0.58s" }}
-          >
+          <div className="grid grid-cols-3 md:flex">
             {footerLinks.map((link) => (
               <a
                 key={link.label}
                 href={link.href}
                 target="_blank"
                 rel="noreferrer"
-                className="label hover:text-foreground transition-colors duration-300"
+                /*
+                  Dividers between links on mobile, but every link gets one
+                  from md up. Desktop pushes the group to the right edge, so
+                  without a leading border the first link floats away from
+                  the copy mail cell instead of closing the strip.
+                */
+                className="label flex items-center justify-center border-border px-4 py-5 transition-colors duration-300 not-first:border-l hover:text-foreground md:border-l md:px-7"
               >
                 {link.label}
               </a>
@@ -145,7 +159,7 @@ const Hero = () => {
           </div>
         </div>
       </div>
-    </section>
+    </div>
   );
 };
 

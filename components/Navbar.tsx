@@ -7,7 +7,7 @@ const navItemClass =
 
 const Navbar = () => {
   return (
-    <header className="flex items-center justify-between py-4">
+    <header className="mx-auto flex w-full max-w-5xl items-center justify-between border-border px-4 py-4 md:border-x md:px-8">
       <Link href="/" className={navItemClass}>
         sougata
       </Link>

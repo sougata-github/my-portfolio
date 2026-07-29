@@ -2,6 +2,8 @@
 
 import { motion, useReducedMotion } from "framer-motion";
 import { projectData } from "@/constants";
+import { cn } from "@/lib/utils";
+import SectionHeader from "../SectionHeader";
 import ProjectCard from "./ProjectCard";
 
 const EASE = [0.22, 1, 0.36, 1] as const;
@@ -40,34 +42,49 @@ const Projects = () => {
         variants={item}
         className="transform-gpu will-change-[opacity,filter,transform]"
       >
-        <span className="label">Selected Work</span>
+        <SectionHeader
+          label="Selected Work"
+          action={
+            <a
+              href="https://fern-fern-b25.notion.site/My-projects-148fce201b5a803e872ac84df907f4ae"
+              target="_blank"
+              rel="noreferrer"
+              className="label underline decoration-1 underline-offset-4 transition-colors duration-300 hover:text-foreground"
+            >
+              View all
+            </a>
+          }
+        />
       </motion.div>
 
       {/*
-        Two columns, never more. Four projects in four columns is a single
-        row with no vertical rhythm for the parallax to act against, and at
-        this container width a quarter-width card is too small for the shader
-        to read as a form.
+        Bento, 2x2 from md and one column below.
 
-        The static offset on the second column is what actually creates the
-        interlocking grid. The scroll drift is garnish on top of it.
+        Negative margins cancel the Section container's padding so the cells
+        run edge to edge and their outer borders meet the vertical border-x,
+        the same trick the hero strip and SectionHeader use.
+
+        Borders live on the cells, never on the grid, and each cell only
+        draws bottom and right. The last row drops its bottom and the last
+        column drops its right, so adjacent cells share one line rather than
+        stacking two.
       */}
-      <div className="mt-6 grid grid-cols-1 gap-x-10 gap-y-14 md:grid-cols-2 md:gap-x-14 md:gap-y-0">
+      <div className="-mx-4 grid grid-cols-1 md:-mx-8 md:grid-cols-2">
         {projectData.map((project, index) => (
           <motion.div
             key={project.id}
             variants={item}
-            className={
-              index % 2 === 1 ? "transform-gpu md:mt-24" : "transform-gpu"
-            }
+            className={cn(
+              "transform-gpu border-border",
+              /* One column: every cell but the last draws a bottom edge. */
+              index < projectData.length - 1 && "border-b",
+              /* Two columns: left column draws right, top row draws bottom. */
+              "md:border-b-0",
+              index % 2 === 0 && "md:border-r",
+              index < 2 && "md:border-b"
+            )}
           >
-            <ProjectCard
-              index={index}
-              title={project.title}
-              stack={project.stack}
-              live={project.links.live}
-              shader={project.shader}
-            />
+            <ProjectCard live={project.links.live} />
           </motion.div>
         ))}
       </div>

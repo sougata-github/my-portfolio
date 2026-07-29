@@ -12,9 +12,14 @@ export default function RoutesLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <div className="min-h-screen flex flex-col flex-1 overflow-x-clip mx-auto w-full max-w-5xl pt-6 px-4 pb-2 md:px-8">
+    /*
+      Full width on purpose. The max-width now lives inside each Section so
+      that horizontal rules can span the viewport while the content column
+      stays where it was.
+    */
+    <div className="flex min-h-screen w-full flex-1 flex-col overflow-x-clip">
       <Navbar />
-      <main className="flex flex-col flex-1">{children}</main>
+      <main className="flex flex-1 flex-col">{children}</main>
       <Footer />
     </div>
   );
