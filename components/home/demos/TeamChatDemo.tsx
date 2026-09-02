@@ -328,7 +328,7 @@ const TeamChatDemo = () => {
                 locked ? "Demo limit reached, 5 messages" : "Message #general"
               }
               aria-label="Message #general"
-              className="min-w-0 flex-1 resize-none bg-transparent leading-relaxed text-foreground outline-none placeholder:text-muted-foreground disabled:cursor-not-allowed"
+              className="scrollbar-hidden min-w-0 flex-1 resize-none overflow-hidden bg-transparent leading-relaxed text-foreground outline-none placeholder:text-muted-foreground disabled:cursor-not-allowed"
             />
             <Smile className="size-3.5 shrink-0" aria-hidden />
           </label>
