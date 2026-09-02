@@ -1,6 +1,6 @@
-import { RiTwitterXLine } from "react-icons/ri";
-import { FiGithub } from "react-icons/fi";
-import { Linkedin } from "lucide-react";
+import { GitHubIcon, LinkedInIcon, XIcon } from "@/components/icons/SocialIcons";
+
+export const EMAIL = "sougatadas9874@gmail.com";
 
 interface Experience {
   id: string;
@@ -131,22 +131,24 @@ export const projectData: Project[] = [
   },
 ];
 
-export const footerLinks = [
+/*
+  Social profiles. The hero strip prints the labels, the contact section
+  prints the marks. Both read from here so the two never drift.
+*/
+export const socialLinks = [
   {
     label: "Linkedin",
-    icon: Linkedin,
+    icon: LinkedInIcon,
     href: "https://www.linkedin.com/in/sougata-linkdin",
   },
   {
     label: "Github",
-    icon: FiGithub,
+    icon: GitHubIcon,
     href: "https://github.com/sougata-github",
-    className: "size-3.5",
   },
-
   {
     label: "X(Twitter)",
-    icon: RiTwitterXLine,
+    icon: XIcon,
     href: "https://x.com/sougata_x",
   },
 ];

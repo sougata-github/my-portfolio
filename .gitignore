@@ -41,3 +41,10 @@ next-env.d.ts
 
 # claude code (personal, machine-local overrides)
 .claude/settings.local.json
+
+# scratch clones for reference (see DESIGN.md, Project demos)
+/.tmp/
+!.env.example
+
+# stray velite/next artifact inside the content dir
+content/.next/

@@ -2,6 +2,7 @@ import "./globals.css";
 
 import { ThemeProvider } from "@/components/providers/ThemeProvider";
 import ThemeShortcutProvider from "@/components/providers/ThemeShortcutProvider";
+import { Toaster } from "@/components/ui/sonner";
 import { Geist, Geist_Mono, Inter, Space_Grotesk } from "next/font/google";
 import type { Metadata } from "next";
 import { SITE_URL } from "@/lib/site";
@@ -109,6 +110,8 @@ export default function RootLayout({
             full-bleed shell instead of being boxed into the site chrome.
           */}
           <ThemeShortcutProvider>{children}</ThemeShortcutProvider>
+          {/* Contact form feedback. Reads the theme from next-themes. */}
+          <Toaster position="bottom-right" />
         </ThemeProvider>
       </body>
     </html>

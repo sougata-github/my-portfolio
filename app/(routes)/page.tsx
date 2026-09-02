@@ -4,6 +4,7 @@ import Blogs from "@/components/home/Blogs";
 import Skills from "@/components/home/Skills";
 import Section from "@/components/Section";
 import Hero from "@/components/home/Hero";
+import Contact from "@/components/home/Contact";
 
 export function HomePage() {
   return (
@@ -35,8 +36,19 @@ export function HomePage() {
       <Section id="projects" innerClassName="pt-6">
         <Projects />
       </Section>
-      <Section innerClassName="pt-6 pb-16 md:pb-24">
+      {/*
+        No bottom padding, same as Experience. The last post row's own py-7
+        closes the section and the footer's border-t draws the edge.
+      */}
+      <Section innerClassName="pt-6">
         <Blogs />
+      </Section>
+      {/*
+        Bottom padding, unlike the list sections. The form is a block, not a
+        row, so nothing inside it can close the section on its own.
+      */}
+      <Section id="contact" innerClassName="pt-6 pb-16 md:pb-24">
+        <Contact />
       </Section>
     </>
   );

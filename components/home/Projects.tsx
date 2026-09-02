@@ -5,8 +5,24 @@ import { projectData } from "@/constants";
 import { cn } from "@/lib/utils";
 import SectionHeader from "../SectionHeader";
 import ProjectCard from "./ProjectCard";
+import AiChatDemo from "./demos/AiChatDemo";
+import JotionDemo from "./demos/JotionDemo";
+import TeamChatDemo from "./demos/TeamChatDemo";
+import IphoneDemo from "./demos/IphoneDemo";
 
 const EASE = [0.22, 1, 0.36, 1] as const;
+
+/*
+  One scripted demo per project, keyed by id. A project without an entry
+  renders an empty slot of the same height, so the grid stays even while
+  the remaining demos are built.
+*/
+const DEMOS: Record<string, React.ReactNode> = {
+  "ai-chat": <AiChatDemo />,
+  jotion: <JotionDemo />,
+  "team-chat": <TeamChatDemo />,
+  "iphone-15": <IphoneDemo />,
+};
 
 const container = {
   hidden: {},
@@ -84,7 +100,12 @@ const Projects = () => {
               index < 2 && "md:border-b"
             )}
           >
-            <ProjectCard live={project.links.live} />
+            <ProjectCard
+              title={project.title}
+              blurb={project.blurb}
+              live={project.links.live}
+              demo={DEMOS[project.id]}
+            />
           </motion.div>
         ))}
       </div>

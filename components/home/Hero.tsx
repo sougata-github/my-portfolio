@@ -2,7 +2,7 @@
 
 import { motion, useReducedMotion, useScroll, useTransform } from "framer-motion";
 import { useRef } from "react";
-import { footerLinks } from "@/constants";
+import { socialLinks } from "@/constants";
 import CopyButton from "../CopyButton";
 
 /*
@@ -139,7 +139,7 @@ const Hero = () => {
           </div>
 
           <div className="grid grid-cols-3 md:flex">
-            {footerLinks.map((link) => (
+            {socialLinks.map((link) => (
               <a
                 key={link.label}
                 href={link.href}
