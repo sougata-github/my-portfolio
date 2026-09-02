@@ -4,7 +4,7 @@ import { ThemeProvider } from "@/components/providers/ThemeProvider";
 import ThemeShortcutProvider from "@/components/providers/ThemeShortcutProvider";
 import { Toaster } from "@/components/ui/sonner";
 import { Geist, Geist_Mono, Inter, Space_Grotesk } from "next/font/google";
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { SITE_URL } from "@/lib/site";
 import { cn } from "@/lib/utils";
 
@@ -33,33 +33,94 @@ const spaceGrotesk = Space_Grotesk({
   fallback: ["Helvetica", "Arial", "sans-serif"],
 });
 
+/*
+  Site-wide metadata. Pages set their own title, description and canonical,
+  and the template appends the name. The description is written for the
+  query a hiring manager or a founder types: what I build, with what, and
+  from where. Remote and India are stated on purpose, that is the search.
+*/
 export const metadata: Metadata = {
   // Resolves relative OG and twitter image paths against the real origin.
   // Without it Next falls back to localhost:3000 and warns at build time.
   metadataBase: new URL(SITE_URL),
-  title: "Sougata Das",
-  description: "Welcome to my portfolio website.",
+  title: {
+    default: "Sougata Das, React and Next.js Developer",
+    template: "%s | Sougata Das",
+  },
+  description:
+    "Sougata Das is a full stack React and Next.js developer based in India. Performant, type-safe web applications in TypeScript, from design system to deployment. Available for remote work.",
+  keywords: [
+    "Sougata Das",
+    "React developer",
+    "Next.js developer",
+    "TypeScript developer",
+    "full stack developer India",
+    "frontend engineer India",
+    "remote React developer",
+    "web developer portfolio",
+  ],
+  authors: [{ name: "Sougata Das", url: SITE_URL }],
+  creator: "Sougata Das",
   openGraph: {
-    title: "Sougata Das",
-    description: "Welcome to my portfolio website.",
-    url: SITE_URL,
+    type: "website",
+    locale: "en_IN",
     siteName: "Sougata Das",
+    title: "Sougata Das, React and Next.js Developer",
+    description:
+      "Full stack React and Next.js developer based in India, building performant, type-safe web applications in TypeScript. Available for remote work.",
+    url: SITE_URL,
     images: [
       {
         url: "/og-image.png",
         width: 64,
         height: 64,
-        alt: "Sougata Das Portfolio OG Image",
+        alt: "Sougata Das",
       },
     ],
-    type: "website",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Sougata Das",
-    description: "Welcome to my portfolio website.",
+    creator: "@sougata_x",
+    title: "Sougata Das, React and Next.js Developer",
+    description:
+      "Full stack React and Next.js developer based in India, building performant, type-safe web applications in TypeScript.",
     images: ["/og-image.png"],
   },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
+  },
+  applicationName: "Sougata Das",
+  category: "technology",
+  /*
+    Local signals. The metadata API has no field for geo tags, so they go
+    through `other`. Country only, the search is "developer in India" and
+    "remote", not a city.
+  */
+  other: {
+    "geo.region": "IN",
+    "geo.placename": "India",
+  },
+};
+
+/*
+  Viewport and theme colour are their own export in current Next, not part
+  of metadata. The colours are the background token in each theme, so the
+  browser chrome on a phone matches the page.
+*/
+export const viewport: Viewport = {
+  width: "device-width",
+  initialScale: 1,
+  themeColor: [
+    { media: "(prefers-color-scheme: light)", color: "#f6f5f2" },
+    { media: "(prefers-color-scheme: dark)", color: "#272624" },
+  ],
 };
 
 export default function RootLayout({

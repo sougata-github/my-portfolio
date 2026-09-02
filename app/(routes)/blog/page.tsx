@@ -4,12 +4,39 @@ import { posts } from "#site/content";
 import FeaturedPost from "@/components/blog/FeaturedPost";
 import Section from "@/components/Section";
 import SectionHeader from "@/components/SectionHeader";
+import { BLOG_OG, OG_SIZE } from "@/lib/og";
 import { formatDate, sortPosts } from "@/lib/utils";
 
 export const metadata: Metadata = {
-  title: "Posts | Sougata Das",
+  title: "Writings",
   description:
-    "Notes from my journey as a developer. What I am learning, what I got wrong, and what stuck.",
+    "Notes from Sougata Das on TypeScript, React and Next.js. A developer's journey, written as I learn.",
+  keywords: [
+    "TypeScript blog",
+    "React blog",
+    "Next.js blog",
+    "web development notes",
+    "Sougata Das blog",
+  ],
+  alternates: { canonical: "/blog" },
+  openGraph: {
+    type: "website",
+    siteName: "Sougata Das",
+    locale: "en_IN",
+    title: "Writings",
+    description:
+      "Notes from Sougata Das on TypeScript, React and Next.js. A developer's journey, written as I learn.",
+    url: "/blog",
+    images: [{ url: BLOG_OG.light, ...OG_SIZE, alt: BLOG_OG.alt }],
+  },
+  twitter: {
+    card: "summary_large_image",
+    creator: "@sougata_x",
+    title: "Writings",
+    description:
+      "Notes from Sougata Das on TypeScript, React and Next.js. A developer's journey, written as I learn.",
+    images: [BLOG_OG.dark],
+  },
 };
 
 /*

@@ -65,8 +65,12 @@ const posts = defineCollection({
       /* Shown as the chip on the card and the post header. */
       category: s.string().max(40).optional(),
       thumbnail: s.enum(THUMBNAILS).optional(),
+      /* Search terms for the page metadata. Kept short and specific. */
+      keywords: s.array(s.string()).default([]),
       /* readingTime in minutes and wordCount, from the body. */
       metadata: s.metadata(),
+      /* Headings for the on-page navigation, h2 with nested h3. */
+      toc: s.toc(),
       raw: s.raw(),
       body: s.mdx(),
     })

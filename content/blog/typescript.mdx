@@ -1,10 +1,19 @@
 ---
 title: TypeScript Basics
-description: Getting started with TypeScript.
+description: A practical walkthrough of TypeScript from primitives to generics, narrowing and discriminated unions, with runnable examples for each idea.
 date: 2024-09-23
 published: true
 category: TypeScript
 thumbnail: typescript
+keywords:
+  - TypeScript
+  - TypeScript tutorial
+  - TypeScript basics
+  - interfaces vs types
+  - type narrowing
+  - discriminated unions
+  - generics in TypeScript
+  - TypeScript enums
 ---
 
 ## Introduction
@@ -431,13 +440,17 @@ interface MyInterface {
 
 ### Extending/Implementing
 
-Type: Types can be used to create union or intersection types, but they cannot be extended or implemented.
+Type: A type alias has no `extends` clause. You build on one with an intersection instead, and a class can `implement` a type alias as long as it names an object shape rather than a union.
 
-```typescript {1,2,4} showLineNumbers
+```typescript {1,2,4,6,7,8} showLineNumbers
 type A = { prop: number };
-type B = { prop: string };
+type B = { other: string };
 
-type C = A & B; // Intersection type
+type C = A & B; // Intersection, the alias way to extend
+
+class Impl implements A {
+  prop = 1; // A class can implement an object type alias
+}
 ```
 
 Interface: Interfaces can extend other interfaces and can be implemented by classes.

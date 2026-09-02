@@ -5,10 +5,54 @@ import Skills from "@/components/home/Skills";
 import Section from "@/components/Section";
 import Hero from "@/components/home/Hero";
 import Contact from "@/components/home/Contact";
+import type { Metadata } from "next";
+import { EMAIL, socialLinks } from "@/constants";
+import { SITE_URL } from "@/lib/site";
+
+export const metadata: Metadata = {
+  alternates: { canonical: "/" },
+};
+
+/*
+  Structured data for the person and the site. This is what lets a search
+  result show the name, the role and the profile links as one entity
+  instead of a bare page title.
+*/
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Person",
+      "@id": `${SITE_URL}/#person`,
+      name: "Sougata Das",
+      url: SITE_URL,
+      email: EMAIL,
+      jobTitle: "Full Stack Developer",
+      description:
+        "React and Next.js developer based in India, building performant, type-safe web applications in TypeScript.",
+      knowsAbout: ["React", "Next.js", "TypeScript", "Tailwind CSS", "Node.js"],
+      address: { "@type": "PostalAddress", addressCountry: "IN" },
+      worksFor: { "@type": "Organization", name: "AdVran", url: "https://advran.com" },
+      sameAs: socialLinks.map((link) => link.href),
+    },
+    {
+      "@type": "WebSite",
+      "@id": `${SITE_URL}/#website`,
+      url: SITE_URL,
+      name: "Sougata Das",
+      publisher: { "@id": `${SITE_URL}/#person` },
+      inLanguage: "en",
+    },
+  ],
+};
 
 export function HomePage() {
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
       <Section>
         <Hero />
       </Section>

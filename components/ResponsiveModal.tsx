@@ -1,27 +1,62 @@
-import { Drawer, DrawerContent, DrawerHeader, DrawerTitle, } from "@/components/ui/drawer";
-import { Dialog, DialogContent, DialogHeader, DialogTitle, } from "@/components/ui/dialog";
+"use client";
 
+import {
+  Drawer,
+  DrawerContent,
+  DrawerDescription,
+  DrawerHeader,
+  DrawerTitle,
+} from "@/components/ui/drawer";
+import {
+  Dialog,
+  DialogContent,
+  DialogDescription,
+  DialogHeader,
+  DialogTitle,
+} from "@/components/ui/dialog";
+import { cn } from "@/lib/utils";
 import { useIsMobile } from "./hooks/use-mobile";
 
+/*
+  Dialog from md up, drawer below. The one place shadcn's Radix primitives
+  still earn their keep on this site.
 
+  description is read by assistive tech and hidden visually, Radix warns
+  when a dialog has none. className reaches the dialog panel so a caller
+  can widen it, which a code block needs and a plain message does not.
+*/
 interface Props {
   children: React.ReactNode;
   open: boolean;
   title: string;
+  description?: string;
+  className?: string;
   onOpenChange: (open: boolean) => void;
 }
 
-const ResponsiveModal = ({ children, open, title, onOpenChange }: Props) => {
+const ResponsiveModal = ({
+  children,
+  open,
+  title,
+  description,
+  className,
+  onOpenChange,
+}: Props) => {
   const isMobile = useIsMobile();
 
   if (isMobile) {
     return (
       <Drawer open={open} onOpenChange={onOpenChange}>
-        <DrawerContent className="px-4 pt-4 pb-5">
-          <DrawerHeader>
-            <DrawerTitle>{title}</DrawerTitle>
+        <DrawerContent className="max-h-[88vh] px-4 pt-2 pb-6">
+          <DrawerHeader className="px-0 text-left">
+            <DrawerTitle className="label">{title}</DrawerTitle>
+            {description && (
+              <DrawerDescription className="sr-only">
+                {description}
+              </DrawerDescription>
+            )}
           </DrawerHeader>
-          {children}
+          <div className="min-h-0 overflow-y-auto">{children}</div>
         </DrawerContent>
       </Drawer>
     );
@@ -29,9 +64,16 @@ const ResponsiveModal = ({ children, open, title, onOpenChange }: Props) => {
 
   return (
     <Dialog open={open} onOpenChange={onOpenChange}>
-      <DialogContent>
+      <DialogContent
+        className={cn("rounded-none border-border bg-background", className)}
+      >
         <DialogHeader>
-          <DialogTitle>{title}</DialogTitle>
+          <DialogTitle className="label">{title}</DialogTitle>
+          {description && (
+            <DialogDescription className="sr-only">
+              {description}
+            </DialogDescription>
+          )}
         </DialogHeader>
         {children}
       </DialogContent>

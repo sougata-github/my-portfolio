@@ -1,6 +1,6 @@
 # DESIGN.md
 
-The design system for the v2 portfolio, written from the code on `revamp/v2` as of 2026-09-02. Scope is the home page from the nav down to the Projects bento, plus the 404. Posts, footer content and the blog pages are still the v1 design and are listed under Parked at the end.
+The design system for the v2 portfolio, written from the code on `revamp/v2` as of 2026-09-02. Scope is the whole site: the home page from the nav to the footer, the blog index and post pages, the 404 and the error pages. What is left to sweep is listed under Parked at the end.
 
 Read this before touching any visual code. The rules here are not taste, most of them were arrived at by getting it wrong first. The session log in `docs/sessions/2026-07-29.md` has the history.
 
@@ -271,6 +271,22 @@ Covers are drawn, never uploaded. A post names a key from `THUMBNAILS` in `velit
 
 Post metadata comes from velite: `metadata.readingTime` for the "min read", `excerpt`, computed at build time from the raw markdown by taking the first two prose paragraphs and skipping headings, code and lists, and `category`, which is stored for the post page and not shown on the list, since the cover already says what the post is about. The metadata line is date, a middle dot, read time, all `.label`.
 
+### 5.12 Post page
+
+Three bands. The header is a statement cell: a `.label` rail with the category on the left and an "All posts" link on the right, the title in the display face at `clamp(1.75rem,5vw,3.75rem)`, the description muted, then date and read time as labels. The body band has no inner padding of its own: the cover sits flush under the header rule, edge to edge inside the vertical rules, then a grid with the contents rail on the left (`11rem`, `13rem` from `lg`) carrying a `border-r` the full height of the row, and the reading measure on the right capped at `68ch`. On a phone the rail becomes a `details` fold under the cover. The last band points at the source repository with a hairline button.
+
+`components/blog/PostLayout.tsx` is a client component that owns the two refs the progress ring measures, and takes the server-rendered MDX as children. `PostToc` lists h2s only with a scroll spy: the last heading past a reading line at 40% of the viewport is foreground, the rest muted. `ReadingProgress` floats bottom right inside the page column, an arc on the border-coloured track with a mono percentage, visible once the cover has entered the viewport and gone again before the end.
+
+Post typography lives in `components/mdx-components.tsx`: h2 in the display face, h3 medium, body Geist at 15px and 16px from `md` with `leading-relaxed`, links underlined, hairline blockquotes and table rules, no bold, no tight tracking, no radius. `app/(routes)/blog/[slug]/loading.tsx` mirrors the page band for band with the same paddings and cover aspect, so a client navigation from the list swaps content in without a shift.
+
+### 5.13 Code blocks
+
+No syntax highlighter. Code is Geist Mono in `muted-foreground` on a `bg-muted/20` surface inside a hairline box, with a header carrying the language as a `.label` and the copy and expand icons. A fence's own meta does the emphasis: lines listed in `{1,3-5}` step up to `foreground`, and `showLineNumbers` turns numbers on. The meta reaches the component through the rehype step in `mdx-components.tsx`, which copies it to a data attribute, since MDX drops it otherwise.
+
+Blocks render on the server like any other markup, so there is no mounting gate and nothing shifts on hydration. A block longer than 18 lines scrolls inside `26rem`. Every block, whatever its length, has an expand action that opens it at full size in `ResponsiveModal`, a dialog from `md` up and a drawer below, both square-cornered on the site's tokens. Inline code is `bg-muted` at `0.9em` in foreground.
+
+Anything that scrolls inside the page takes `.scrollbar-minimal`, ported from pii-ai: a 6px thumb in foreground at 18% alpha on a transparent track, no buttons, readable on both themes. The `@supports` reset in `globals.css` is load-bearing, since Chromium ignores the webkit rules while the standard scrollbar properties are set. Message lists in demos keep `.scrollbar-hidden`, since those scroll on their own.
+
 ## 6. Spacing
 
 Only these values are used for vertical rhythm. Pick from the list rather than inventing a new one.
@@ -431,7 +447,8 @@ Other interaction rules:
 | `ThemeShortcutProvider` | `components/providers/ThemeShortcutProvider.tsx` | Keyboard theme switch |
 | `Hero`, `Skills`, `Experience`, `Projects`, `ProjectCard`, `Blogs`, `Contact`, `ContactForm` | `components/home/` | Home sections |
 | `LinkedInIcon`, `XIcon`, `GitHubIcon` | `components/icons/SocialIcons.tsx` | Brand marks on `currentColor` |
-| `Thumbnail`, `FeaturedPost`, `ReadingProgress` | `components/blog/` | Drawn post covers, the featured cell, the post progress ring |
+| `Thumbnail`, `FeaturedPost`, `PostLayout`, `PostToc`, `ReadingProgress` | `components/blog/` | Drawn post covers, the featured cell, the post body grid, contents rail, progress ring |
+| `CodeBlock`, `ResponsiveModal` | `components/` | Monotone code blocks and the dialog-or-drawer they expand into |
 | `Navbar`, `Footer` | `components/` | Chrome, in `app/(routes)/layout.tsx` |
 
 Retired from the home page: `Button`, `ResponsiveModal`, `AnimatedSection` (deleted), `MagicReveal` (orphaned). `dialog` and `drawer` stay for `ResponsiveModal`, which the blog may still want.
@@ -494,6 +511,23 @@ Walked the page top to bottom against the rules in section 5.
 
 ## 14. Parked
 
-Still v1 and outside this document's scope until rebuilt: `/blog/[slug]` and `components/mdx-components.tsx` heading styles. `components/blog/ReadingProgress.tsx` is ported from pii-ai and waits for the post page to mount it. Inter is loaded but unused. `usehooks-ts` and `react-icons` are installed but unused. Six shadcn primitives are installed but unused: `avatar`, `card`, `separator`, `sheet`, `textarea`, `tooltip`.
+Nothing on the site is v1 any more. Left to sweep: Inter is loaded but unused, `usehooks-ts` and `react-icons` are installed but unused, `MagicReveal` is an orphan, and the OG image is a 64px favicon rather than a real social card. Six shadcn primitives are installed but unused: `avatar`, `card`, `separator`, `sheet`, `textarea`, `tooltip`.
 
 All four bento demos are in: AI Chat (scripted), Jotion (static, sidebar tree expands and collapses), Team Chat (live composer with a five-message cap, server menu, and a theme button that switches the whole site) and iPhone 15 (the landing page hero rebuilt without its video, the phone drawn in CSS, entrance plays once in view). The stack list from `projectData.stack` is still unrendered. The wider sequence is at the bottom of `docs/sessions/2026-07-29.md`.
+
+## 15. SEO
+
+Written for the searches that matter to this site: a hiring manager or founder looking for a React or Next.js developer, and a developer looking up a TypeScript topic.
+
+- **Titles** use a root template, `%s | Sougata Das`, with the home default "Sougata Das, React and Next.js Developer". Page titles are short nouns: "Writings", the post title.
+- **Descriptions** say what, with what, and from where. The home description names React, Next.js, TypeScript, India and remote work on purpose. Post descriptions name the topics the post actually covers, since that is what a search snippet is built from.
+- **Keywords** are declared per page. Home carries the role and location terms, the blog index the topic terms, and each post its own list from frontmatter. Keep lists short and specific, a keyword nobody would type is noise.
+- **Canonicals** are set per page through `alternates.canonical`, never in the root, so a page can never inherit another page's canonical.
+- **Open Graph and Twitter** are set in the root and overridden per page. Posts are `type: "article"` with `publishedTime` and tags. Blog pages carry 1200 by 630 cards cropped from the drawn covers, in both tones under `public/og`, mapped by thumbnail key in `lib/og.ts`: the light one for Open Graph, which renders on light chrome, and the dark one for the Twitter card, where the timeline is dark. The home page still uses the 64px favicon and needs its own card.
+- **Structured data** is inline JSON-LD. The home page carries a `Person` and a `WebSite` graph with the social profiles as `sameAs` and India as the address country. Each post carries a `BlogPosting` with author, dates, keywords and word count.
+- **Sitemap and robots** come from `app/sitemap.ts` and `app/robots.ts`, published posts only, with the 404 excluded and marked `noindex` by Next.
+- **Headings** are real `h1` through `h3` in the post body, with `rehype-slug` ids and self-linking h2s, which is what gives a search engine the section structure.
+- **Local signals** for the home page: India and remote in the description and keywords, `en_IN` as the Open Graph locale, `addressCountry: IN` on the Person, and `geo.region` and `geo.placename` meta through the `other` field, since the Metadata API has no geo fields of its own. Country only, nobody searches a city for remote work.
+- **Viewport and theme colour** are a separate `viewport` export in the root layout, not metadata fields. The theme colours are the two background tokens as hex, so a phone's browser chrome matches the page in either mode.
+- **Nested metadata replaces, it does not merge.** A page that sets `openGraph` or `twitter` loses everything the root set in that object, so blog pages restate `siteName`, `locale` and `creator` alongside their own images. Titles are the exception, they flow through the template.
+- **Error pages are not indexed and not linked.** `not-found.tsx` gets `noindex` from Next automatically and is absent from the sitemap. `app/(routes)/error.tsx` catches a page failure inside the chrome with the 404's anatomy and a "Try again" that calls `reset()`. `app/global-error.tsx` catches the root layout itself, so it renders its own `html`, `body`, fonts and stylesheet, follows the OS theme through the media query alone, and reuses the 404's three-band shell.
