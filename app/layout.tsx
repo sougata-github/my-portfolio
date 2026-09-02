@@ -37,7 +37,7 @@ const spaceGrotesk = Space_Grotesk({
   Site-wide metadata. Pages set their own title, description and canonical,
   and the template appends the name. The description is written for the
   query a hiring manager or a founder types: what I build, with what, and
-  from where. Remote and India are stated on purpose, that is the search.
+  from where. India is stated on purpose, that is the search.
 */
 export const metadata: Metadata = {
   // Resolves relative OG and twitter image paths against the real origin.
@@ -48,7 +48,7 @@ export const metadata: Metadata = {
     template: "%s | Sougata Das",
   },
   description:
-    "Sougata Das is a full stack React and Next.js developer based in India. Performant, type-safe web applications in TypeScript, from design system to deployment. Available for remote work.",
+    "Sougata Das is a full stack React and Next.js developer based in India. Performant, type-safe web applications in TypeScript, from design system to deployment.",
   keywords: [
     "Sougata Das",
     "React developer",
@@ -67,7 +67,7 @@ export const metadata: Metadata = {
     siteName: "Sougata Das",
     title: "Sougata Das, React and Next.js Developer",
     description:
-      "Full stack React and Next.js developer based in India, building performant, type-safe web applications in TypeScript. Available for remote work.",
+      "Full stack React and Next.js developer based in India, building performant, type-safe web applications in TypeScript.",
     url: SITE_URL,
     images: [
       {
@@ -100,8 +100,8 @@ export const metadata: Metadata = {
   category: "technology",
   /*
     Local signals. The metadata API has no field for geo tags, so they go
-    through `other`. Country only, the search is "developer in India" and
-    "remote", not a city.
+    through `other`. Country only, the search is "developer in India",
+    not a city.
   */
   other: {
     "geo.region": "IN",
