@@ -2,7 +2,7 @@
 
 This is my personal portfolio site. It showcases my projects and hosts my blog, and it has a contact form that delivers messages straight to my inbox.
 
-<img width="1271" height="715" alt="portfolio-1" src="https://github.com/user-attachments/assets/1e5a9cd5-6697-4fd5-ba42-d067a9e5aa13" />
+![Portfolio landing page](.github/preview.png)
 
 ## Tech Stack
 
